@@ -1,26 +1,96 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+@theme {
+  --font-sans: 'Plus Jakarta Sans', ui-sans-serif, system-ui, sans-serif;
+
+  --color-primary: #03427f;
+  --color-primary-dark: #014872;
+  --color-primary-light: #02b9d5;
+  --color-secondary: #ffc129;
+  --color-secondary-light: #e9ce5b;
+  --color-accent: #a2d19b;
+  --color-background: #FAFBFC;
+  --color-surface: #FFFFFF;
+  --color-surface-muted: #F0F2F5;
+  --color-text-primary: #1a1a1a;
+  --color-text-secondary: #5A6474;
+  --color-border: #E2E6EB;
+  --color-success: #a2d19b;
+  --color-warning: #ffc129;
+  --color-error: #D94052;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+  body {
+    font-family: var(--font-sans);
+    color: var(--color-text-primary);
+    background-color: var(--color-background);
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-weight: 700;
+    line-height: 1.15;
+    letter-spacing: -0.02em;
+  }
+
+  ::selection {
+    background-color: var(--color-primary);
+    color: white;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+@layer utilities {
+  .container-site {
+    width: 100%;
+    max-width: 1360px;
+    margin-inline: auto;
+    padding-inline: 1.25rem;
+  }
+
+  @media (min-width: 768px) {
+    .container-site {
+      padding-inline: 2rem;
+    }
+  }
+
+  @media (min-width: 1280px) {
+    .container-site {
+      padding-inline: 2.5rem;
+    }
+  }
+
+  .section-padding {
+    padding-block: 4rem;
+  }
+
+  @media (min-width: 768px) {
+    .section-padding {
+      padding-block: 5rem;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .section-padding {
+      padding-block: 6rem;
+    }
+  }
+
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }

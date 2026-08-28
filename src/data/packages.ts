@@ -1,0 +1,178 @@
+export interface Package {
+    id: string;
+    name: string;
+    location: 'Royapuram' | 'Adyar' | 'BDC';
+    price: number;
+    originalPrice: number;
+    discount: number;
+    category: string;
+    inclusions?: string[];
+}
+
+export const packages: Package[] = [
+    // Royapuram
+    {
+        id: 'rp-diabetes-wellness',
+        name: 'Diabetes Wellness Package',
+        location: 'Royapuram',
+        price: 5550,
+        originalPrice: 12390,
+        discount: 55,
+        category: 'Diabetes',
+    },
+    {
+        id: 'rp-ip-footcare',
+        name: 'IP - Diabetic and Footcare Package',
+        location: 'Royapuram',
+        price: 9500,
+        originalPrice: 18635,
+        discount: 49,
+        category: 'Foot Care',
+    },
+    {
+        id: 'rp-affordable',
+        name: 'Affordable Diabetes Care Package',
+        location: 'Royapuram',
+        price: 1250,
+        originalPrice: 5220,
+        discount: 76,
+        category: 'Diabetes',
+    },
+    {
+        id: 'rp-short-review',
+        name: 'Short Review Package',
+        location: 'Royapuram',
+        price: 1680,
+        originalPrice: 2140,
+        discount: 21,
+        category: 'Review',
+    },
+    {
+        id: 'rp-master',
+        name: 'Master Package',
+        location: 'Royapuram',
+        price: 6660,
+        originalPrice: 15010,
+        discount: 56,
+        category: 'Diabetes',
+    },
+    {
+        id: 'rp-premium',
+        name: 'Premium Package',
+        location: 'Royapuram',
+        price: 9999,
+        originalPrice: 14865,
+        discount: 33,
+        category: 'Diabetes',
+    },
+    // Adyar
+    {
+        id: 'ad-special',
+        name: 'Adyar Special Package',
+        location: 'Adyar',
+        price: 2500,
+        originalPrice: 5090,
+        discount: 51,
+        category: 'Diabetes',
+    },
+    {
+        id: 'ad-basic-diabetic',
+        name: 'Basic Diabetic Package',
+        location: 'Adyar',
+        price: 4000,
+        originalPrice: 6190,
+        discount: 35,
+        category: 'Diabetes',
+    },
+    {
+        id: 'ad-high-risk-foot',
+        name: 'High Risk Foot Package',
+        location: 'Adyar',
+        price: 1500,
+        originalPrice: 2425,
+        discount: 38,
+        category: 'Foot Care',
+    },
+    {
+        id: 'ad-short-review',
+        name: 'Short Review Package',
+        location: 'Adyar',
+        price: 1800,
+        originalPrice: 1800,
+        discount: 0,
+        category: 'Review',
+    },
+    // BDC
+    {
+        id: 'bdc-prof-mv-premium',
+        name: 'Prof MV Home Diabetes Premium Package',
+        location: 'BDC',
+        price: 2900,
+        originalPrice: 5655,
+        discount: 49,
+        category: 'Diabetes',
+    },
+    {
+        id: 'bdc-diabetes-wellness',
+        name: 'Diabetes Wellness Package',
+        location: 'BDC',
+        price: 5900,
+        originalPrice: 10530,
+        discount: 44,
+        category: 'Diabetes',
+    },
+    {
+        id: 'bdc-annual-prevention',
+        name: 'Annual Package to Prevent Diabetic Complication',
+        location: 'BDC',
+        price: 5990,
+        originalPrice: 11985,
+        discount: 50,
+        category: 'Prevention',
+    },
+    {
+        id: 'bdc-basic-diabetic',
+        name: 'Basic Diabetic Package',
+        location: 'BDC',
+        price: 4000,
+        originalPrice: 5690,
+        discount: 30,
+        category: 'Diabetes',
+    },
+    {
+        id: 'bdc-basic',
+        name: 'Basic Package',
+        location: 'BDC',
+        price: 3350,
+        originalPrice: 5890,
+        discount: 43,
+        category: 'Wellness',
+    },
+    {
+        id: 'bdc-rotary',
+        name: 'Rotary Package',
+        location: 'BDC',
+        price: 1500,
+        originalPrice: 3205,
+        discount: 53,
+        category: 'Diabetes',
+    },
+    {
+        id: 'bdc-wellness-master',
+        name: 'Wellness Master Package',
+        location: 'BDC',
+        price: 6000,
+        originalPrice: 8790,
+        discount: 32,
+        category: 'Wellness',
+    },
+    {
+        id: 'bdc-special-diabetes',
+        name: 'Special Diabetes Package',
+        location: 'BDC',
+        price: 3250,
+        originalPrice: 4460,
+        discount: 27,
+        category: 'Diabetes',
+    },
+];

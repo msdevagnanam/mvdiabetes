@@ -2,6 +2,7 @@
 
 import { motion } from 'framer-motion';
 import Link from 'next/link';
+import Image from 'next/image';
 import { ArrowRight, MapPin, Calendar } from 'lucide-react';
 import { doctors } from '@/data/doctors';
 
@@ -47,13 +48,23 @@ export default function DoctorSection() {
                             transition={{ duration: 0.4, delay: i * 0.08 }}
                             className="group bg-white rounded-2xl border border-border hover:border-primary/20 hover:shadow-xl hover:shadow-primary/5 transition-all duration-300 overflow-hidden"
                         >
-                            {/* Photo placeholder */}
-                            <div className="aspect-[4/3] bg-gradient-to-br from-primary/5 to-primary/10 flex items-center justify-center">
-                                <div className="w-20 h-20 rounded-full bg-primary/10 flex items-center justify-center">
-                                    <span className="text-2xl font-bold text-primary/40">
-                                        {doc.name.split(' ').map(n => n[0]).join('').slice(0, 2)}
-                                    </span>
-                                </div>
+                            {/* Photo */}
+                            <div className="aspect-[4/3] bg-gradient-to-br from-primary/5 to-primary/10 relative overflow-hidden flex items-center justify-center border-b border-border/50">
+                                {doc.image ? (
+                                    <Image
+                                        src={doc.image}
+                                        alt={doc.name}
+                                        fill
+                                        sizes="(max-width: 768px) 100vw, 33vw"
+                                        className="object-cover group-hover:scale-105 transition-transform duration-500"
+                                    />
+                                ) : (
+                                    <div className="w-20 h-20 rounded-full bg-primary/10 flex items-center justify-center">
+                                        <span className="text-2xl font-bold text-primary/40">
+                                            {doc.name.split(' ').map(n => n.replace('Dr.', '').trim()).filter(Boolean).map(n => n[0]).join('').slice(0, 2).toUpperCase()}
+                                        </span>
+                                    </div>
+                                )}
                             </div>
 
                             <div className="p-5 lg:p-6">

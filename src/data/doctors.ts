@@ -19,6 +19,7 @@ export const doctors: Doctor[] = [
         qualifications: 'M.D., Ph.D., FICP, FRCP (London & Glasgow)',
         specialty: 'Diabetology',
         location: ['Royapuram', 'Koramangala'],
+        image: '/images/our-doctors/Dr. Vijay Viswanathan.png',
         about:
             'Head & Chief Diabetologist at MV Hospital for Diabetes. First Asian President of D-Foot International. Leading expert in diabetic foot care and diabetes research.',
     },
@@ -30,6 +31,7 @@ export const doctors: Doctor[] = [
         qualifications: 'MBBS, MS',
         specialty: 'Surgery',
         location: ['Royapuram'],
+        image: '/images/our-doctors/Dr. G. Senthil.png',
     },
     {
         id: 'prashanth-arun',
@@ -39,6 +41,7 @@ export const doctors: Doctor[] = [
         qualifications: 'MBBS, MD',
         specialty: 'Diabetology',
         location: ['Royapuram'],
+        image: '/images/our-doctors/Dr. Prashanth Arun.png',
     },
     {
         id: 'uma-mahesh',
@@ -48,6 +51,7 @@ export const doctors: Doctor[] = [
         qualifications: 'MBBS, MD',
         specialty: 'Diabetology',
         location: ['Royapuram'],
+        image: '/images/our-doctors/Dr Uma Mahesh.png',
     },
     {
         id: 'leela-baid',
@@ -57,6 +61,7 @@ export const doctors: Doctor[] = [
         qualifications: 'MBBS, MD',
         specialty: 'Diabetology',
         location: ['Royapuram'],
+        image: '/images/our-doctors/Dr. Leela Baid.png',
     },
     {
         id: 'abishek-sr',
@@ -66,6 +71,7 @@ export const doctors: Doctor[] = [
         qualifications: 'MBBS, MD',
         specialty: 'Diabetology',
         location: ['Royapuram'],
+        image: '/images/our-doctors/Dr. Abishek S.R.png',
     },
     {
         id: 'bs-sanjay',
@@ -75,6 +81,7 @@ export const doctors: Doctor[] = [
         qualifications: 'M.B.B.S, D-DIAB (AIMS)',
         specialty: 'Diabetology',
         location: ['Royapuram', 'Koramangala'],
+        image: '/images/our-doctors/Dr. B S Sanjay.png',
     },
     {
         id: 'vishnupriya-reddy',

@@ -21,10 +21,10 @@ function UtilityBar() {
                         <Mail size={13} />
                         <span>{siteConfig.email}</span>
                     </a>
-                    <Link href="/about/branches" className="flex items-center gap-1.5 hover:text-white transition-colors">
+                    {/* <Link href="/about/branches" className="flex items-center gap-1.5 hover:text-white transition-colors">
                         <MapPin size={13} />
                         <span>4 Locations</span>
-                    </Link>
+                    </Link> */}
                 </div>
                 <div className="flex items-center gap-4">
                     <span className="text-white/60">Toll Free: {siteConfig.tollFree}</span>

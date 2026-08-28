@@ -1,7 +1,7 @@
 import Hero from '@/components/sections/Hero';
 import TrustStrip from '@/components/sections/TrustStrip';
 import WhyMVDiabetes from '@/components/sections/WhyMVDiabetes';
-import CareJourney from '@/components/sections/CareJourney';
+import CareJourney from '@/components/sections/CareJourney'; // clear cache
 import SpecialtyExplorer from '@/components/sections/SpecialtyExplorer';
 import PackageSection from '@/components/sections/PackageSection';
 import DoctorSection from '@/components/sections/DoctorSection';
@@ -12,7 +12,7 @@ import {
   BranchSection,
   AppointmentCTASection,
 } from '@/components/sections/HomeSections';
-import { StatsCounter, PatientEducation, VideoTestimonials, Accreditations } from '@/components/sections/MissingSections';
+import { StatsCounter, PatientEducation, VideoTestimonials, Accreditations, AwardsAndAchievements } from '@/components/sections/MissingSections';
 
 export default function HomePage() {
   return (
@@ -30,6 +30,7 @@ export default function HomePage() {
       <VideoTestimonials />
       <BlogPreview />
       <NewsEventsPreview />
+      <AwardsAndAchievements />
       <BranchSection />
       <Accreditations />
       <AppointmentCTASection />

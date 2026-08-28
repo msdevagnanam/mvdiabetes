@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
 import Link from 'next/link';
+import Image from 'next/image';
 import { ArrowRight, MapPin, Tag } from 'lucide-react';
 import { packages } from '@/data/packages';
 
@@ -72,16 +73,21 @@ export default function PackageSection() {
 
                 {/* Package Grid */}
                 <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
-                    {filteredPackages.slice(0, 6).map((pkg, i) => (
+                    {filteredPackages.map((pkg, i) => (
                         <motion.div
                             key={pkg.id}
                             initial={{ opacity: 0, y: 20 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true, margin: '-30px' }}
                             transition={{ duration: 0.4, delay: i * 0.05 }}
-                            className="group bg-white rounded-2xl border border-border hover:border-primary/20 hover:shadow-lg hover:shadow-primary/5 transition-all duration-300 overflow-hidden"
+                            className="group bg-white rounded-2xl border border-border hover:border-primary/20 hover:shadow-lg hover:shadow-primary/5 transition-all duration-300 overflow-hidden flex flex-col h-full"
                         >
-                            <div className="p-6">
+                            {pkg.image && (
+                                <div className="aspect-[16/10] w-full relative overflow-hidden bg-surface-muted border-b border-border/50">
+                                    <Image src={pkg.image} alt={pkg.name} fill className="object-cover group-hover:scale-105 transition-transform duration-500" />
+                                </div>
+                            )}
+                            <div className="p-6 flex-1 flex flex-col">
                                 <div className="flex items-center justify-between mb-4">
                                     <span className="text-xs font-medium text-primary bg-primary/5 px-2.5 py-1 rounded-full">{pkg.category}</span>
                                     {pkg.discount > 0 && (
@@ -100,12 +106,14 @@ export default function PackageSection() {
                                         <span className="text-sm text-text-secondary line-through">{formatPrice(pkg.originalPrice)}</span>
                                     )}
                                 </div>
-                                <Link
-                                    href="/appointment"
-                                    className="block w-full text-center py-2.5 bg-primary/5 text-primary text-sm font-semibold rounded-xl hover:bg-primary hover:text-white transition-colors"
-                                >
-                                    Book Package
-                                </Link>
+                                <div className="mt-auto pt-2">
+                                    <Link
+                                        href="/appointment"
+                                        className="block w-full text-center py-2.5 bg-primary/5 text-primary text-sm font-semibold rounded-xl hover:bg-primary hover:text-white transition-colors"
+                                    >
+                                        Book Package
+                                    </Link>
+                                </div>
                             </div>
                         </motion.div>
                     ))}

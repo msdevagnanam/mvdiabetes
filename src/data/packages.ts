@@ -7,6 +7,7 @@ export interface Package {
     discount: number;
     category: string;
     inclusions?: string[];
+    image?: string;
 }
 
 export const packages: Package[] = [
@@ -19,6 +20,7 @@ export const packages: Package[] = [
         originalPrice: 12390,
         discount: 55,
         category: 'Diabetes',
+        image: '/images/our-popular/royapuram/opp-img1.png',
     },
     {
         id: 'rp-ip-footcare',
@@ -28,6 +30,7 @@ export const packages: Package[] = [
         originalPrice: 18635,
         discount: 49,
         category: 'Foot Care',
+        image: '/images/our-popular/royapuram/opp-img2.png',
     },
     {
         id: 'rp-affordable',
@@ -37,6 +40,7 @@ export const packages: Package[] = [
         originalPrice: 5220,
         discount: 76,
         category: 'Diabetes',
+        image: '/images/our-popular/royapuram/opp-img3.png',
     },
     {
         id: 'rp-short-review',
@@ -46,6 +50,7 @@ export const packages: Package[] = [
         originalPrice: 2140,
         discount: 21,
         category: 'Review',
+        image: '/images/our-popular/royapuram/opp-img4.png',
     },
     {
         id: 'rp-master',
@@ -55,6 +60,7 @@ export const packages: Package[] = [
         originalPrice: 15010,
         discount: 56,
         category: 'Diabetes',
+        image: '/images/our-popular/royapuram/opp-img5.png',
     },
     {
         id: 'rp-premium',
@@ -64,6 +70,7 @@ export const packages: Package[] = [
         originalPrice: 14865,
         discount: 33,
         category: 'Diabetes',
+        image: '/images/our-popular/royapuram/opp-img6.png',
     },
     // Adyar
     {
@@ -74,6 +81,7 @@ export const packages: Package[] = [
         originalPrice: 5090,
         discount: 51,
         category: 'Diabetes',
+        image: '/images/our-popular/adyar/opp-img8.png',
     },
     {
         id: 'ad-basic-diabetic',
@@ -83,6 +91,7 @@ export const packages: Package[] = [
         originalPrice: 6190,
         discount: 35,
         category: 'Diabetes',
+        image: '/images/our-popular/adyar/opp-img9.png',
     },
     {
         id: 'ad-high-risk-foot',
@@ -92,6 +101,7 @@ export const packages: Package[] = [
         originalPrice: 2425,
         discount: 38,
         category: 'Foot Care',
+        image: '/images/our-popular/adyar/opp-img10.png',
     },
     {
         id: 'ad-short-review',
@@ -101,35 +111,39 @@ export const packages: Package[] = [
         originalPrice: 1800,
         discount: 0,
         category: 'Review',
+        image: '/images/our-popular/adyar/opp-img11.png',
     },
-    // BDC
     {
         id: 'bdc-prof-mv-premium',
         name: 'Prof MV Home Diabetes Premium Package',
-        location: 'BDC',
+        location: 'Adyar',
         price: 2900,
         originalPrice: 5655,
         discount: 49,
         category: 'Diabetes',
+        image: '/images/our-popular/adyar/opp-img12.png',
     },
     {
         id: 'bdc-diabetes-wellness',
         name: 'Diabetes Wellness Package',
-        location: 'BDC',
+        location: 'Adyar',
         price: 5900,
         originalPrice: 10530,
         discount: 44,
         category: 'Diabetes',
+        image: '/images/our-popular/adyar/opp-img13.png',
     },
     {
         id: 'bdc-annual-prevention',
         name: 'Annual Package to Prevent Diabetic Complication',
-        location: 'BDC',
+        location: 'Adyar',
         price: 5990,
         originalPrice: 11985,
         discount: 50,
         category: 'Prevention',
+        image: '/images/our-popular/adyar/opp-img14.png',
     },
+    // BDC
     {
         id: 'bdc-basic-diabetic',
         name: 'Basic Diabetic Package',
@@ -138,6 +152,7 @@ export const packages: Package[] = [
         originalPrice: 5690,
         discount: 30,
         category: 'Diabetes',
+        image: '/images/our-popular/bdc/opp-img15.png',
     },
     {
         id: 'bdc-basic',
@@ -147,6 +162,7 @@ export const packages: Package[] = [
         originalPrice: 5890,
         discount: 43,
         category: 'Wellness',
+        image: '/images/our-popular/bdc/opp-img16.png',
     },
     {
         id: 'bdc-rotary',
@@ -156,6 +172,7 @@ export const packages: Package[] = [
         originalPrice: 3205,
         discount: 53,
         category: 'Diabetes',
+        image: '/images/our-popular/bdc/opp-img17.png',
     },
     {
         id: 'bdc-wellness-master',
@@ -165,6 +182,7 @@ export const packages: Package[] = [
         originalPrice: 8790,
         discount: 32,
         category: 'Wellness',
+        image: '/images/our-popular/bdc/opp-img18.png',
     },
     {
         id: 'bdc-special-diabetes',
@@ -174,5 +192,6 @@ export const packages: Package[] = [
         originalPrice: 4460,
         discount: 27,
         category: 'Diabetes',
+        image: '/images/our-popular/bdc/opp-img19.png',
     },
 ];

@@ -64,7 +64,7 @@ export function PatientEducation() {
                             whileInView={{ opacity: 1, scale: 1 }}
                             viewport={{ once: true }}
                             transition={{ delay: idx * 0.1 }}
-                            className="bg-white rounded-2xl p-6 shadow-xl shadow-black-[0.03] border border-border/50 hover:shadow-2xl hover:shadow-primary/5 hover:-translate-y-1 transition-all group cursor-pointer"
+                            className="bg-white rounded-2xl p-6 shadow-xl shadow-black/[0.03] border border-border/50 hover:shadow-2xl hover:shadow-primary/5 hover:-translate-y-1 transition-all group cursor-pointer"
                         >
                             <div className={`inline-block px-3 py-1 rounded-full text-xs font-bold mb-6 ${article.color}`}>
                                 {article.category}
@@ -88,44 +88,71 @@ export function PatientEducation() {
 
 export function VideoTestimonials() {
     const videos = [
-        { id: 1, name: 'Mr. Subramanian', issue: 'Diabetic Retinopathy Treatment' },
-        { id: 2, name: 'Mrs. Lakshmi', issue: 'Advanced Foot Care Recovery' },
+        {
+            id: 1,
+            name: 'Mr. Subramanian',
+            issue: 'Diabetic Retinopathy Treatment',
+            embedUrl: 'https://www.youtube.com/embed/_uJsoPkGa1M?si=yaPT7b9Tuqf1XrPP'
+        },
+        {
+            id: 2,
+            name: 'Mrs. Lakshmi',
+            issue: 'Advanced Foot Care Recovery',
+            embedUrl: 'https://www.youtube.com/embed/aYXfpmniT-s?si=lqWuY0IUowI2OxQM'
+        },
     ];
 
     return (
-        <section className="section-padding bg-white">
+        <section className="section-padding bg-surface-muted/30">
             <div className="container-site">
-                <div className="text-center max-w-2xl mx-auto mb-12">
-                    <p className="text-sm font-semibold text-secondary uppercase tracking-wider mb-3">Real Stories</p>
-                    <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-text-primary">Hear From Our Patients</h2>
+                <div className="text-center max-w-2xl mx-auto mb-12 lg:mb-16">
+                    <motion.div
+                        initial={{ opacity: 0, y: 15 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.5 }}
+                        className="text-xs font-bold text-secondary uppercase tracking-widest mb-3"
+                    >
+                        Real Stories
+                    </motion.div>
+                    <motion.h2
+                        initial={{ opacity: 0, y: 15 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.5, delay: 0.1 }}
+                        className="text-3xl sm:text-4xl lg:text-[2.5rem] font-extrabold text-text-primary"
+                    >
+                        Hear From Our Patients
+                    </motion.h2>
                 </div>
 
-                <div className="grid md:grid-cols-2 gap-8">
+                <div className="grid md:grid-cols-2 gap-8 lg:gap-10">
                     {videos.map((vid, idx) => (
                         <motion.div
                             key={vid.id}
                             initial={{ opacity: 0, y: 20 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
-                            transition={{ delay: idx * 0.2 }}
-                            className="group relative rounded-3xl overflow-hidden aspect-[16/9] shadow-lg cursor-pointer bg-surface-muted"
+                            transition={{ delay: idx * 0.2, ease: [0.22, 1, 0.36, 1] }}
+                            className="group relative rounded-3xl overflow-hidden bg-white shadow-xl shadow-black-[0.04] border border-border/50 hover:shadow-2xl hover:shadow-primary/10 transition-all duration-300"
                         >
-                            {/* Placeholder Video Background */}
-                            <div className="absolute inset-0 bg-primary-dark/20 mix-blend-multiply group-hover:bg-primary/20 transition-colors z-10" />
-
-                            {/* Play Button Overlay */}
-                            <div className="absolute inset-0 z-20 flex items-center justify-center">
-                                <div className="w-16 h-16 rounded-full bg-white/90 backdrop-blur-sm flex items-center justify-center shadow-xl group-hover:scale-110 group-hover:bg-primary group-hover:text-white text-primary transition-all duration-300">
-                                    <Play size={24} className="ml-1" />
-                                </div>
+                            <div className="aspect-[16/9] relative z-20">
+                                <iframe
+                                    width="100%"
+                                    height="100%"
+                                    src={vid.embedUrl}
+                                    title={`Patient Story: ${vid.name}`}
+                                    frameBorder="0"
+                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                    referrerPolicy="strict-origin-when-cross-origin"
+                                    allowFullScreen
+                                    className="absolute inset-0 w-full h-full"
+                                ></iframe>
                             </div>
 
-                            {/* Video Info Gradient */}
-                            <div className="absolute inset-x-0 bottom-0 p-6 z-20 bg-gradient-to-t from-black/80 via-black/40 to-transparent">
-                                <div className="translate-y-2 group-hover:translate-y-0 transition-transform duration-300">
-                                    <h4 className="text-white font-bold text-lg">{vid.name}</h4>
-                                    <p className="text-white/80 text-sm font-medium">{vid.issue}</p>
-                                </div>
+                            <div className="p-6 bg-white relative z-10 border-t border-border/30 group-hover:bg-primary/[0.02] transition-colors">
+                                <h4 className="text-text-primary font-extrabold text-xl mb-1">{vid.name}</h4>
+                                <p className="text-text-secondary text-sm font-medium">{vid.issue}</p>
                             </div>
                         </motion.div>
                     ))}
@@ -141,7 +168,6 @@ export function Accreditations() {
             <div className="container-site text-center">
                 <p className="text-xs font-bold text-text-secondary uppercase tracking-widest mb-8">Recognized for Clinical Excellence</p>
                 <div className="flex flex-wrap justify-center items-center gap-8 lg:gap-16 opacity-60 grayscale hover:grayscale-0 transition-all duration-500">
-                    {/* Placeholder for NABH, NABL seals */}
                     <div className="text-xl font-black text-primary flex items-center gap-2">
                         <Award size={28} /> NABH Accredited
                     </div>
@@ -151,6 +177,105 @@ export function Accreditations() {
                     <div className="text-xl font-black text-primary flex items-center gap-2">
                         <Award size={28} /> ISO 9001:2015
                     </div>
+                </div>
+            </div>
+        </section>
+    );
+}
+
+export function AwardsAndAchievements() {
+    const awards = [
+        {
+            image: '/images/Recognized/recognized-img1.png',
+            title: 'Best Doctor Award',
+            subtitle: 'Conferred by Tamil Nadu MGR Medical University',
+        },
+        {
+            image: '/images/Recognized/recognized-img2.png',
+            title: 'Certificate of Recognition',
+            subtitle: 'The Times of India — Excellence in Diabetology & Foot Care',
+        },
+        {
+            image: '/images/Recognized/recognized-img3.png',
+            title: 'MV Hospital for Diabetes',
+            subtitle: 'Diabetes & Research Centre — National Recognition',
+        },
+    ];
+
+    return (
+        <section className="py-16 lg:py-24 relative overflow-hidden bg-primary-dark">
+            {/* Decorative background */}
+            <div className="absolute inset-0 opacity-[0.03]" style={{ backgroundImage: 'radial-gradient(circle at 1px 1px, white 1px, transparent 0)', backgroundSize: '32px 32px' }} />
+            <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-secondary/10 rounded-full blur-[120px] -translate-y-1/2 translate-x-1/3" />
+            <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-primary-light/10 rounded-full blur-[100px] translate-y-1/2 -translate-x-1/3" />
+
+            <div className="container-site relative z-10">
+                {/* Section Header */}
+                <div className="text-center max-w-3xl mx-auto mb-14 lg:mb-16">
+                    <motion.div
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.6 }}
+                        className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm text-secondary text-xs font-bold uppercase tracking-widest px-5 py-2 rounded-full mb-6 border border-white/10"
+                    >
+                        <Award size={14} /> Our Legacy
+                    </motion.div>
+                    <motion.h2
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.6, delay: 0.1 }}
+                        className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white mb-5 leading-tight"
+                    >
+                        Awards &amp; Achievements
+                    </motion.h2>
+                    <motion.p
+                        initial={{ opacity: 0, y: 15 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.5, delay: 0.2 }}
+                        className="text-white/60 text-sm lg:text-base leading-relaxed max-w-2xl mx-auto"
+                    >
+                        Celebrating decades of excellence in diabetes care, groundbreaking research, and transformative contributions to global healthcare.
+                    </motion.p>
+                </div>
+
+                {/* Awards Grid */}
+                <div className="grid md:grid-cols-3 gap-6 lg:gap-8 max-w-6xl mx-auto">
+                    {awards.map((award, i) => (
+                        <motion.div
+                            key={i}
+                            initial={{ opacity: 0, y: 30, scale: 0.95 }}
+                            whileInView={{ opacity: 1, y: 0, scale: 1 }}
+                            viewport={{ once: true, margin: '-40px' }}
+                            transition={{ duration: 0.5, delay: i * 0.15, ease: [0.22, 1, 0.36, 1] }}
+                            whileHover={{ y: -8 }}
+                            className="group relative rounded-2xl overflow-hidden shadow-2xl shadow-black/30 cursor-pointer"
+                        >
+                            {/* Image */}
+                            <div className="aspect-[4/3] relative">
+                                <Image
+                                    src={award.image}
+                                    alt={award.title}
+                                    fill
+                                    sizes="(max-width: 768px) 100vw, 33vw"
+                                    className="object-cover group-hover:scale-110 transition-transform duration-700 ease-out"
+                                />
+                                {/* Gradient overlay */}
+                                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-70 group-hover:opacity-100 transition-opacity duration-500" />
+                            </div>
+
+                            {/* Caption */}
+                            <div className="absolute inset-x-0 bottom-0 p-5 lg:p-6 translate-y-2 group-hover:translate-y-0 transition-transform duration-500 ease-out">
+                                <h4 className="text-white font-bold text-base lg:text-lg leading-snug mb-1">{award.title}</h4>
+                                <p className="text-white/70 text-xs lg:text-sm font-medium opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100">{award.subtitle}</p>
+                            </div>
+
+                            {/* Decorative border glow on hover */}
+                            <div className="absolute inset-0 rounded-2xl border-2 border-white/0 group-hover:border-secondary/40 transition-colors duration-500 pointer-events-none" />
+                        </motion.div>
+                    ))}
                 </div>
             </div>
         </section>

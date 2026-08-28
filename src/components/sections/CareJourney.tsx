@@ -1,7 +1,7 @@
 'use client';
 
 import { useState, useRef } from 'react';
-import { motion, useScroll, useMotionValueEvent, AnimatePresence } from 'framer-motion';
+import { motion, useScroll, useMotionValueEvent } from 'framer-motion';
 
 const steps = [
     {
@@ -45,135 +45,122 @@ const steps = [
 export default function CareJourney() {
     const [activeStep, setActiveStep] = useState(0);
     const containerRef = useRef<HTMLElement>(null);
+    const sectionHeightRef = useRef<HTMLDivElement>(null);
 
     const { scrollYProgress } = useScroll({
-        target: containerRef,
-        offset: ["start start", "end end"]
+        target: sectionHeightRef,
+        offset: ["start center", "end end"]
     });
 
     useMotionValueEvent(scrollYProgress, "change", (latest) => {
-        // Only hijack the state if we are on a large screen where the sticky behavior is active
-        if (typeof window !== 'undefined' && window.innerWidth >= 1024) {
-            const step = Math.min(5, Math.floor(latest * 5.99));
-            if (step !== activeStep) {
+        if (typeof window !== 'undefined') {
+            // Using 6.5 to map to 6 items smoothly over the scroll distance
+            const step = Math.min(5, Math.floor(latest * 6.5));
+            if (activeStep !== step) {
                 setActiveStep(step);
             }
         }
     });
 
     return (
-        <section ref={containerRef} className="bg-surface-muted relative lg:h-[400vh]">
-            <div className="lg:sticky lg:top-[72px] lg:h-[calc(100vh-72px)] py-16 lg:py-0 flex flex-col justify-center overflow-hidden">
-                <div className="container-site">
-                    <div className="text-center max-w-2xl mx-auto mb-12 lg:mb-14">
-                        <motion.p
-                            initial={{ opacity: 0, y: 15 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: true }}
-                            transition={{ duration: 0.5 }}
-                            className="text-sm font-semibold text-primary uppercase tracking-wider mb-3"
-                        >
-                            Your Care Journey
-                        </motion.p>
-                        <motion.h2
-                            initial={{ opacity: 0, y: 15 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: true }}
-                            transition={{ duration: 0.5, delay: 0.1, ease: 'easeOut' }}
-                            className="text-2xl sm:text-3xl lg:text-[2.5rem] font-extrabold leading-tight mb-4"
-                        >
-                            Simplifying Your Diabetes Journey
-                        </motion.h2>
-                        <motion.p
-                            initial={{ opacity: 0, y: 15 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: true }}
-                            transition={{ duration: 0.6, delay: 0.2, ease: 'easeOut' }}
-                            className="text-text-secondary"
-                        >
-                            From your first consultation to long-term wellness, we guide you through every step.
-                        </motion.p>
-                    </div>
+        <section ref={containerRef} className="section-padding bg-surface-muted relative">
+            <div className="container-site">
+                <div className="text-center max-w-2xl mx-auto mb-12 lg:mb-14">
+                    <motion.p
+                        initial={{ opacity: 0, y: 15 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.5 }}
+                        className="text-sm font-semibold text-primary uppercase tracking-wider mb-3"
+                    >
+                        Your Care Journey
+                    </motion.p>
+                    <motion.h2
+                        initial={{ opacity: 0, y: 15 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.5, delay: 0.1, ease: 'easeOut' }}
+                        className="text-2xl sm:text-3xl lg:text-[2.5rem] font-extrabold leading-tight mb-4"
+                    >
+                        Simplifying Your Diabetes Journey
+                    </motion.h2>
+                    <motion.p
+                        initial={{ opacity: 0, y: 15 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.6, delay: 0.2, ease: 'easeOut' }}
+                        className="text-text-secondary"
+                    >
+                        From your first consultation to long-term wellness, we guide you through every step.
+                    </motion.p>
+                </div>
 
-                    {/* Desktop Timeline */}
-                    <div className="hidden lg:block max-w-5xl mx-auto">
-                        {/* Steps Navigation */}
-                        <div className="relative flex justify-between mb-10">
+                <div ref={sectionHeightRef} className="max-w-4xl mx-auto relative pb-20">
+
+                    {/* Desktop Horizontal Timeline (Sticky) */}
+                    <div className="hidden lg:block sticky top-[80px] z-50 bg-surface-muted/95 backdrop-blur-sm pt-6 pb-8 mb-12 border-b border-border/50">
+                        <div className="relative flex justify-between px-4">
                             {/* Progress line */}
-                            <div className="absolute top-5 left-0 right-0 h-[2px] bg-border" />
+                            <div className="absolute top-5 left-8 right-8 h-[2px] bg-border" />
                             <motion.div
-                                className="absolute top-5 left-0 h-[2px] bg-primary"
+                                className="absolute top-5 left-8 h-[2px] bg-primary"
                                 initial={{ width: 0 }}
                                 animate={{ width: `${(activeStep / (steps.length - 1)) * 100}%` }}
                                 transition={{ duration: 0.5, ease: 'easeInOut' }}
                             />
                             {steps.map((step, i) => (
-                                <button
+                                <div
                                     key={step.num}
-                                    onMouseEnter={() => setActiveStep(i)}
-                                    onClick={() => setActiveStep(i)}
-                                    className="relative z-10 flex flex-col items-center gap-3 group focus:outline-none"
+                                    className="relative z-10 flex flex-col items-center gap-3"
                                 >
                                     <div
                                         className={`
-                                            w-10 h-10 rounded-full flex items-center justify-center text-sm font-bold transition-all duration-300 ease-out
-                                            ${i <= activeStep ? `${step.color} text-white shadow-xl scale-110` : 'bg-white border-2 border-border text-text-secondary scale-100 group-hover:border-primary/40'}
+                                            w-10 h-10 rounded-full flex items-center justify-center text-sm font-bold transition-all duration-300 ease-out shadow-md
+                                            ${i === activeStep ? `${step.color} text-white scale-110 shadow-lg ring-[6px] ring-primary/10 ring-offset-2 ring-offset-surface-muted` :
+                                                i < activeStep ? `${step.color} text-white shadow-md scale-100` :
+                                                    'bg-white border-2 border-border text-text-secondary scale-100'}
                                         `}
                                     >
                                         {step.num}
                                     </div>
-                                    <span className={`text-sm font-semibold transition-colors duration-300 ${i === activeStep ? 'text-primary' : 'text-text-secondary group-hover:text-primary/70'}`}>
+                                    <span className={`text-sm font-semibold transition-colors duration-300 ${i === activeStep ? 'text-primary' : i < activeStep ? 'text-text-primary' : 'text-text-secondary'}`}>
                                         {step.title}
                                     </span>
-                                </button>
+                                </div>
                             ))}
-                        </div>
-
-                        {/* Active Step Content */}
-                        <div className="min-h-[160px] relative">
-                            <AnimatePresence mode="wait">
-                                <motion.div
-                                    key={activeStep}
-                                    initial={{ opacity: 0, y: 15, scale: 0.98 }}
-                                    animate={{ opacity: 1, y: 0, scale: 1 }}
-                                    exit={{ opacity: 0, y: -15, scale: 0.98 }}
-                                    transition={{ duration: 0.4, ease: [0.25, 0.46, 0.45, 0.94] }}
-                                    className="bg-white rounded-2xl p-8 lg:p-10 border border-border/80 shadow-lg shadow-black/[0.03] flex items-center w-full"
-                                >
-                                    <div className="flex items-start gap-6 w-full">
-                                        <div className={`w-14 h-14 rounded-2xl ${steps[activeStep].color} text-white flex items-center justify-center text-xl font-bold shrink-0 shadow-lg`}>
-                                            {steps[activeStep].num}
-                                        </div>
-                                        <div>
-                                            <h3 className="text-xl font-bold text-text-primary mb-2 transition-colors">{steps[activeStep].title}</h3>
-                                            <p className="text-text-secondary leading-relaxed max-w-2xl text-[1.05rem]">{steps[activeStep].description}</p>
-                                        </div>
-                                    </div>
-                                </motion.div>
-                            </AnimatePresence>
                         </div>
                     </div>
 
-                    {/* Mobile Vertical Timeline */}
-                    <div className="lg:hidden space-y-4">
+                    {/* Stacked Cards Layout */}
+                    <div>
                         {steps.map((step, i) => (
                             <motion.div
                                 key={step.num}
-                                initial={{ opacity: 0, x: -15 }}
-                                whileInView={{ opacity: 1, x: 0 }}
+                                initial={{ opacity: 0, y: 40 }}
+                                whileInView={{ opacity: 1, y: 0 }}
                                 viewport={{ once: true, margin: '-20px' }}
-                                transition={{ duration: 0.5, delay: i * 0.1, ease: 'easeOut' }}
-                                className="flex gap-4"
+                                transition={{ duration: 0.5, delay: 0.05 }}
+                                className="sticky bg-white rounded-3xl border border-border shadow-[0_-8px_30px_rgba(0,0,0,0.04)] p-8 lg:p-12 mb-6 lg:mb-10"
+                                style={{
+                                    // Give sticky space for the horizontal timeline + offset for thickness
+                                    top: `calc(230px + ${i * 24}px)`,
+                                    zIndex: i + 1
+                                }}
                             >
-                                <div className="flex flex-col items-center">
-                                    <div className={`w-10 h-10 rounded-full ${step.color} text-white flex items-center justify-center text-sm font-bold shrink-0 shadow-md`}>
+                                <div className="flex flex-col sm:flex-row gap-6 lg:gap-10 items-start">
+                                    <div className={`w-14 h-14 lg:w-16 lg:h-16 rounded-2xl ${step.color} text-white flex items-center justify-center text-xl lg:text-2xl font-bold shrink-0 shadow-lg`}>
                                         {step.num}
                                     </div>
-                                    {i < steps.length - 1 && <div className="w-[2px] flex-1 bg-border mt-2" />}
-                                </div>
-                                <div className="pb-6">
-                                    <h3 className="text-base font-bold text-text-primary mb-1">{step.title}</h3>
-                                    <p className="text-sm text-text-secondary leading-relaxed">{step.description}</p>
+                                    <div className="flex-1">
+                                        <div className="flex items-center justify-between gap-4 mb-3">
+                                            <h3 className="text-xl lg:text-2xl font-bold text-text-primary">
+                                                {step.title}
+                                            </h3>
+                                        </div>
+                                        <p className="text-text-secondary leading-relaxed text-base lg:text-lg max-w-2xl">
+                                            {step.description}
+                                        </p>
+                                    </div>
                                 </div>
                             </motion.div>
                         ))}

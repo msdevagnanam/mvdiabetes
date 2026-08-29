@@ -8,10 +8,10 @@ export const navigation: NavItem[] = [
     { label: 'Home', href: '/' },
     {
         label: 'About',
-        href: '/about',
+        href: '/about-us',
         children: [
-            { label: 'Our Story', href: '/about' },
-            { label: 'Vision, Mission & Values', href: '/about#vision' },
+            { label: 'Our Story', href: '/about-us' },
+            { label: 'Vision, Mission & Values', href: '/about-us#vision-mission' },
             { label: 'Branches', href: '/about/branches' },
             { label: 'Facilities', href: '/about/facilities' },
             { label: 'Infrastructure', href: '/about/infrastructure' },

@@ -92,7 +92,7 @@ export default function WhyMVDiabetes() {
                     className="flex flex-wrap gap-4 mt-10"
                 >
                     <Link
-                        href="/about"
+                        href="/about-us"
                         className="inline-flex items-center gap-2 text-primary font-semibold text-sm hover:gap-3 transition-all"
                     >
                         Learn about our story

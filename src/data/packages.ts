@@ -1,19 +1,25 @@
 export interface Package {
     id: string;
+    slug: string;
     name: string;
     location: 'Royapuram' | 'Adyar' | 'BDC';
     price: number;
     originalPrice: number;
     discount: number;
     category: string;
-    inclusions?: string[];
+    inclusions: string[];
     image?: string;
+    description: string;
+    duration?: string;
+    eligibility?: string;
+    available: boolean;
 }
 
 export const packages: Package[] = [
     // Royapuram
     {
         id: 'rp-diabetes-wellness',
+        slug: 'diabetes-wellness-package-royapuram',
         name: 'Diabetes Wellness Package',
         location: 'Royapuram',
         price: 5550,
@@ -21,9 +27,15 @@ export const packages: Package[] = [
         discount: 55,
         category: 'Diabetes',
         image: '/images/our-popular/royapuram/opp-img1.png',
+        description: 'A comprehensive diabetes wellness screening designed to evaluate your overall metabolic health, diabetes control, organ function, and complication risks — all in one visit.',
+        inclusions: ['Fasting & Post Prandial Blood Sugar', 'HbA1c', 'Complete Blood Count', 'Kidney Function Tests', 'Liver Function Tests', 'Lipid Profile', 'Thyroid Profile', 'Urine Analysis', 'ECG', 'Diabetologist Consultation', 'Eye Screening', 'Foot Screening'],
+        duration: 'Half Day',
+        eligibility: 'Adults with known or suspected diabetes',
+        available: true,
     },
     {
         id: 'rp-ip-footcare',
+        slug: 'ip-diabetic-footcare-package',
         name: 'IP - Diabetic and Footcare Package',
         location: 'Royapuram',
         price: 9500,
@@ -31,9 +43,15 @@ export const packages: Package[] = [
         discount: 49,
         category: 'Foot Care',
         image: '/images/our-popular/royapuram/opp-img2.png',
+        description: 'Specialised inpatient package for diabetic foot evaluation and care, including vascular assessment, wound care consultation, and comprehensive diabetic workup.',
+        inclusions: ['Diabetologist Consultation', 'Foot Surgeon Consultation', 'Vascular Assessment', 'Wound Care Evaluation', 'Blood Sugar Tests', 'HbA1c', 'Kidney Function Tests', 'Complete Blood Count', 'X-Ray (Foot)', 'Inpatient Stay'],
+        duration: '2-3 Days',
+        eligibility: 'Patients with diabetic foot complications',
+        available: true,
     },
     {
         id: 'rp-affordable',
+        slug: 'affordable-diabetes-care-package',
         name: 'Affordable Diabetes Care Package',
         location: 'Royapuram',
         price: 1250,
@@ -41,9 +59,15 @@ export const packages: Package[] = [
         discount: 76,
         category: 'Diabetes',
         image: '/images/our-popular/royapuram/opp-img3.png',
+        description: 'An affordable entry-level diabetes screening package for basic diabetes assessment and early detection.',
+        inclusions: ['Fasting Blood Sugar', 'Post Prandial Blood Sugar', 'HbA1c', 'Urine Examination', 'Diabetologist Consultation'],
+        duration: '2-3 Hours',
+        eligibility: 'All adults, especially those at risk of diabetes',
+        available: true,
     },
     {
         id: 'rp-short-review',
+        slug: 'short-review-package-royapuram',
         name: 'Short Review Package',
         location: 'Royapuram',
         price: 1680,
@@ -51,9 +75,15 @@ export const packages: Package[] = [
         discount: 21,
         category: 'Review',
         image: '/images/our-popular/royapuram/opp-img4.png',
+        description: 'A quick review package for existing diabetes patients to monitor ongoing diabetes control and assess basic parameters.',
+        inclusions: ['Fasting Blood Sugar', 'Post Prandial Blood Sugar', 'HbA1c', 'Complete Blood Count', 'Urine Examination'],
+        duration: '1-2 Hours',
+        eligibility: 'Existing diabetes patients for routine review',
+        available: true,
     },
     {
         id: 'rp-master',
+        slug: 'master-package-royapuram',
         name: 'Master Package',
         location: 'Royapuram',
         price: 6660,
@@ -61,9 +91,15 @@ export const packages: Package[] = [
         discount: 56,
         category: 'Diabetes',
         image: '/images/our-popular/royapuram/opp-img5.png',
+        description: 'An advanced master-level diabetes evaluation covering comprehensive organ screening, complication assessment, and specialist consultations.',
+        inclusions: ['Fasting & Post Prandial Blood Sugar', 'HbA1c', 'Complete Blood Count', 'Kidney Function Tests', 'Liver Function Tests', 'Lipid Profile', 'Thyroid Profile', 'Urine Analysis', 'ECG with Central BP', 'Diabetologist Consultation', 'Eye Screening', 'Foot Screening', 'Nutritionist Consultation'],
+        duration: 'Full Day',
+        eligibility: 'Adults seeking thorough diabetes health assessment',
+        available: true,
     },
     {
         id: 'rp-premium',
+        slug: 'premium-package-royapuram',
         name: 'Premium Package',
         location: 'Royapuram',
         price: 9999,
@@ -71,10 +107,16 @@ export const packages: Package[] = [
         discount: 33,
         category: 'Diabetes',
         image: '/images/our-popular/royapuram/opp-img6.png',
+        description: 'The most comprehensive diabetes evaluation package including advanced cardiac, renal, and neuropathy screening with dedicated specialist time.',
+        inclusions: ['Fasting & Post Prandial Blood Sugar', 'HbA1c', 'Complete Blood Count', 'Kidney Function Tests', 'Liver Function Tests', 'Lipid Profile', 'Thyroid Profile', 'Urine Microalbumin', 'ECG with Central BP', 'Echo', 'Diabetologist Consultation', 'Eye Screening', 'Foot Screening', 'Neuropathy Screening', 'Nutritionist Consultation', 'Yoga Session'],
+        duration: 'Full Day',
+        eligibility: 'Adults seeking premium diabetes assessment',
+        available: true,
     },
     // Adyar
     {
         id: 'ad-special',
+        slug: 'adyar-special-package',
         name: 'Adyar Special Package',
         location: 'Adyar',
         price: 2500,
@@ -82,9 +124,15 @@ export const packages: Package[] = [
         discount: 51,
         category: 'Diabetes',
         image: '/images/our-popular/adyar/opp-img8.png',
+        description: 'A special diabetes screening package available exclusively at MV Centre for Diabetes, Adyar. Comprehensive yet affordable diabetes evaluation.',
+        inclusions: ['Fasting & Post Prandial Blood Sugar', 'HbA1c', 'Kidney Function Tests', 'Lipid Profile', 'Urine Analysis', 'Diabetologist Consultation'],
+        duration: 'Half Day',
+        eligibility: 'All adults',
+        available: true,
     },
     {
         id: 'ad-basic-diabetic',
+        slug: 'basic-diabetic-package-adyar',
         name: 'Basic Diabetic Package',
         location: 'Adyar',
         price: 4000,
@@ -92,9 +140,15 @@ export const packages: Package[] = [
         discount: 35,
         category: 'Diabetes',
         image: '/images/our-popular/adyar/opp-img9.png',
+        description: 'A fundamental diabetes assessment package at Adyar covering core blood tests, organ function screening, and diabetologist consultation.',
+        inclusions: ['Fasting & Post Prandial Blood Sugar', 'HbA1c', 'Complete Blood Count', 'Kidney Function Tests', 'Liver Function Tests', 'Lipid Profile', 'ECG', 'Diabetologist Consultation'],
+        duration: 'Half Day',
+        eligibility: 'Adults with known or suspected diabetes',
+        available: true,
     },
     {
         id: 'ad-high-risk-foot',
+        slug: 'high-risk-foot-package-adyar',
         name: 'High Risk Foot Package',
         location: 'Adyar',
         price: 1500,
@@ -102,9 +156,15 @@ export const packages: Package[] = [
         discount: 38,
         category: 'Foot Care',
         image: '/images/our-popular/adyar/opp-img10.png',
+        description: 'Focused screening for patients at high risk of diabetic foot complications — including vascular and neurological foot assessment.',
+        inclusions: ['Diabetologist Consultation', 'Foot Vascular Exam', 'Foot Neuro Exam', 'Blood Sugar Tests', 'HbA1c'],
+        duration: '2-3 Hours',
+        eligibility: 'Diabetic patients with foot risk factors',
+        available: true,
     },
     {
         id: 'ad-short-review',
+        slug: 'short-review-package-adyar',
         name: 'Short Review Package',
         location: 'Adyar',
         price: 1800,
@@ -112,9 +172,15 @@ export const packages: Package[] = [
         discount: 0,
         category: 'Review',
         image: '/images/our-popular/adyar/opp-img11.png',
+        description: 'A quick review package for existing diabetes patients to monitor ongoing diabetes control at the Adyar branch.',
+        inclusions: ['Fasting Blood Sugar', 'Post Prandial Blood Sugar', 'HbA1c', 'Complete Blood Count', 'Urine Examination'],
+        duration: '1-2 Hours',
+        eligibility: 'Existing diabetes patients',
+        available: true,
     },
     {
         id: 'bdc-prof-mv-premium',
+        slug: 'prof-mv-home-diabetes-premium-package',
         name: 'Prof MV Home Diabetes Premium Package',
         location: 'Adyar',
         price: 2900,
@@ -122,9 +188,15 @@ export const packages: Package[] = [
         discount: 49,
         category: 'Diabetes',
         image: '/images/our-popular/adyar/opp-img12.png',
+        description: 'Named after our founder Prof. M. Viswanathan, this premium package provides thorough diabetes evaluation with comprehensive organ screening.',
+        inclusions: ['Fasting & Post Prandial Blood Sugar', 'HbA1c', 'Complete Blood Count', 'Kidney Function Tests', 'Liver Function Tests', 'Lipid Profile', 'ECG', 'Urine Analysis', 'Diabetologist Consultation'],
+        duration: 'Half Day',
+        eligibility: 'All adults',
+        available: true,
     },
     {
         id: 'bdc-diabetes-wellness',
+        slug: 'diabetes-wellness-package-adyar',
         name: 'Diabetes Wellness Package',
         location: 'Adyar',
         price: 5900,
@@ -132,9 +204,15 @@ export const packages: Package[] = [
         discount: 44,
         category: 'Diabetes',
         image: '/images/our-popular/adyar/opp-img13.png',
+        description: 'Comprehensive diabetes wellness screening at Adyar with full metabolic panel, cardiac screening, and specialist consultations.',
+        inclusions: ['Fasting & Post Prandial Blood Sugar', 'HbA1c', 'Complete Blood Count', 'Kidney Function Tests', 'Liver Function Tests', 'Lipid Profile', 'Thyroid Profile', 'ECG', 'Urine Analysis', 'Eye Screening', 'Foot Screening', 'Diabetologist Consultation'],
+        duration: 'Full Day',
+        eligibility: 'Adults with known or suspected diabetes',
+        available: true,
     },
     {
         id: 'bdc-annual-prevention',
+        slug: 'annual-prevention-package-adyar',
         name: 'Annual Package to Prevent Diabetic Complication',
         location: 'Adyar',
         price: 5990,
@@ -142,10 +220,16 @@ export const packages: Package[] = [
         discount: 50,
         category: 'Prevention',
         image: '/images/our-popular/adyar/opp-img14.png',
+        description: 'Annual comprehensive screening designed to detect and prevent diabetic complications early — recommended for all diabetes patients once a year.',
+        inclusions: ['Fasting & Post Prandial Blood Sugar', 'HbA1c', 'Complete Blood Count', 'Kidney Function Tests', 'Liver Function Tests', 'Lipid Profile', 'Thyroid Profile', 'Urine Microalbumin', 'ECG with Central BP', 'Eye Screening', 'Foot Screening', 'Neuropathy Screening', 'Diabetologist Consultation', 'Nutritionist Consultation'],
+        duration: 'Full Day',
+        eligibility: 'All diabetes patients (annual recommended)',
+        available: true,
     },
     // BDC
     {
         id: 'bdc-basic-diabetic',
+        slug: 'basic-diabetic-package-bdc',
         name: 'Basic Diabetic Package',
         location: 'BDC',
         price: 4000,
@@ -153,9 +237,15 @@ export const packages: Package[] = [
         discount: 30,
         category: 'Diabetes',
         image: '/images/our-popular/bdc/opp-img15.png',
+        description: 'Core diabetes assessment package at our Bengaluru centre covering essential tests and specialist consultation.',
+        inclusions: ['Fasting & Post Prandial Blood Sugar', 'HbA1c', 'Complete Blood Count', 'Kidney Function Tests', 'Lipid Profile', 'ECG', 'Diabetologist Consultation'],
+        duration: 'Half Day',
+        eligibility: 'Adults with known or suspected diabetes',
+        available: true,
     },
     {
         id: 'bdc-basic',
+        slug: 'basic-package-bdc',
         name: 'Basic Package',
         location: 'BDC',
         price: 3350,
@@ -163,9 +253,15 @@ export const packages: Package[] = [
         discount: 43,
         category: 'Wellness',
         image: '/images/our-popular/bdc/opp-img16.png',
+        description: 'A wellness screening package at the Bengaluru centre for early detection and general health assessment.',
+        inclusions: ['Fasting Blood Sugar', 'Complete Blood Count', 'Kidney Function Tests', 'Liver Function Tests', 'Lipid Profile', 'Thyroid Profile', 'ECG', 'Diabetologist Consultation'],
+        duration: 'Half Day',
+        eligibility: 'All adults',
+        available: true,
     },
     {
         id: 'bdc-rotary',
+        slug: 'rotary-package-bdc',
         name: 'Rotary Package',
         location: 'BDC',
         price: 1500,
@@ -173,9 +269,15 @@ export const packages: Package[] = [
         discount: 53,
         category: 'Diabetes',
         image: '/images/our-popular/bdc/opp-img17.png',
+        description: 'An accessible diabetes screening package at our Bengaluru centre, in partnership with Rotary initiatives for community health.',
+        inclusions: ['Fasting & Post Prandial Blood Sugar', 'HbA1c', 'Kidney Function Tests', 'Lipid Profile', 'Urine Analysis', 'Diabetologist Consultation'],
+        duration: '2-3 Hours',
+        eligibility: 'All adults',
+        available: true,
     },
     {
         id: 'bdc-wellness-master',
+        slug: 'wellness-master-package-bdc',
         name: 'Wellness Master Package',
         location: 'BDC',
         price: 6000,
@@ -183,9 +285,15 @@ export const packages: Package[] = [
         discount: 32,
         category: 'Wellness',
         image: '/images/our-popular/bdc/opp-img18.png',
+        description: 'Advanced wellness screening at the Bengaluru centre including comprehensive metabolic, cardiac, and organ function assessment.',
+        inclusions: ['Fasting & Post Prandial Blood Sugar', 'HbA1c', 'Complete Blood Count', 'Kidney Function Tests', 'Liver Function Tests', 'Lipid Profile', 'Thyroid Profile', 'ECG with Central BP', 'Urine Analysis', 'Diabetologist Consultation', 'Nutritionist Consultation'],
+        duration: 'Full Day',
+        eligibility: 'All adults seeking comprehensive wellness check',
+        available: true,
     },
     {
         id: 'bdc-special-diabetes',
+        slug: 'special-diabetes-package-bdc',
         name: 'Special Diabetes Package',
         location: 'BDC',
         price: 3250,
@@ -193,5 +301,22 @@ export const packages: Package[] = [
         discount: 27,
         category: 'Diabetes',
         image: '/images/our-popular/bdc/opp-img19.png',
+        description: 'A focused diabetes screening package at our Bengaluru centre with targeted investigations for diabetes assessment.',
+        inclusions: ['Fasting & Post Prandial Blood Sugar', 'HbA1c', 'Complete Blood Count', 'Kidney Function Tests', 'Lipid Profile', 'Urine Analysis', 'Diabetologist Consultation'],
+        duration: 'Half Day',
+        eligibility: 'All adults seeking diabetes screening',
+        available: true,
     },
 ];
+
+export function getPackageBySlug(slug: string): Package | undefined {
+    return packages.find((p) => p.slug === slug);
+}
+
+export function getPackagesByLocation(location: string): Package[] {
+    return packages.filter((p) => p.location === location && p.available);
+}
+
+export function getPackagesByCategory(category: string): Package[] {
+    return packages.filter((p) => p.category === category && p.available);
+}

@@ -6,8 +6,8 @@ import { branches } from '@/data/branches';
 
 const footerLinks = {
     about: [
-        { label: 'Our Story', href: '/about' },
-        { label: 'Vision & Mission', href: '/about#vision' },
+        { label: 'Our Story', href: '/about-us' },
+        { label: 'Vision & Mission', href: '/about-us#vision-mission' },
         { label: 'Branches', href: '/about/branches' },
         { label: 'Facilities', href: '/about/facilities' },
         { label: 'Infrastructure', href: '/about/infrastructure' },

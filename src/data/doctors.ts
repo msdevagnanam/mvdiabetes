@@ -8,6 +8,11 @@ export interface Doctor {
     location: string[];
     image?: string;
     about?: string;
+    bio?: string;
+    experience?: string;
+    expertise?: string[];
+    memberships?: string[];
+    appointmentEnabled: boolean;
 }
 
 export const doctors: Doctor[] = [
@@ -20,48 +25,76 @@ export const doctors: Doctor[] = [
         specialty: 'Diabetology',
         location: ['Royapuram', 'Koramangala'],
         image: '/images/our-doctors/Dr. Vijay Viswanathan.png',
-        about:
-            'Head & Chief Diabetologist at MV Hospital for Diabetes. First Asian President of D-Foot International. Leading expert in diabetic foot care and diabetes research.',
+        about: 'Head & Chief Diabetologist at MV Hospital for Diabetes. First Asian President of D-Foot International. Leading expert in diabetic foot care and diabetes research.',
+        bio: 'Dr. Vijay Viswanathan is the Head and Chief Physician at MV Diabetes, overseeing centres in North and South Chennai and Bengaluru. He earned India\'s first Ph.D. in Diabetes (Diabetic Nephropathy, 1999). He has completed 34 years of dedicated practice, with research interests spanning diabetic foot and limb salvage, diabetes and kidney disease, and diabetes and TB. Under his leadership, nearly 90,000 patients have been saved from prescribed amputation, and over 3,000 doctors have been trained in diabetic foot care.',
+        experience: '34+ years',
+        expertise: ['Diabetic Foot: Limb Salvage', 'Diabetes and Kidney Disease', 'Diabetes and TB', 'Diabetes Research', 'Clinical Diabetology'],
+        memberships: ['President, RSSDI 2025', 'Honorary President, D-Foot International (Belgium)', 'Hon. Gen. Secretary, Association of Physicians (API) Chennai'],
+        appointmentEnabled: true,
     },
     {
         id: 'senthil-g',
         slug: 'dr-g-senthil',
         name: 'Dr. Senthil',
         designation: 'Chief Plastic & Foot surgeon',
-        qualifications: 'MBBS, MS',
+        qualifications: 'MBBS, MS, MCh (Plastic Surgery)',
         specialty: 'Surgery',
         location: ['Royapuram'],
         image: '/images/our-doctors/Dr. G. Senthil.png',
+        about: 'Senior Consultant Surgeon specialising in Diabetic Foot Surgery, Plastic & Reconstructive Surgery, and General Surgery.',
+        bio: 'Dr. Senthil is a Senior Consultant Surgeon at MV Hospital for Diabetes, specialising in Diabetic Foot Surgery, Plastic & Reconstructive Surgery, and General Surgery. He is a pioneer in conservative and limb-saving surgical approaches for complex diabetic foot complications, with over 25 years of experience.',
+        experience: '25+ years',
+        expertise: ['Diabetic Foot Surgery', 'Plastic & Reconstructive Surgery', 'Conservative Limb-Saving Techniques', 'General Surgery'],
+        memberships: [],
+        appointmentEnabled: true,
     },
     {
         id: 'prashanth-arun',
         slug: 'dr-prashanth-arun',
         name: 'Dr. Prashanth Arun',
         designation: 'Consultant Physician & Diabetologist',
-        qualifications: 'MBBS, MD',
+        qualifications: 'MBBS, MD, PG Diploma in Diabetology (Royal College, UK)',
         specialty: 'Diabetology',
         location: ['Royapuram'],
         image: '/images/our-doctors/Dr. Prashanth Arun.png',
+        about: 'Consultant Physician and Diabetologist with over 12 years of clinical experience.',
+        bio: 'Dr. Prashanth Arun is a Consultant Physician and Diabetologist with over 12 years of clinical experience. With MV Hospital since 2017, he has received the RSSDI Achievement Award (2023) and SRM Eminent Alumni Award (2023). He specialises in complex diabetes management, Internal Medicine, and ICU care.',
+        experience: '12+ years',
+        expertise: ['Complex Diabetes Management', 'Internal Medicine', 'ICU Care & Inpatient Management', 'Diabetology'],
+        memberships: ['RSSDI Achievement Award 2023', 'SRM Eminent Alumni Award 2023'],
+        appointmentEnabled: true,
     },
     {
         id: 'uma-mahesh',
         slug: 'dr-uma-mahesh',
         name: 'Dr. Uma Mahesh',
         designation: 'Senior Diabetologist',
-        qualifications: 'MBBS, MD',
+        qualifications: 'MBBS, MDRC',
         specialty: 'Diabetology',
         location: ['Royapuram'],
         image: '/images/our-doctors/Dr Uma Mahesh.png',
+        about: 'Senior Consultant Diabetologist with over 25 years of experience.',
+        bio: 'Dr. Uma Mahesh is a Senior Consultant Diabetologist with over 25 years of experience. He served at MV Hospital for Diabetes from 1999 to 2014 and has trained over 300 doctors in Diabetology. He was faculty for the WDF Project training 3,000 doctors nationwide.',
+        experience: '25+ years',
+        expertise: ['Type 2 Diabetes Management', 'Advanced Diabetes Therapeutics', 'Clinical Research Leadership'],
+        memberships: [],
+        appointmentEnabled: true,
     },
     {
         id: 'leela-baid',
         slug: 'dr-leela-baid',
         name: 'Dr. Leela Baid',
         designation: 'Senior Diabetologist & Asst. Medical superintendent -OP',
-        qualifications: 'MBBS, MD',
+        qualifications: 'MBBS, Fellowship in Diabetology, MBA (Hospital Management)',
         specialty: 'Diabetology',
         location: ['Royapuram'],
         image: '/images/our-doctors/Dr. Leela Baid.png',
+        about: 'Consultant Diabetologist with expertise in advanced diabetes technologies.',
+        bio: 'Dr. Leela Baid is a Consultant Diabetologist with expertise in advanced diabetes technologies. Certified in insulin pump therapy, she is part of the MV Hospital team since 2014. She specialises in Type 1 and Type 2 diabetes, advanced diabetes technologies & insulin pumps, and pediatric diabetes (SWEET Project).',
+        experience: '9+ years',
+        expertise: ['Type 1 and Type 2 Diabetes', 'Advanced Diabetes Technologies & Insulin Pumps', 'Pediatric Diabetes (SWEET Project)'],
+        memberships: [],
+        appointmentEnabled: true,
     },
     {
         id: 'abishek-sr',
@@ -72,6 +105,12 @@ export const doctors: Doctor[] = [
         specialty: 'Diabetology',
         location: ['Royapuram'],
         image: '/images/our-doctors/Dr. Abishek S.R.png',
+        about: 'Consultant Diabetologist specialising in newer forms of diabetes and prevention strategies.',
+        bio: 'Dr. Abishek S.R is a Consultant Diabetologist at MV Hospital for Diabetes. He has a Fellowship in Clinical Diabetology and is certified in Hypertension, Obesity, and Diabetes from the Joslin Diabetes Center. He specialises in newer forms of diabetes, prevention strategies, and Type 1 diabetes care.',
+        experience: '3+ years',
+        expertise: ['Newer Forms of Diabetes', 'Diabetes Prevention Strategies', 'Type 1 Diabetes Care'],
+        memberships: ['Joslin Diabetes Center Certified'],
+        appointmentEnabled: true,
     },
     {
         id: 'bs-sanjay',
@@ -82,6 +121,12 @@ export const doctors: Doctor[] = [
         specialty: 'Diabetology',
         location: ['Royapuram', 'Koramangala'],
         image: '/images/our-doctors/Dr. B S Sanjay.png',
+        about: 'Consultant Physician and Diabetologist with over 19 years of clinical experience.',
+        bio: 'Dr. B S Sanjay is a Consultant Physician and Diabetologist at MV Centre for Diabetes with over 19 years of clinical experience. He holds a PG Diploma in Diabetology from Amrita Institute of Medical Science and has been with MV Centre since 2009.',
+        experience: '19 years',
+        expertise: ['Internal Medicine and Diabetology', 'Complex Diabetes Cases', 'Diabetic Foot Care'],
+        memberships: [],
+        appointmentEnabled: true,
     },
     {
         id: 'vishnupriya-reddy',
@@ -91,6 +136,11 @@ export const doctors: Doctor[] = [
         qualifications: 'M.B.B.S, MDRC, DFM (RCGP)',
         specialty: 'Diabetology',
         location: ['Koramangala'],
+        bio: 'Dr. Vishnupriya Reddy is a Consultant Diabetologist at the MV Centre for Diabetes, Koramangala. She specialises in diabetes management and family medicine.',
+        experience: '10+ years',
+        expertise: ['Diabetes Management', 'Family Medicine', 'Preventive Diabetology'],
+        memberships: [],
+        appointmentEnabled: true,
     },
     {
         id: 'shyam-sunder',
@@ -100,6 +150,11 @@ export const doctors: Doctor[] = [
         qualifications: 'MBBS, M.D., D.N.B., D.M (Cardiology)',
         specialty: 'Cardiology',
         location: ['Koramangala'],
+        bio: 'Dr. Shyam Sunder is a Consultant Cardiologist at MV Centre for Diabetes, Koramangala, specialising in cardiovascular care for diabetes patients.',
+        experience: '15+ years',
+        expertise: ['Cardiology for Diabetes Patients', 'Echocardiography', 'Cardiac Risk Assessment'],
+        memberships: [],
+        appointmentEnabled: true,
     },
     {
         id: 'sreelakshmi',
@@ -109,6 +164,11 @@ export const doctors: Doctor[] = [
         qualifications: 'BDS, MDS',
         specialty: 'Dental',
         location: ['Koramangala'],
+        bio: 'Dr. Sreelakshmi is a Consultant Dentist at MV Centre for Diabetes, Koramangala, focused on oral health services for diabetes patients.',
+        experience: '8+ years',
+        expertise: ['Dental Care for Diabetes Patients', 'Periodontal Treatment', 'Preventive Dentistry'],
+        memberships: [],
+        appointmentEnabled: true,
     },
     {
         id: 'dilip-dhanapal',
@@ -118,6 +178,11 @@ export const doctors: Doctor[] = [
         qualifications: 'MBBS, MS, M.Ch (Urology)',
         specialty: 'Urology',
         location: ['Koramangala'],
+        bio: 'Dr. Dilip Dhanapal is a Consultant Urologist at MV Centre for Diabetes, Koramangala, specialising in urological care for diabetes-related complications.',
+        experience: '12+ years',
+        expertise: ['Urology for Diabetes Patients', 'Diabetes-Related Urological Complications'],
+        memberships: [],
+        appointmentEnabled: true,
     },
     {
         id: 'amit-jain',
@@ -127,6 +192,11 @@ export const doctors: Doctor[] = [
         qualifications: 'MBBS, DNB (Surgery), FPS (Diabetic Foot)',
         specialty: 'Diabetic Foot Care',
         location: ['Koramangala'],
+        bio: 'Dr. Amit Jain is a Wound Care Specialist at MV Centre for Diabetes, Koramangala, with advanced training in diabetic foot surgery and wound management.',
+        experience: '10+ years',
+        expertise: ['Diabetic Foot Wound Care', 'Foot Surgery', 'Advanced Wound Management'],
+        memberships: [],
+        appointmentEnabled: true,
     },
     {
         id: 'ramamurthy',
@@ -136,5 +206,22 @@ export const doctors: Doctor[] = [
         qualifications: 'M.B.B.S, DNB, MNAMS',
         specialty: 'General Medicine',
         location: ['Koramangala'],
+        bio: 'Dr. Ramamurthy is a Consultant at MV Centre for Diabetes, Koramangala, with expertise in internal medicine and general diabetes care.',
+        experience: '15+ years',
+        expertise: ['Internal Medicine', 'General Diabetes Care'],
+        memberships: [],
+        appointmentEnabled: true,
     },
 ];
+
+export function getDoctorBySlug(slug: string): Doctor | undefined {
+    return doctors.find((d) => d.slug === slug);
+}
+
+export function getDoctorsByLocation(location: string): Doctor[] {
+    return doctors.filter((d) => d.location.includes(location));
+}
+
+export function getDoctorsBySpecialty(specialty: string): Doctor[] {
+    return doctors.filter((d) => d.specialty === specialty);
+}

@@ -40,22 +40,21 @@ export default function InsurancePartners() {
                 </div>
 
                 {/* Partner grid */}
-                <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4 lg:gap-5">
+                <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4 lg:gap-5 justify-center">
                     {insurancePartners.map((partner, i) => (
                         <motion.div
-                            key={partner.name}
+                            key={partner.image}
                             initial={{ opacity: 0, y: 15 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
                             transition={{ duration: 0.4, delay: Math.min(i, 9) * 0.04 }}
-                            className="group bg-surface-muted rounded-xl border border-border p-5 flex items-center justify-center text-center hover:border-primary/20 hover:shadow-sm transition-all min-h-[80px]"
+                            className="group bg-surface-muted rounded-xl border border-border p-5 flex items-center justify-center text-center hover:border-primary/20 hover:shadow-sm transition-all min-h-[100px]"
                         >
-                            <div className="flex items-center gap-2">
-                                <Shield size={14} className="text-primary/30 group-hover:text-primary transition-colors shrink-0" />
-                                <span className="text-sm font-medium text-text-secondary group-hover:text-text-primary transition-colors leading-tight">
-                                    {partner.name}
-                                </span>
-                            </div>
+                            <img
+                                src={partner.image}
+                                alt={`Insurance Partner ${i + 1}`}
+                                className="w-full h-12 object-contain mix-blend-multiply opacity-80 group-hover:opacity-100 transition-opacity"
+                            />
                         </motion.div>
                     ))}
                 </div>

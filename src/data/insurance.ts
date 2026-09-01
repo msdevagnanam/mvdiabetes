@@ -1,23 +1,12 @@
 export interface InsurancePartner {
-    name: string;
+    image: string;
 }
 
 export const insurancePartners: InsurancePartner[] = [
-    { name: 'SBI General Insurance' },
-    { name: 'Navi' },
-    { name: 'Bajaj Allianz' },
-    { name: 'Ericson' },
-    { name: 'Universal Sompo' },
-    { name: 'MedSave USA' },
-    { name: 'Star Health Insurance' },
-    { name: 'Medi Assist' },
-    { name: 'Paramount Health' },
-    { name: 'Raksha TPA' },
-    { name: 'Family Health Plan TPA' },
-    { name: 'Heritage Health' },
-    { name: 'Vipul Medcare' },
-    { name: 'ICICI Lombard' },
-    { name: 'Religare Health Insurance' },
+    { image: '/images/partnership/partnership-img1.png' },
+    { image: '/images/partnership/partnership-img2.png' },
+    { image: '/images/partnership/partnership-img3.png' },
+    { image: '/images/partnership/partnership-img4.png' },
 ];
 
 export const insuranceContent = {

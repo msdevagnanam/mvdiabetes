@@ -1,6 +1,6 @@
 'use client';
 
-import { useRef, useEffect } from 'react';
+import { useRef, useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 import Link from 'next/link';
 import Image from 'next/image';
@@ -250,59 +250,109 @@ function NewsEventsPreview() {
 
 function BranchSection() {
     const branchData = [
-        { name: 'Royapuram (Main)', city: 'Chennai', address: 'No.4, West Madha Church St' },
-        { name: 'Adyar', city: 'Chennai', address: 'Gandhi Nagar, Adyar' },
-        { name: 'Koramangala', city: 'Bengaluru', address: '80 Feet Road, 4th Block' },
+        {
+            id: 'royapuram',
+            name: 'Royapuram (Main)',
+            city: 'Chennai',
+            address: 'No.4, West Madha Church St, Royapuram',
+            query: 'MV Diabetes Royapuram Chennai'
+        },
+        {
+            id: 'adyar',
+            name: 'Adyar',
+            city: 'Chennai',
+            address: 'Gandhi Nagar, Adyar, Chennai',
+            query: 'MV Diabetes Adyar Chennai'
+        },
+        {
+            id: 'koramangala',
+            name: 'Koramangala',
+            city: 'Bengaluru',
+            address: '80 Feet Road, 4th Block, Koramangala',
+            query: 'MV Diabetes Koramangala Bengaluru'
+        },
     ];
 
-    return (
-        <section className="section-padding bg-white">
-            <div className="container-site">
-                <div className="text-center max-w-2xl mx-auto mb-12">
-                    <motion.p
-                        initial={{ opacity: 0, y: 15 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true }}
-                        transition={{ duration: 0.5 }}
-                        className="text-sm font-semibold text-primary uppercase tracking-wider mb-3"
-                    >
-                        Our Locations
-                    </motion.p>
-                    <motion.h2
-                        initial={{ opacity: 0, y: 15 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true }}
-                        transition={{ duration: 0.5, delay: 0.1 }}
-                        className="text-2xl sm:text-3xl lg:text-[2.5rem] font-extrabold leading-tight"
-                    >
-                        Your Gateway to Quality Healthcare
-                    </motion.h2>
-                </div>
+    const [activeBranch, setActiveBranch] = useState(branchData[0]);
 
-                <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5 lg:gap-6 max-w-5xl mx-auto">
-                    {branchData.map((branch, i) => (
+    return (
+        <section className="section-padding bg-surface-muted/30">
+            <div className="container-site">
+                <div className="flex flex-col lg:flex-row gap-12 items-start">
+
+                    {/* Left Column: Text & List */}
+                    <div className="w-full lg:w-[45%] xl:w-2/5">
                         <motion.div
-                            key={branch.name}
-                            initial={{ opacity: 0, y: 20 }}
+                            initial={{ opacity: 0, y: 15 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
-                            transition={{ duration: 0.4, delay: i * 0.08 }}
+                            transition={{ duration: 0.5 }}
+                            className="mb-8"
                         >
-                            <Link
-                                href="/about/branches"
-                                className="block bg-surface-muted rounded-2xl p-6 hover:bg-primary hover:text-white group transition-all duration-300"
-                            >
-                                <div className="w-10 h-10 rounded-xl bg-primary/10 group-hover:bg-white/10 flex items-center justify-center mb-4 transition-colors">
-                                    <MapPin size={18} className="text-primary group-hover:text-white" />
-                                </div>
-                                <h3 className="text-base font-bold text-text-primary group-hover:text-white mb-1 transition-colors">
-                                    {branch.name}
-                                </h3>
-                                <p className="text-sm text-text-secondary group-hover:text-white/70 mb-1 transition-colors">{branch.city}</p>
-                                <p className="text-xs text-text-secondary/70 group-hover:text-white/50 transition-colors">{branch.address}</p>
-                            </Link>
+                            <p className="text-sm font-semibold text-primary uppercase tracking-wider mb-3">
+                                Our Locations
+                            </p>
+                            <h2 className="text-3xl sm:text-4xl lg:text-[2.5rem] font-extrabold leading-tight text-text-primary mb-4">
+                                Your Gateway to Quality Healthcare
+                            </h2>
+                            <p className="text-text-secondary text-base leading-relaxed">
+                                MV Diabetes offers premium healthcare facilities at strategic locations to ensure easy access to world-class treatment.
+                            </p>
                         </motion.div>
-                    ))}
+
+                        <div className="flex flex-col gap-4">
+                            {branchData.map((branch, i) => {
+                                const isActive = activeBranch.id === branch.id;
+                                return (
+                                    <motion.button
+                                        key={branch.id}
+                                        onClick={() => setActiveBranch(branch)}
+                                        initial={{ opacity: 0, x: -20 }}
+                                        whileInView={{ opacity: 1, x: 0 }}
+                                        viewport={{ once: true }}
+                                        transition={{ duration: 0.4, delay: i * 0.1 }}
+                                        className={`w-full text-left p-6 rounded-2xl border transition-all duration-300 flex gap-4 
+                                            ${isActive
+                                                ? 'bg-white border-primary shadow-lg shadow-primary/5'
+                                                : 'bg-transparent border-transparent hover:bg-white hover:border-border hover:shadow-sm'
+                                            }`}
+                                    >
+                                        <div className={`w-12 h-12 rounded-full shrink-0 flex items-center justify-center transition-colors duration-300 ${isActive ? 'bg-primary text-white' : 'bg-primary/10 text-primary'}`}>
+                                            <MapPin size={22} />
+                                        </div>
+                                        <div>
+                                            <h3 className={`text-lg font-bold mb-1 transition-colors duration-300 ${isActive ? 'text-primary' : 'text-text-primary'}`}>
+                                                {branch.name}
+                                            </h3>
+                                            <p className="text-sm text-text-secondary font-medium mb-1">{branch.city}</p>
+                                            <p className="text-xs text-text-secondary/80 leading-relaxed">{branch.address}</p>
+                                        </div>
+                                    </motion.button>
+                                );
+                            })}
+                        </div>
+                    </div>
+
+                    {/* Right Column: Interactive Map */}
+                    <motion.div
+                        initial={{ opacity: 0, scale: 0.95 }}
+                        whileInView={{ opacity: 1, scale: 1 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.6 }}
+                        className="w-full lg:w-[55%] xl:w-3/5 h-[400px] lg:h-[600px] rounded-[2rem] overflow-hidden border border-border shadow-xl relative bg-black/5"
+                    >
+                        {/* Map Embed */}
+                        <iframe
+                            src={`https://maps.google.com/maps?q=${encodeURIComponent(activeBranch.query)}&t=&z=15&ie=UTF8&iwloc=&output=embed`}
+                            width="100%"
+                            height="100%"
+                            className="absolute inset-0 border-0"
+                            allowFullScreen
+                            loading="lazy"
+                            referrerPolicy="no-referrer-when-downgrade"
+                        />
+                    </motion.div>
+
                 </div>
             </div>
         </section>

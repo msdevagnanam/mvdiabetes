@@ -203,7 +203,7 @@ export default function Header() {
             <div className={`sticky z-[60] flex justify-center w-full transition-all duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] ${scrolled ? 'top-4 lg:top-6 px-4 xl:px-0' : 'top-0 px-0'}`}>
                 <header
                     className={`
-                      mx-auto bg-white transition-all duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] w-full overflow-hidden
+                      mx-auto bg-white transition-all duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] w-full
                       ${scrolled
                             ? 'max-w-[1320px] shadow-2xl shadow-black/10 border border-border/70 rounded-2xl bg-white/95 backdrop-blur-xl'
                             : 'max-w-full shadow-sm border-b border-border/30 rounded-none'}

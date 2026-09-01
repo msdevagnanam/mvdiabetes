@@ -4,6 +4,7 @@ import WhyMVDiabetes from '@/components/sections/WhyMVDiabetes';
 import CareJourney from '@/components/sections/CareJourney'; // clear cache
 import SpecialtyExplorer from '@/components/sections/SpecialtyExplorer';
 import PackageSection from '@/components/sections/PackageSection';
+import CheckupsSection from '@/components/sections/CheckupsSection';
 import DoctorSection from '@/components/sections/DoctorSection';
 import {
   TestimonialSlider,
@@ -12,7 +13,7 @@ import {
   BranchSection,
   AppointmentCTASection,
 } from '@/components/sections/HomeSections';
-import { StatsCounter, PatientEducation, VideoTestimonials, Accreditations, AwardsAndAchievements } from '@/components/sections/MissingSections';
+import { StatsCounter, PatientEducation, VideoTestimonials, Accreditations, AwardsAndAchievements, TPAPartnerships } from '@/components/sections/MissingSections';
 
 export default function HomePage() {
   return (
@@ -21,6 +22,7 @@ export default function HomePage() {
       <TrustStrip />
       <WhyMVDiabetes />
       <PackageSection />
+      <CheckupsSection />
       <CareJourney />
       <SpecialtyExplorer />
       <StatsCounter />
@@ -31,6 +33,7 @@ export default function HomePage() {
       <BlogPreview />
       <NewsEventsPreview />
       <AwardsAndAchievements />
+      <TPAPartnerships />
       <BranchSection />
       <Accreditations />
       <AppointmentCTASection />

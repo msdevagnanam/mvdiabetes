@@ -1,4 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server';
+import fs from 'fs';
+import path from 'path';
 
 interface AppointmentRequest {
     id: string;
@@ -13,8 +15,8 @@ interface AppointmentRequest {
     packageSlug?: string;
     checkupSlug?: string;
     appointmentType: string;
-    appointmentDate: string;
-    alternativeDate?: string;
+    appointmentDate1: string;
+    appointmentDate2?: string;
     preferredTime?: string;
     reasonForVisit?: string;
     message?: string;
@@ -23,9 +25,30 @@ interface AppointmentRequest {
     createdAt: string;
 }
 
-// In-memory store for development only
-// IMPORTANT: This is NOT a production database. Replace with a real backend.
-const appointmentStore: AppointmentRequest[] = [];
+const DATA_DIR = path.join(process.cwd(), 'src', 'data', 'submissions');
+const APPOINTMENT_FILE = path.join(DATA_DIR, 'appointments.json');
+
+// Ensure the directory and file exist
+function ensureDataFile() {
+    if (!fs.existsSync(DATA_DIR)) {
+        fs.mkdirSync(DATA_DIR, { recursive: true });
+    }
+    if (!fs.existsSync(APPOINTMENT_FILE)) {
+        fs.writeFileSync(APPOINTMENT_FILE, JSON.stringify([]));
+    }
+}
+
+function getAppointments(): AppointmentRequest[] {
+    ensureDataFile();
+    const data = fs.readFileSync(APPOINTMENT_FILE, 'utf-8');
+    return JSON.parse(data);
+}
+
+function saveAppointment(appointment: AppointmentRequest) {
+    const appointments = getAppointments();
+    appointments.push(appointment);
+    fs.writeFileSync(APPOINTMENT_FILE, JSON.stringify(appointments, null, 2));
+}
 
 function generateReferenceNumber(): string {
     const year = new Date().getFullYear();
@@ -43,6 +66,14 @@ function validateEmail(email: string): boolean {
     return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
 }
 
+export async function GET() {
+    const appointments = getAppointments();
+    return NextResponse.json({
+        total: appointments.length,
+        data: appointments
+    });
+}
+
 export async function POST(request: NextRequest) {
     try {
         const body = await request.json();
@@ -55,16 +86,16 @@ export async function POST(request: NextRequest) {
         else if (!validatePhone(body.phone)) errors.phone = 'Please enter a valid 10-digit mobile number.';
         if (body.email && !validateEmail(body.email)) errors.email = 'Please enter a valid email address.';
         if (!body.location?.trim()) errors.location = 'Please select a location.';
-        if (!body.appointmentDate?.trim()) errors.appointmentDate = 'Please select an appointment date.';
+        if (!body.appointmentDate1?.trim()) errors.appointmentDate1 = 'Please select an appointment date.';
         if (!body.appointmentType?.trim()) errors.appointmentType = 'Please select an appointment type.';
 
         // Check date is not in the past
-        if (body.appointmentDate) {
-            const selectedDate = new Date(body.appointmentDate);
+        if (body.appointmentDate1) {
+            const selectedDate = new Date(body.appointmentDate1);
             const today = new Date();
             today.setHours(0, 0, 0, 0);
             if (selectedDate < today) {
-                errors.appointmentDate = 'Please select a future date.';
+                errors.appointmentDate1 = 'Please select a future date.';
             }
         }
 
@@ -85,8 +116,8 @@ export async function POST(request: NextRequest) {
             packageSlug: body.packageSlug || undefined,
             checkupSlug: body.checkupSlug || undefined,
             appointmentType: body.appointmentType.trim(),
-            appointmentDate: body.appointmentDate.trim(),
-            alternativeDate: body.alternativeDate?.trim() || undefined,
+            appointmentDate1: body.appointmentDate1.trim(),
+            appointmentDate2: body.appointmentDate2?.trim() || undefined,
             preferredTime: body.preferredTime || undefined,
             reasonForVisit: body.reasonForVisit?.trim() || undefined,
             message: body.message?.trim() || undefined,
@@ -95,7 +126,7 @@ export async function POST(request: NextRequest) {
             createdAt: new Date().toISOString(),
         };
 
-        appointmentStore.push(appointment);
+        saveAppointment(appointment);
 
         return NextResponse.json({
             success: true,

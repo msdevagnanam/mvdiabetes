@@ -50,7 +50,7 @@ export const branches: Branch[] = [
         address: '2/22, Venkateswara Nagar 2nd Main Road, Velachery West, Chennai - 600 042 (Above Lawrance & Mayo showroom)',
         phones: ['044-2259 2209', '044-4206 7555', '+91-93451 84574'],
         email: 'velachery@mvdiabetes.com',
-        mapUrl: 'https://maps.app.goo.gl/ARJiXKqgbyHD6MRK6',
+        mapUrl: 'https://www.google.com/maps/search/?api=1&query=M.V.+Centre+of+Diabetes,+Velachery,+Chennai',
         services: ['Diabetes Care', 'Nutrition', 'Health Packages'],
         openingHours: 'Mon-Sat: 9:00 AM - 7:00 PM',
     },

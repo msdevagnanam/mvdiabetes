@@ -53,10 +53,10 @@ const featuredNavigators = [
 
 export default function SpecialtyExplorer() {
     return (
-        <section className="py-20 lg:py-28 bg-[#fafafa] relative overflow-hidden">
+        <section className="section-padding bg-[#fafafa] relative overflow-hidden">
             <div className="container-site relative z-10">
-                <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-6 mb-12 lg:mb-16">
-                    <div className="max-w-2xl">
+                <div className="flex flex-col md:flex-row md:items-end justify-between gap-8 mb-12 lg:mb-16">
+                    <div className="max-w-4xl">
                         <motion.div
                             initial={{ opacity: 0, y: 15 }}
                             whileInView={{ opacity: 1, y: 0 }}
@@ -71,16 +71,16 @@ export default function SpecialtyExplorer() {
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
                             transition={{ duration: 0.5, delay: 0.1 }}
-                            className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-text-primary mb-5 leading-tight tracking-tight"
+                            className="text-3xl sm:text-4xl lg:text-[2.75rem] font-extrabold text-text-primary mb-5 leading-tight tracking-tight"
                         >
-                            Navigate Your Health <br className="hidden sm:block" /> with Ease.
+                            Navigate Your Health with Ease.
                         </motion.h2>
                         <motion.p
                             initial={{ opacity: 0, y: 15 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
                             transition={{ duration: 0.5, delay: 0.2 }}
-                            className="text-text-secondary text-base lg:text-lg leading-relaxed"
+                            className="text-text-secondary text-base lg:text-lg leading-relaxed max-w-3xl"
                         >
                             We offer individualized treatment plans blending modern medicine with holistic therapies. From rapid diagnosis to continuous lifestyle management.
                         </motion.p>

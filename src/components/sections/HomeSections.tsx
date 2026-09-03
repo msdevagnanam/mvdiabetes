@@ -362,7 +362,7 @@ function BranchSection() {
 function AppointmentCTASection() {
     return (
         <section className="bg-gradient-to-r from-primary to-primary-light">
-            <div className="container-site py-14 lg:py-16">
+            <div className="container-site section-padding">
                 <div className="flex flex-col lg:flex-row items-center justify-between gap-6 text-center lg:text-left">
                     <div>
                         <h2 className="text-2xl sm:text-3xl font-extrabold text-white mb-2">

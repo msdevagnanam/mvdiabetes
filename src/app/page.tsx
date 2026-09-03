@@ -1,4 +1,5 @@
 import Hero from '@/components/sections/Hero';
+import LegacyFeatureCards from '@/components/sections/LegacyFeatureCards';
 import TrustStrip from '@/components/sections/TrustStrip';
 import WhyMVDiabetes from '@/components/sections/WhyMVDiabetes';
 import CareJourney from '@/components/sections/CareJourney'; // clear cache
@@ -19,6 +20,7 @@ export default function HomePage() {
   return (
     <>
       <Hero />
+      <LegacyFeatureCards />
       <TrustStrip />
       <WhyMVDiabetes />
       <PackageSection />

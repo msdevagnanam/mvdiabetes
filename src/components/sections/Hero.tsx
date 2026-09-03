@@ -9,32 +9,32 @@ import { ArrowRight, ChevronLeft, ChevronRight } from 'lucide-react';
 const slides = [
     {
         id: 1,
-        eyebrow: "India's First Exclusive Diabetes Hospital",
+        eyebrow: "Over 90,000+ Limbs Saved from Amputation",
         headline: (
             <>
-                Diabetes Care.<br />
-                <span className="text-secondary">Reimagined</span> Around You.
+                Expert Foot Care from <br />
+                <span className="text-secondary">Chennai’s Most Trusted</span> Diabetes Hospital
             </>
         ),
-        description: "With personalized treatments and a holistic approach, we're dedicated to empowering your health at India's leading diabetes super specialty institution.",
-        imagePrimary: '/images/hero/mv-hero-img1.png',
-        primaryCta: { text: "Book an Appointment", link: "/appointment" },
-        secondaryCta: { text: "Explore Diabetes Care", link: "/care" },
+        description: "Specialized in advanced diabetic foot care and complex limb salvage. Our expert podiatry and surgical team relies on proven protocols to prioritize your mobility and save limbs.",
+        imagePrimary: '/images/hero/mv-hero-img2.png',
+        primaryCta: { text: "Explore Foot Care", link: "/care/podiatry" },
+        secondaryCta: { text: "Book an Appointment", link: "/appointment" },
         theme: "primary"
     },
     {
         id: 2,
-        eyebrow: "Over 90,000+ Limbs Saved from Amputation",
+        eyebrow: "India's First Exclusive Diabetes Hospital",
         headline: (
             <>
-                Expert Foot Care.<br />
-                <span className="text-secondary">Focused</span> on Saving Limbs.
+                India’s Preferred <br />
+                <span className="text-secondary">Diabetes Super Specialty</span> Hospital
             </>
         ),
-        description: "Specialized in advanced diabetic foot care and complex limb salvage. Our expert podiatry and surgical team puts your mobility first.",
-        imagePrimary: '/images/hero/mv-hero-img2.png',
-        primaryCta: { text: "Explore Foot Care", link: "/care/podiatry" },
-        secondaryCta: { text: "Book an Appointment", link: "/appointment" },
+        description: "Serving Patients from India & Abroad with Excellence & Compassion Comprehensive Tertiary Care | 65-Bed NABH-Recognized Facility.",
+        imagePrimary: '/images/hero/mv-hero-img1.png',
+        primaryCta: { text: "Book an Appointment", link: "/appointment" },
+        secondaryCta: { text: "Explore Diabetes Care", link: "/care" },
         theme: "dark"
     }
 ];
@@ -154,8 +154,8 @@ export default function Hero() {
                             key={i}
                             onClick={() => setCurrentSlide(i)}
                             className={`transition-all duration-300 rounded-full ${i === currentSlide
-                                    ? 'w-8 h-2 bg-secondary'
-                                    : 'w-2 h-2 bg-white/30 hover:bg-white/50'
+                                ? 'w-8 h-2 bg-secondary'
+                                : 'w-2 h-2 bg-white/30 hover:bg-white/50'
                                 }`}
                             aria-label={`Go to slide ${i + 1}`}
                         />
@@ -188,8 +188,8 @@ export default function Hero() {
                         key={i}
                         onClick={() => setCurrentSlide(i)}
                         className={`transition-all duration-300 rounded-full ${i === currentSlide
-                                ? 'w-6 h-1.5 bg-secondary'
-                                : 'w-1.5 h-1.5 bg-white/30'
+                            ? 'w-6 h-1.5 bg-secondary'
+                            : 'w-1.5 h-1.5 bg-white/30'
                             }`}
                         aria-label={`Go to slide ${i + 1}`}
                     />

@@ -39,24 +39,56 @@ export default function InsurancePartners() {
                     </motion.p>
                 </div>
 
-                {/* Partner grid */}
-                <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4 lg:gap-5 justify-center">
-                    {insurancePartners.map((partner, i) => (
-                        <motion.div
-                            key={partner.image}
-                            initial={{ opacity: 0, y: 15 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: true }}
-                            transition={{ duration: 0.4, delay: Math.min(i, 9) * 0.04 }}
-                            className="group bg-surface-muted rounded-xl border border-border p-5 flex items-center justify-center text-center hover:border-primary/20 hover:shadow-sm transition-all min-h-[100px]"
-                        >
-                            <img
-                                src={partner.image}
-                                alt={`Insurance Partner ${i + 1}`}
-                                className="w-full h-12 object-contain mix-blend-multiply opacity-80 group-hover:opacity-100 transition-opacity"
-                            />
-                        </motion.div>
-                    ))}
+                {/* Partner Marquee */}
+                <div className="relative flex overflow-hidden w-full py-4 group fade-edges">
+                    <style>{`
+                        @keyframes scroll {
+                            0% { transform: translateX(0); }
+                            100% { transform: translateX(-100%); }
+                        }
+                        .animate-scroll {
+                            animation: scroll 40s linear infinite;
+                        }
+                        .group:hover .animate-scroll {
+                            animation-play-state: paused;
+                        }
+                        .fade-edges {
+                            mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+                            -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+                        }
+                    `}</style>
+
+                    {/* First Track */}
+                    <div className="flex shrink-0 gap-6 items-center animate-scroll pr-6">
+                        {insurancePartners.map((partner, i) => (
+                            <div
+                                key={`set1-${i}`}
+                                className="group bg-surface-muted rounded-2xl border border-border p-5 flex items-center justify-center hover:border-primary/30 hover:shadow-lg transition-all h-[100px] sm:h-[110px] lg:h-[120px] min-w-[180px] sm:min-w-[200px] lg:min-w-[220px]"
+                            >
+                                <img
+                                    src={partner.image}
+                                    alt={`Insurance Partner ${i + 1}`}
+                                    className="w-[85%] h-[85%] object-contain mix-blend-multiply opacity-80 group-hover:opacity-100 transition-opacity"
+                                />
+                            </div>
+                        ))}
+                    </div>
+
+                    {/* Second Track (Seamless loop) */}
+                    <div className="flex shrink-0 gap-6 items-center animate-scroll pr-6" aria-hidden="true">
+                        {insurancePartners.map((partner, i) => (
+                            <div
+                                key={`set2-${i}`}
+                                className="group bg-surface-muted rounded-2xl border border-border p-5 flex items-center justify-center hover:border-primary/30 hover:shadow-lg transition-all h-[100px] sm:h-[110px] lg:h-[120px] min-w-[180px] sm:min-w-[200px] lg:min-w-[220px]"
+                            >
+                                <img
+                                    src={partner.image}
+                                    alt={`Insurance Partner ${i + 1}`}
+                                    className="w-[85%] h-[85%] object-contain mix-blend-multiply opacity-80 group-hover:opacity-100 transition-opacity"
+                                />
+                            </div>
+                        ))}
+                    </div>
                 </div>
             </div>
         </section>

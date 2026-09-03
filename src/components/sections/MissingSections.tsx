@@ -37,7 +37,7 @@ export function StatsCounter() {
     ];
 
     return (
-        <section className="py-12 bg-primary-dark relative overflow-hidden">
+        <section className="section-padding bg-primary-dark relative overflow-hidden">
             {/* Subtle background pattern */}
             <div className="absolute inset-0 opacity-5" style={{ backgroundImage: 'radial-gradient(circle at 2px 2px, white 1px, transparent 0)', backgroundSize: '24px 24px' }}></div>
 
@@ -147,7 +147,7 @@ export function VideoTestimonials() {
     const [activeVideo, setActiveVideo] = useState(videos[0]);
 
     return (
-        <section className="py-20 lg:py-28 bg-[#fafafa] overflow-hidden">
+        <section className="section-padding bg-[#fafafa] overflow-hidden">
             <div className="container-site">
 
                 <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-6 mb-12 lg:mb-16">

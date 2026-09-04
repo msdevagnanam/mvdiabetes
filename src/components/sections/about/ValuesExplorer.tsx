@@ -21,7 +21,7 @@ export default function ValuesExplorer() {
         <section id="values" className="section-padding bg-surface-muted overflow-hidden">
             <div className="container-site">
                 {/* Header */}
-                <div className="text-center max-w-2xl mx-auto mb-12">
+                <div className="text-center max-w-3xl mx-auto mb-12">
                     <motion.p
                         initial={{ opacity: 0, y: 15 }}
                         whileInView={{ opacity: 1, y: 0 }}
@@ -36,10 +36,19 @@ export default function ValuesExplorer() {
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
                         transition={{ duration: 0.5, delay: 0.1 }}
-                        className="text-2xl sm:text-3xl lg:text-[2.5rem] font-extrabold leading-tight"
+                        className="text-2xl sm:text-3xl lg:text-[2.5rem] font-extrabold leading-tight mb-6"
                     >
                         What We Stand For
                     </motion.h2>
+                    <motion.p
+                        initial={{ opacity: 0, y: 15 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.5, delay: 0.2 }}
+                        className="text-text-secondary leading-relaxed sm:text-lg"
+                    >
+                        We envision a world where diabetes is effectively managed, allowing our patients to lead healthier, more fulfilling lives. With over 300 dedicated staff members, we work collaboratively to uphold our core values.
+                    </motion.p>
                 </div>
 
                 {/* Desktop: Side-by-side explorer */}
@@ -54,8 +63,8 @@ export default function ValuesExplorer() {
                                     key={value.id}
                                     onClick={() => setActiveValue(value.id)}
                                     className={`w-full flex items-center gap-4 px-5 py-4 rounded-xl text-left transition-all duration-300 ${isActive
-                                            ? 'bg-primary text-white shadow-lg shadow-primary/15'
-                                            : 'bg-white border border-border hover:border-primary/30 hover:shadow-sm'
+                                        ? 'bg-primary text-white shadow-lg shadow-primary/15'
+                                        : 'bg-white border border-border hover:border-primary/30 hover:shadow-sm'
                                         }`}
                                 >
                                     <div

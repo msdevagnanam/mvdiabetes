@@ -2,6 +2,7 @@
 
 import { motion } from 'framer-motion';
 import Link from 'next/link';
+import Image from 'next/image';
 import { ArrowRight, CheckCircle } from 'lucide-react';
 import { advancedCareContent } from '@/data/about';
 
@@ -18,18 +19,14 @@ export default function AdvancedDiabetesCare() {
                         transition={{ duration: 0.7 }}
                         className="relative"
                     >
-                        <div className="aspect-[4/5] rounded-2xl bg-gradient-to-br from-primary/5 via-primary/10 to-accent/10 border border-border overflow-hidden relative">
-                            <div className="absolute inset-0 flex items-center justify-center">
-                                <div className="text-center px-8">
-                                    <div className="w-16 h-16 mx-auto mb-4 rounded-2xl bg-primary/10 flex items-center justify-center">
-                                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="text-primary">
-                                            <path d="M22 12h-4l-3 9L9 3l-3 9H2" />
-                                        </svg>
-                                    </div>
-                                    <p className="text-text-secondary text-sm font-medium">Advanced Diabetes Care</p>
-                                    <p className="text-text-secondary/60 text-xs mt-1">All Under One Roof</p>
-                                </div>
-                            </div>
+                        <div className="aspect-[4/5] sm:aspect-square lg:aspect-[4/5] rounded-3xl overflow-hidden relative shadow-md border border-border">
+                            <Image
+                                src="/images/about/abc.png"
+                                alt="Advanced Diabetes Care Facility"
+                                fill
+                                sizes="(max-width: 1024px) 100vw, 50vw"
+                                className="object-cover hover:scale-105 transition-transform duration-700"
+                            />
                         </div>
                         {/* Decorative accent */}
                         <div className="absolute -bottom-4 -right-4 w-32 h-32 rounded-2xl bg-secondary/10 -z-10" />

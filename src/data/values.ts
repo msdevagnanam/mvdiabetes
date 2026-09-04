@@ -1,16 +1,13 @@
 export const visionContent = {
     label: 'Our Vision',
-    statement: 'A Happy, Healthy World Unburdened By Diabetes',
-    description:
-        'We envision a future where diabetes no longer diminishes lives — where every patient receives the care, education, and support they need to thrive.',
+    statement: 'To be a compassionate, collaborative healthcare institution dedicated to helping people with diabetes lead healthier, longer lives, supported by world-class care and innovation.',
+    description: '',
 };
 
 export const missionContent = {
     label: 'Our Mission',
-    statement:
-        'Every person having diabetes should be helped to live his normal span of life in perfect health.',
-    description:
-        'Through compassionate care, cutting-edge research, and unwavering commitment to excellence, we strive to transform the diabetes experience for every patient who walks through our doors.',
+    statement: 'Every person having diabetes should be helped to live his normal span of life in perfect health.',
+    description: '',
 };
 
 export interface ValueItem {
@@ -29,28 +26,26 @@ export const coreValues: ValueItem[] = [
         number: '01',
         title: 'Patient-Centered Care',
         shortTitle: 'Patient-Centered',
-        description:
-            'The patient is at the heart of everything we do. Our treatment, recovery plans, and ongoing support are all designed with one goal — helping people with diabetes live healthier, fuller lives.',
+        description: 'We put our patients at the heart of everything we do. From treatment to recovery, our mission is to focus on helping every patient having diabetes live his normal lifespan in perfect health.',
         details: [
-            'Patient at the heart of every care decision',
-            'Personalised treatment and recovery pathways',
-            'Empowering patients with knowledge and support',
-            'Helping people with diabetes live healthier lives',
+            'Patient at the heart of everything we do',
+            'Focus on treatment and recovery',
+            'Helping every patient',
+            'Enabling a normal lifespan in perfect health',
         ],
         icon: 'Heart',
     },
     {
         id: 'respect-compassion',
         number: '02',
-        title: 'Respect & Compassion',
+        title: 'Respect and Compassion',
         shortTitle: 'Respect & Compassion',
-        description:
-            'We treat every patient, family member, carer, and staff member with dignity, empathy, and kindness. Compassion is not just a value — it is the foundation of healing.',
+        description: "We treat everyone—patients, families, carers, and staff—with respect, dignity, and compassion. We recognize each person's aspirations, abilities, and limits, and respond with kindness and empathy to their pain, anxiety, or needs.",
         details: [
-            'Dignity for patients and families',
-            'Empathy in every interaction',
-            'Kindness towards carers and staff',
-            'Compassion as the foundation of healing',
+            'Treating everyone with respect and dignity',
+            'Recognizing individual aspirations and limits',
+            'Responding with kindness',
+            'Showing empathy to pain, anxiety, or needs',
         ],
         icon: 'HandHeart',
     },
@@ -59,43 +54,40 @@ export const coreValues: ValueItem[] = [
         number: '03',
         title: 'Commitment to Quality',
         shortTitle: 'Quality',
-        description:
-            'We are committed to the highest standards of patient safety, confidentiality, and continuous improvement. Every process is designed to deliver a reliable, positive patient experience.',
+        description: 'We are dedicated to delivering high-quality care by ensuring patient safety, maintaining confidentiality, and continuously improving the effectiveness of our services. We build trust by focusing on the basics of care—safety, reliability, and positive patient experiences.',
         details: [
-            'Patient safety as the highest priority',
-            'Strict confidentiality standards',
-            'Continuous improvement culture',
-            'Reliable, positive patient experience',
+            'Delivering high-quality care',
+            'Ensuring patient safety and confidentiality',
+            'Continuously improving services',
+            'Focusing on safety, reliability, and positive experiences',
         ],
         icon: 'ShieldCheck',
     },
     {
         id: 'excellence-innovation',
         number: '04',
-        title: 'Excellence & Innovation',
+        title: 'Excellence and Innovation',
         shortTitle: 'Innovation',
-        description:
-            'We pursue innovation in research, technology, and treatment to stay at the forefront of diabetes care. New ideas, holistic approaches, and emerging therapies drive our excellence.',
+        description: 'We strive to continuously improve healthcare by embracing innovation, research, and technology. By investing in new ideas, treatments, and holistic approaches, we work to enhance the well-being of our patients and improve health outcomes for all.',
         details: [
-            'Innovation in research and technology',
-            'Adoption of emerging therapies',
-            'New ideas and holistic approaches',
-            'Pioneering treatments for better outcomes',
+            'Embracing innovation, research, and technology',
+            'Investing in new ideas and treatments',
+            'Taking holistic approaches',
+            'Improving health outcomes for all',
         ],
         icon: 'Lightbulb',
     },
     {
         id: 'caring-staff',
         number: '05',
-        title: 'Caring for Our Staff',
+        title: 'Caring for our staff',
         shortTitle: 'Our People',
-        description:
-            'We invest in our staff\'s wellbeing, professional growth, and collaborative spirit. When our team thrives, our patients receive the highest quality of care.',
+        description: 'We recognize that our staff are essential to delivering the high-quality care we aspire to provide for our patients. We strive to support, nurture, and collaborate with our staff to ensure their well-being and professional growth. By working together, we ensure the best outcomes for both our staff and our patients.',
         details: [
-            'Staff wellbeing and professional growth',
-            'Collaborative teamwork culture',
-            'Investment in continuous learning',
-            'High-quality patient outcomes through people',
+            'Staff are essential to high-quality care',
+            'Supporting and nurturing our staff',
+            'Ensuring well-being and professional growth',
+            'Working together for the best outcomes',
         ],
         icon: 'Users',
     },

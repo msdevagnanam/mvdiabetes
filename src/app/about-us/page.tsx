@@ -34,21 +34,21 @@ export const metadata: Metadata = {
 export default function AboutUsPage() {
     return (
         <>
-            <AboutStickyNav />
+            {/* <AboutStickyNav /> */}
             <AboutHero />
             <InstitutionalStats />
             <AdvancedDiabetesCare />
             <LegacySection />
-            <HistoryTimeline />
-            <DreamContinues />
-            <ResearchLegacy />
             <LeadershipFeature />
+            {/* <HistoryTimeline /> */}
+            {/* <DreamContinues /> */}
+            {/* <ResearchLegacy /> */}
             <VisionMission />
             <ValuesExplorer />
-            <ModernInstitution />
-            <ClinicalLeadership />
+            {/* <ModernInstitution /> */}
+            {/* <ClinicalLeadership /> */}
             <InsurancePartners />
-            <TeamDirectory />
+            {/* <TeamDirectory /> */}
             <AboutCTA />
         </>
     );

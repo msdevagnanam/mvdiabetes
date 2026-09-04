@@ -156,27 +156,27 @@ export default function AppointmentForm() {
     const today = new Date().toISOString().split('T')[0];
 
     return (
-        <div id="form-top" className="min-h-screen bg-surface-muted py-8 lg:py-16">
-            <div className="container-site max-w-3xl">
+        <div id="form-top" className="min-h-screen bg-surface-muted py-4 lg:py-6">
+            <div className="container-site max-w-4xl">
                 {/* Header Page Title */}
-                <div className="mb-8 text-center max-w-2xl mx-auto px-4">
-                    <h1 className="text-3xl sm:text-4xl lg:text-[2.75rem] font-extrabold text-text-primary leading-tight mb-4 tracking-tight">Book Your Appointment</h1>
-                    <p className="text-text-secondary text-lg">Schedule your visit at MV The appointments team will check the availability of the consultant and date requested and send you a confirmation mail or call you on the mobile no. shared by you.</p>
+                <div className="mb-4 text-center max-w-3xl mx-auto px-4">
+                    <h1 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-text-primary leading-tight mb-2 tracking-tight">Book Your Appointment</h1>
+                    <p className="text-text-secondary text-sm sm:text-base">Schedule your visit at MV The appointments team will check the availability of the consultant and date requested and send you a confirmation mail or call you on the mobile no. shared by you.</p>
                 </div>
 
-                <div className="bg-white rounded-[2rem] border border-border p-6 sm:p-8 lg:p-10 shadow-sm">
-                    <div className="flex flex-col gap-8">
+                <div className="bg-white rounded-2xl border border-border p-4 sm:p-5 lg:p-6 shadow-sm">
+                    <div className="flex flex-col gap-4">
 
-                        <h2 className="text-xl font-bold text-text-primary mb-1 border-b pb-4">Service Details</h2>
-                        <div className="grid grid-cols-1 md:grid-cols-2 gap-5 lg:gap-6">
+                        <h2 className="text-lg font-bold text-text-primary mb-1 border-b pb-2">Service Details</h2>
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 lg:gap-5">
                             {/* SECTION: Appointment Type */}
                             <div id="appointmentType-field">
-                                <label className="block text-sm font-bold text-text-primary mb-2">What would you like to book? <span className="text-red-500">*</span></label>
+                                <label className="block text-xs font-bold text-text-primary mb-1">What would you like to book? <span className="text-red-500">*</span></label>
                                 <div className="relative">
                                     <select
                                         value={form.appointmentType}
                                         onChange={e => update('appointmentType', e.target.value)}
-                                        className="w-full px-5 py-4 rounded-xl border-2 border-border focus:border-primary focus:ring-4 focus:ring-primary/10 outline-none transition-all bg-white text-text-primary font-semibold appearance-none hover:border-black/20 cursor-pointer shadow-sm"
+                                        className="w-full px-4 py-2.5 rounded-lg border border-border focus:border-primary focus:ring-2 focus:ring-primary/10 outline-none transition-all bg-white text-text-primary font-semibold appearance-none hover:border-black/20 cursor-pointer shadow-sm text-sm"
                                     >
                                         <option value="">Select Appointment Type</option>
                                         {APPOINTMENT_TYPES.map(t => (
@@ -192,12 +192,12 @@ export default function AppointmentForm() {
 
                             {/* SECTION: Location */}
                             <div id="location-field">
-                                <label className="block text-sm font-bold text-text-primary mb-2">Select your preferred location <span className="text-red-500">*</span></label>
+                                <label className="block text-xs font-bold text-text-primary mb-1">Select your preferred location <span className="text-red-500">*</span></label>
                                 <div className="relative">
                                     <select
                                         value={form.location}
                                         onChange={e => update('location', e.target.value)}
-                                        className="w-full px-5 py-4 rounded-xl border-2 border-border focus:border-primary focus:ring-4 focus:ring-primary/10 outline-none transition-all bg-white text-text-primary font-semibold appearance-none hover:border-black/20 cursor-pointer shadow-sm"
+                                        className="w-full px-4 py-2.5 rounded-lg border border-border focus:border-primary focus:ring-2 focus:ring-primary/10 outline-none transition-all bg-white text-text-primary font-semibold appearance-none hover:border-black/20 cursor-pointer shadow-sm text-sm"
                                     >
                                         <option value="">Select Nearest Branch</option>
                                         {branches.map(b => (
@@ -212,109 +212,108 @@ export default function AppointmentForm() {
                             </div>
                         </div>
 
-                        <h2 className="text-xl font-bold text-text-primary mb-1 mt-4 border-b pb-4">Date</h2>
-                        <div className="grid grid-cols-1 md:grid-cols-2 gap-5 lg:gap-6">
+                        <h2 className="text-lg font-bold text-text-primary mb-1 mt-2 border-b pb-2">Date</h2>
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 lg:gap-5">
                             {/* SECTION: Date 1 */}
                             <div id="appointmentDate1-field">
-                                <label className="block text-sm font-bold text-text-primary mb-2">Appointment Date - 1 <span className="text-red-500">*</span></label>
+                                <label className="block text-xs font-bold text-text-primary mb-1">Appointment Date - 1 <span className="text-red-500">*</span></label>
                                 <input type="date" min={today} value={form.appointmentDate1}
                                     onChange={e => update('appointmentDate1', e.target.value)}
-                                    className="w-full px-5 py-4 rounded-xl border-2 border-border focus:border-primary focus:ring-4 focus:ring-primary/10 outline-none transition-all bg-white text-text-primary font-semibold hover:border-black/20 shadow-sm" />
-                                {errors.appointmentDate1 && <p className="text-red-500 text-sm mt-3 flex items-center gap-1 font-semibold bg-red-50 w-fit px-3 py-1.5 rounded-lg border border-red-100"><AlertCircle size={14} />{errors.appointmentDate1}</p>}
+                                    className="w-full px-4 py-2.5 rounded-lg border border-border focus:border-primary focus:ring-2 focus:ring-primary/10 outline-none transition-all bg-white text-text-primary font-semibold hover:border-black/20 shadow-sm text-sm" />
+                                {errors.appointmentDate1 && <p className="text-red-500 text-xs mt-1 flex items-center gap-1 font-semibold w-fit"><AlertCircle size={12} />{errors.appointmentDate1}</p>}
                             </div>
 
                             {/* SECTION: Date 2 */}
                             <div id="appointmentDate2-field">
-                                <label className="block text-sm font-bold text-text-primary mb-2">Appointment Date - 2</label>
+                                <label className="block text-xs font-bold text-text-primary mb-1">Appointment Date - 2</label>
                                 <input type="date" min={today} value={form.appointmentDate2}
                                     onChange={e => update('appointmentDate2', e.target.value)}
-                                    className="w-full px-5 py-4 rounded-xl border-2 border-border focus:border-primary focus:ring-4 focus:ring-primary/10 outline-none transition-all bg-white text-text-primary font-semibold hover:border-black/20 shadow-sm" />
+                                    className="w-full px-4 py-2.5 rounded-lg border border-border focus:border-primary focus:ring-2 focus:ring-primary/10 outline-none transition-all bg-white text-text-primary font-semibold hover:border-black/20 shadow-sm text-sm" />
                             </div>
                         </div>
 
-                        <h2 className="text-xl font-bold text-text-primary mb-1 mt-4 border-b pb-4">Patient Details</h2>
+                        <h2 className="text-lg font-bold text-text-primary mb-1 mt-2 border-b pb-2">Patient Details</h2>
                         {/* SECTION: Patient Details */}
-                        <div className="grid grid-cols-1 md:grid-cols-2 gap-5 lg:gap-6">
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 lg:gap-5">
                             <div id="patientName-field" className="md:col-span-2">
-                                <label className="block text-sm font-bold text-text-primary mb-2">Full Name <span className="text-red-500">*</span></label>
+                                <label className="block text-xs font-bold text-text-primary mb-1">Full Name <span className="text-red-500">*</span></label>
                                 <input type="text" value={form.patientName} placeholder="Enter your full name"
                                     onChange={e => update('patientName', e.target.value)}
-                                    className="w-full px-5 py-4 rounded-xl border-2 border-border focus:border-primary focus:ring-4 focus:ring-primary/10 outline-none transition-all bg-white text-text-primary font-semibold hover:border-black/20 shadow-sm" />
-                                {errors.patientName && <p className="text-red-500 text-sm mt-3 flex items-center gap-1 font-semibold bg-red-50 w-fit px-3 py-1.5 rounded-lg border border-red-100"><AlertCircle size={14} />{errors.patientName}</p>}
+                                    className="w-full px-4 py-2.5 rounded-lg border border-border focus:border-primary focus:ring-2 focus:ring-primary/10 outline-none transition-all bg-white text-text-primary font-semibold hover:border-black/20 shadow-sm text-sm" />
+                                {errors.patientName && <p className="text-red-500 text-xs mt-1 flex items-center gap-1 font-semibold w-fit"><AlertCircle size={12} />{errors.patientName}</p>}
                             </div>
 
                             <div id="phone-field">
-                                <label className="block text-sm font-bold text-text-primary mb-2">Phone Number <span className="text-red-500">*</span></label>
-                                <div className="flex shadow-sm rounded-xl">
-                                    <span className="inline-flex items-center px-4 font-bold text-text-secondary bg-surface-muted border-2 border-r-0 border-border rounded-l-xl select-none">+91</span>
+                                <label className="block text-xs font-bold text-text-primary mb-1">Phone Number <span className="text-red-500">*</span></label>
+                                <div className="flex shadow-sm rounded-lg">
+                                    <span className="inline-flex items-center px-4 font-bold text-text-secondary bg-surface-muted border border-r-0 border-border rounded-l-lg select-none text-sm">+91</span>
                                     <input type="tel" value={form.phone} placeholder="98765 43210" maxLength={10}
                                         onChange={e => update('phone', e.target.value.replace(/\D/g, ''))}
-                                        className="flex-1 px-5 py-4 rounded-r-xl border-2 border-border focus:border-primary focus:ring-4 focus:ring-primary/10 outline-none transition-all bg-white text-text-primary font-semibold tracking-wide hover:border-black/20" />
+                                        className="flex-1 px-4 py-2.5 rounded-r-lg border border-border focus:border-primary focus:ring-2 focus:ring-primary/10 outline-none transition-all bg-white text-text-primary font-semibold tracking-wide hover:border-black/20 text-sm" />
                                 </div>
-                                {errors.phone && <p className="text-red-500 text-sm mt-3 flex items-center gap-1 font-semibold bg-red-50 w-fit px-3 py-1.5 rounded-lg border border-red-100"><AlertCircle size={14} />{errors.phone}</p>}
+                                {errors.phone && <p className="text-red-500 text-xs mt-1 flex items-center gap-1 font-semibold w-fit"><AlertCircle size={12} />{errors.phone}</p>}
                             </div>
 
                             <div id="email-field">
-                                <label className="block text-sm font-bold text-text-primary mb-2">Email <span className="text-red-500">*</span></label>
+                                <label className="block text-xs font-bold text-text-primary mb-1">Email <span className="text-red-500">*</span></label>
                                 <input type="email" value={form.email} placeholder="your@email.com"
                                     onChange={e => update('email', e.target.value)}
-                                    className="w-full px-5 py-4 rounded-xl border-2 border-border focus:border-primary focus:ring-4 focus:ring-primary/10 outline-none transition-all bg-white text-text-primary font-semibold hover:border-black/20 shadow-sm" />
-                                {errors.email && <p className="text-red-500 text-sm mt-3 flex items-center gap-1 font-semibold bg-red-50 w-fit px-3 py-1.5 rounded-lg border border-red-100"><AlertCircle size={14} />{errors.email}</p>}
+                                    className="w-full px-4 py-2.5 rounded-lg border border-border focus:border-primary focus:ring-2 focus:ring-primary/10 outline-none transition-all bg-white text-text-primary font-semibold hover:border-black/20 shadow-sm text-sm" />
+                                {errors.email && <p className="text-red-500 text-xs mt-1 flex items-center gap-1 font-semibold w-fit"><AlertCircle size={12} />{errors.email}</p>}
                             </div>
 
                             <div>
-                                <label className="block text-sm font-bold text-text-primary mb-2">Age</label>
+                                <label className="block text-xs font-bold text-text-primary mb-1">Age</label>
                                 <input type="number" value={form.age} placeholder="e.g. 45"
                                     onChange={e => update('age', e.target.value)}
-                                    className="w-full px-5 py-4 rounded-xl border-2 border-border focus:border-primary focus:ring-4 focus:ring-primary/10 outline-none transition-all bg-white text-text-primary font-semibold hover:border-black/20 shadow-sm" />
+                                    className="w-full px-4 py-2.5 rounded-lg border border-border focus:border-primary focus:ring-2 focus:ring-primary/10 outline-none transition-all bg-white text-text-primary font-semibold hover:border-black/20 shadow-sm text-sm" />
                             </div>
                             <div>
-                                <label className="block text-sm font-bold text-text-primary mb-2">Gender</label>
+                                <label className="block text-xs font-bold text-text-primary mb-1">Gender</label>
                                 <div className="relative">
                                     <select
                                         value={form.gender}
                                         onChange={e => update('gender', e.target.value)}
-                                        className="w-full px-5 py-4 rounded-xl border-2 border-border focus:border-primary focus:ring-4 focus:ring-primary/10 outline-none transition-all bg-white text-text-primary font-semibold appearance-none hover:border-black/20 cursor-pointer shadow-sm"
+                                        className="w-full px-4 py-2.5 rounded-lg border border-border focus:border-primary focus:ring-2 focus:ring-primary/10 outline-none transition-all bg-white text-text-primary font-semibold appearance-none hover:border-black/20 cursor-pointer shadow-sm text-sm"
                                     >
                                         <option value="">Select Gender</option>
                                         <option value="Male">Male</option>
                                         <option value="Female">Female</option>
                                         <option value="Other">Other</option>
                                     </select>
-                                    <div className="absolute right-5 top-1/2 -translate-y-1/2 pointer-events-none text-text-secondary flex items-center justify-center w-8 h-8">
-                                        <User size={18} />
+                                    <div className="absolute right-4 top-1/2 -translate-y-1/2 pointer-events-none text-text-secondary flex items-center justify-center">
+                                        <User size={16} />
                                     </div>
                                 </div>
                             </div>
                         </div>
 
                         {/* SECTION: Submit Area */}
-                        <div className="bg-gradient-to-br from-surface-muted to-white p-6 sm:p-8 rounded-3xl border-2 border-border/50 flex flex-col mt-4 shadow-[inset_0_4px_20px_rgba(0,0,0,0.02)]">
-                            <div id="consent-field" className="flex items-start gap-4 mb-8 max-w-6xl text-left bg-white p-4 rounded-2xl border border-border shadow-sm">
+                        <div className="bg-gradient-to-br from-surface-muted to-white p-4 sm:p-5 rounded-2xl border border-border/50 flex flex-col mt-2 shadow-[inset_0_4px_20px_rgba(0,0,0,0.02)]">
+                            <div id="consent-field" className="flex items-start gap-3 mb-4 max-w-4xl text-left bg-white p-3 rounded-lg border border-border shadow-sm">
                                 <input id="consent" type="checkbox" checked={form.consent}
                                     onChange={e => update('consent', e.target.checked)}
-                                    className="w-5 h-5 rounded border-2 border-border text-primary focus:ring-primary focus:ring-4 focus:ring-primary/20 mt-0.5 cursor-pointer shrink-0 transition-all" />
+                                    className="w-4 h-4 rounded border border-border text-primary focus:ring-primary focus:ring-2 mt-0.5 cursor-pointer shrink-0 transition-all" />
                                 <div>
-                                    <label htmlFor="consent" className="text-sm font-medium text-text-primary leading-relaxed cursor-pointer select-none">
-                                        I consent to MV Diabetes contacting me regarding this appointment request via phone or email. My information will be handled securely in accordance with the <Link href="/privacy" className="text-primary hover:underline font-bold">Privacy Policy</Link>.<span className="text-red-500">*</span>
+                                    <label htmlFor="consent" className="text-xs font-medium text-text-primary leading-relaxed cursor-pointer select-none mb-0">
+                                        I consent to MV Diabetes contacting me via phone or email for this appointment. My information will be handled securely per the <Link href="/privacy" className="text-primary hover:underline font-bold">Privacy Policy</Link>.<span className="text-red-500">*</span>
                                     </label>
-                                    {errors.consent && <p className="text-red-500 text-sm mt-3 flex items-center gap-1 font-semibold bg-red-50 w-fit px-3 py-1.5 rounded-lg border border-red-100"><AlertCircle size={14} />{errors.consent}</p>}
+                                    {errors.consent && <p className="text-red-500 text-xs mt-1 flex items-center gap-1 font-semibold"><AlertCircle size={12} />{errors.consent}</p>}
                                 </div>
                             </div>
 
                             {errors.submit && (
-                                <div className="mb-6 w-full p-5 bg-red-50 border-2 border-red-200 rounded-2xl text-left">
-                                    <p className="text-red-600 font-bold flex items-center gap-2 mb-2"><AlertCircle size={20} /> Submission Failed</p>
-                                    <p className="text-red-600/80 text-sm font-medium">{errors.submit}</p>
-                                    <a href={`tel:+919380814247`} className="text-sm text-primary bg-white px-4 py-2 rounded-lg border border-border font-bold mt-4 inline-flex items-center gap-2 hover:border-primary transition-all shadow-sm"><PhoneCall size={14} /> Call Appointments Team directly</a>
+                                <div className="mb-4 w-full p-4 bg-red-50 border border-red-200 rounded-lg text-left">
+                                    <p className="text-red-600 font-bold flex items-center gap-2 mb-1 text-sm"><AlertCircle size={16} /> Submission Failed</p>
+                                    <p className="text-red-600/80 text-xs font-medium">{errors.submit}</p>
                                 </div>
                             )}
 
                             <button onClick={submit} disabled={submitting}
-                                className="w-full flex items-center justify-center gap-3 px-12 py-5 lg:py-5 rounded-2xl bg-secondary text-text-primary font-black text-lg hover:bg-[#ebae12] hover:-translate-y-1 transition-all duration-300 shadow-[0_15px_30px_rgba(255,193,41,0.25)] hover:shadow-[0_20px_40px_rgba(255,193,41,0.35)] disabled:opacity-60 disabled:cursor-not-allowed disabled:hover:translate-y-0">
-                                {submitting ? <><Loader2 size={24} className="animate-spin" /> Submitting Request…</> : <><Check size={24} /> Confirm & Submit Request</>}
+                                className="w-full flex items-center justify-center gap-2 px-8 py-3 rounded-xl bg-secondary text-text-primary font-bold text-base hover:bg-[#ebae12] hover:-translate-y-0.5 transition-all duration-300 shadow-md hover:shadow-lg disabled:opacity-60 disabled:cursor-not-allowed disabled:hover:translate-y-0">
+                                {submitting ? <><Loader2 size={20} className="animate-spin" /> Submitting…</> : <><Check size={20} /> Submit Request</>}
                             </button>
-                            <p className="text-text-secondary text-sm mt-6 font-medium text-center">By submitting, you are requesting an appointment slot. Our team will contact you shortly to confirm your final schedule.</p>
+                            <p className="text-text-secondary text-xs mt-3 font-medium text-center">We will contact you shortly to confirm your schedule.</p>
                         </div>
                     </div>
                 </div>

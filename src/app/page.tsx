@@ -4,6 +4,7 @@ import TrustStrip from '@/components/sections/TrustStrip';
 import WhyMVDiabetes from '@/components/sections/WhyMVDiabetes';
 import CareJourney from '@/components/sections/CareJourney'; // clear cache
 import SpecialtyExplorer from '@/components/sections/SpecialtyExplorer';
+import SpecialtiesGrid from '@/components/sections/SpecialtiesGrid';
 import PackageSection from '@/components/sections/PackageSection';
 import CheckupsSection from '@/components/sections/CheckupsSection';
 import DoctorSection from '@/components/sections/DoctorSection';
@@ -24,10 +25,11 @@ export default function HomePage() {
       <TrustStrip />
       <WhyMVDiabetes />
       <PackageSection />
-      <CheckupsSection />
       <CareJourney />
       <SpecialtyExplorer />
+      <SpecialtiesGrid />
       <StatsCounter />
+      <CheckupsSection />
       <DoctorSection />
       <PatientEducation />
       <TestimonialSlider />
@@ -37,7 +39,7 @@ export default function HomePage() {
       <AwardsAndAchievements />
       <TPAPartnerships />
       <BranchSection />
-      <Accreditations />
+      {/* <Accreditations /> */}
       <AppointmentCTASection />
     </>
   );

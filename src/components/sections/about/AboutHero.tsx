@@ -2,6 +2,7 @@
 
 import { motion } from 'framer-motion';
 import Link from 'next/link';
+import Image from 'next/image';
 import { ArrowRight } from 'lucide-react';
 import { aboutHero } from '@/data/about';
 
@@ -77,21 +78,18 @@ export default function AboutHero() {
                         transition={{ duration: 0.8, delay: 0.3 }}
                         className="relative hidden lg:block"
                     >
-                        <div className="relative aspect-[4/3] rounded-2xl overflow-hidden">
-                            {/* Gradient institutional visual */}
-                            <div className="absolute inset-0 bg-gradient-to-br from-white/10 via-white/5 to-transparent border border-white/10 rounded-2xl" />
-                            <div className="absolute inset-0 flex items-center justify-center">
-                                <div className="text-center">
-                                    <div className="w-20 h-20 mx-auto mb-4 rounded-2xl bg-white/10 flex items-center justify-center">
-                                        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="opacity-60">
-                                            <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
-                                            <polyline points="9 22 9 12 15 12 15 22" />
-                                        </svg>
-                                    </div>
-                                    <p className="text-white/40 text-sm font-medium">MV Diabetes</p>
-                                    <p className="text-white/25 text-xs mt-1">Since 1954</p>
-                                </div>
-                            </div>
+                        <div className="relative aspect-[4/3] rounded-2xl overflow-hidden shadow-2xl border border-white/10">
+                            {/* Insert the Background Image here */}
+                            <Image
+                                src="/images/about/about-hero-banner.png"
+                                alt="MV Diabetes About"
+                                fill
+                                priority
+                                className="object-cover transition-transform duration-700 hover:scale-105"
+                                sizes="(max-width: 1024px) 100vw, 50vw"
+                            />
+                            {/* Subtle overlay to help floating cards stand out */}
+                            <div className="absolute inset-0 bg-gradient-to-t from-primary-dark/80 via-transparent to-transparent pointer-events-none" />
 
                             {/* Floating stats cards */}
                             <motion.div

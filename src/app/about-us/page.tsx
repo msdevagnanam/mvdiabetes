@@ -13,8 +13,8 @@ import InsurancePartners from '@/components/sections/about/InsurancePartners';
 import TeamDirectory from '@/components/sections/about/TeamDirectory';
 import ClinicalLeadership from '@/components/sections/about/ClinicalLeadership';
 import ModernInstitution from '@/components/sections/about/ModernInstitution';
-import AboutStickyNav from '@/components/sections/about/AboutStickyNav';
 import AboutCTA from '@/components/sections/about/AboutCTA';
+import AboutProducts from '@/components/sections/about/AboutProducts';
 
 export const metadata: Metadata = {
     title: 'About Us — MV Diabetes | India\'s First Exclusive Diabetes Hospital',
@@ -49,6 +49,7 @@ export default function AboutUsPage() {
             {/* <ClinicalLeadership /> */}
             <InsurancePartners />
             {/* <TeamDirectory /> */}
+            <AboutProducts />
             <AboutCTA />
         </>
     );

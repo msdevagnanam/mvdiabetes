@@ -69,5 +69,6 @@ export const navigation: NavItem[] = [
             { label: 'Current Vacancies', href: '/careers' },
         ],
     },
+    { label: 'Our Products', href: '/our-products' },
     { label: 'Contact', href: '/contact' },
 ];

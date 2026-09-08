@@ -36,7 +36,7 @@ export default function AcademicsPage() {
             />
 
             <section className="section-padding bg-white">
-                <div className="container-site">
+                <div className="container-site font-sans">
                     <div className="max-w-4xl mx-auto space-y-12">
                         <div className="text-center mb-12">
                             <h2 className="text-3xl font-extrabold text-primary-dark mb-4">Training the Next Generation of Experts</h2>

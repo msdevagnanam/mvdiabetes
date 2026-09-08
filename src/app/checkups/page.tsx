@@ -21,7 +21,7 @@ export default function CheckupsPage() {
             />
 
             <section className="section-padding bg-surface-muted">
-                <div className="container-site">
+                <div className="container-site font-sans">
                     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
                         {checkups.filter(c => c.available).map(checkup => (
                             <Link href={`/checkups/${checkup.slug}`} key={checkup.id}

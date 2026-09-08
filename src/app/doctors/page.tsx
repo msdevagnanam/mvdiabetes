@@ -23,7 +23,7 @@ export default function DoctorsPage() {
             />
 
             <section className="section-padding bg-white">
-                <div className="container-site">
+                <div className="container-site font-sans">
                     {/* Specialty quick links */}
                     <div className="flex flex-wrap gap-2 mb-10">
                         {specialtyList.map(s => (

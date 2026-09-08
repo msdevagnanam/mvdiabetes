@@ -15,7 +15,7 @@ export default function CareersPage() {
         <>
             <PageHero title="Careers at MV Diabetes" description="Join India's first exclusive diabetes hospital. Explore current openings across our centres in Chennai and Bengaluru." breadcrumbs={[{ label: 'Careers' }]} />
             <section className="section-padding bg-white">
-                <div className="container-site max-w-4xl">
+                <div className="container-site max-w-4xl font-sans">
                     <div className="space-y-4">
                         {careers.map(job => (
                             <Link href={`/careers/${job.slug}`} key={job.id}

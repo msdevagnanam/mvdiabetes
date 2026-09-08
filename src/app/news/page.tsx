@@ -15,7 +15,7 @@ export default function NewsPage() {
         <>
             <PageHero title="News & Events" description="Stay updated with the latest from MV Diabetes — conferences, health camps, research, and community initiatives." breadcrumbs={[{ label: 'News & Events' }]} />
             <section className="section-padding bg-white">
-                <div className="container-site">
+                <div className="container-site font-sans">
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                         {newsEvents.map(event => (
                             <Link href={`/news/${event.slug}`} key={event.id}

@@ -161,7 +161,7 @@ export default function SearchPage() {
         <>
             <PageHero title="Global Search" description="Find exactly what you need across our entire platform." breadcrumbs={[{ label: 'Search' }]} />
             <Suspense fallback={
-                <div className="min-h-[50vh] bg-white flex items-center justify-center">
+                <div className="min-h-[50vh] bg-white flex items-center justify-center font-sans">
                     <div className="animate-spin w-8 h-8 border-4 border-primary border-t-transparent rounded-full" />
                 </div>
             }>

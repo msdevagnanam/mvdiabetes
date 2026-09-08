@@ -51,7 +51,7 @@ export default function ResearchPage() {
             />
 
             <section className="section-padding bg-surface-muted min-h-screen">
-                <div className="container-site">
+                <div className="container-site font-sans">
 
                     <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
                         <div className="max-w-2xl">

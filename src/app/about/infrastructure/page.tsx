@@ -28,7 +28,7 @@ export default function InfrastructurePage() {
             />
 
             <section className="section-padding bg-surface-muted">
-                <div className="container-site">
+                <div className="container-site font-sans">
                     <div className="text-center max-w-3xl mx-auto mb-16">
                         <h2 className="text-3xl md:text-4xl font-extrabold text-primary-dark mb-4">Built for Excellence</h2>
                         <p className="text-lg text-text-secondary leading-relaxed">

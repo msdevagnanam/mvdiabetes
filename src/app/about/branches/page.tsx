@@ -15,7 +15,7 @@ export default function BranchesPage() {
         <>
             <PageHero title="Our Branches" description="MV Diabetes provides world-class care across Chennai and Bengaluru." breadcrumbs={[{ label: 'About', href: '/about-us' }, { label: 'Branches' }]} />
             <section className="section-padding bg-white">
-                <div className="container-site">
+                <div className="container-site font-sans">
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                         {branches.map(branch => (
                             <div key={branch.id} className="p-6 rounded-2xl border border-border hover:shadow-lg hover:border-primary/20 transition-all flex flex-col">

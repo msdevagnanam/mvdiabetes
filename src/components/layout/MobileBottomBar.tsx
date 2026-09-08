@@ -2,6 +2,7 @@
 
 import Link from 'next/link';
 import { Phone, MessageCircle, Calendar } from 'lucide-react';
+import { WhatsAppIcon } from '@/components/ui/icons/WhatsAppIcon';
 import { siteConfig } from '@/data/site';
 
 export default function MobileBottomBar() {
@@ -21,7 +22,7 @@ export default function MobileBottomBar() {
                     rel="noopener noreferrer"
                     className="flex flex-col items-center justify-center gap-1 text-accent hover:text-accent/80 transition-colors"
                 >
-                    <MessageCircle size={18} />
+                    <WhatsAppIcon size={20} />
                     <span className="text-[0.65rem] font-medium">WhatsApp</span>
                 </a>
                 <Link

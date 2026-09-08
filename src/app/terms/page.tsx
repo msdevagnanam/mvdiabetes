@@ -13,7 +13,7 @@ export default function TermsPage() {
         <>
             <PageHero title="Terms & Conditions" description="Rules and regulations for using our website and services." breadcrumbs={[{ label: 'Terms' }]} />
             <section className="section-padding bg-white">
-                <div className="container-site max-w-4xl">
+                <div className="container-site max-w-4xl font-sans">
                     <div className="prose prose-lg max-w-none text-text-secondary [&_h2]:text-text-primary [&_h2]:font-extrabold [&_h2]:text-2xl [&_h2]:mt-8 [&_h2]:mb-4 [&_ul]:space-y-1 [&_li]:text-text-secondary">
                         <p>Last updated: {new Date().toLocaleDateString('en-IN', { month: 'long', year: 'numeric' })}</p>
 

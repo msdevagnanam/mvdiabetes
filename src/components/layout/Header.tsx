@@ -3,6 +3,7 @@
 import { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
 import { Menu, X, Search, Phone, Mail, MapPin, ChevronDown, ChevronRight, MessageCircle } from 'lucide-react';
+import { WhatsAppIcon } from '@/components/ui/icons/WhatsAppIcon';
 import { navigation, type NavItem } from '@/data/navigation';
 import { siteConfig } from '@/data/site';
 
@@ -34,7 +35,7 @@ function UtilityBar() {
                         rel="noopener noreferrer"
                         className="flex items-center gap-1.5 text-accent hover:text-accent/80 transition-colors font-medium"
                     >
-                        <MessageCircle size={13} />
+                        <WhatsAppIcon size={13} />
                         <span>WhatsApp</span>
                     </a>
                 </div>

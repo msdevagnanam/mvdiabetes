@@ -23,7 +23,7 @@ export default function PackagesPage() {
             />
 
             <section className="section-padding bg-white">
-                <div className="container-site">
+                <div className="container-site font-sans">
                     {locations.map(loc => {
                         const locPackages = packages.filter(p => p.location === loc && p.available);
                         return (

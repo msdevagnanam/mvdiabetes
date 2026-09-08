@@ -3,6 +3,7 @@
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { MessageCircle, Calendar, ArrowUp } from 'lucide-react';
+import { WhatsAppIcon } from '@/components/ui/icons/WhatsAppIcon';
 import { siteConfig } from '@/data/site';
 
 export default function FloatingActions() {
@@ -40,7 +41,7 @@ export default function FloatingActions() {
                 className="w-12 h-12 lg:w-14 lg:h-14 rounded-full bg-accent text-white shadow-lg shadow-accent/30 flex items-center justify-center hover:scale-105 transition-transform"
                 aria-label="WhatsApp"
             >
-                <MessageCircle size={22} />
+                <WhatsAppIcon size={26} />
             </a>
             <Link
                 href="/appointment"

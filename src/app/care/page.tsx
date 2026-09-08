@@ -20,7 +20,7 @@ export default function CarePage() {
             />
 
             <section className="section-padding bg-white">
-                <div className="container-site">
+                <div className="container-site font-sans">
                     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
                         {specialties.map(spec => (
                             <Link href={`/care/${spec.slug}`} key={spec.id}

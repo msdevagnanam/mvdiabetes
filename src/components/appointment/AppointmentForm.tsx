@@ -156,7 +156,7 @@ export default function AppointmentForm() {
     const today = new Date().toISOString().split('T')[0];
 
     return (
-        <div id="form-top" className="min-h-screen bg-surface-muted py-4 lg:py-6">
+        <div id="form-top" className="min-h-screen bg-surface-muted py-4 lg:py-6 font-sans">
             <div className="container-site max-w-4xl">
                 {/* Header Page Title */}
                 <div className="mb-4 text-center max-w-3xl mx-auto px-4">

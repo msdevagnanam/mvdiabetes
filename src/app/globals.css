@@ -1,5 +1,5 @@
 @import "tailwindcss";
-
+@plugin "@tailwindcss/typography";
 @theme {
   --font-sans: 'Plus Jakarta Sans', ui-sans-serif, system-ui, sans-serif;
 
@@ -18,6 +18,7 @@
   --color-success: #a2d19b;
   --color-warning: #ffc129;
   --color-error: #D94052;
+
 }
 
 @layer base {

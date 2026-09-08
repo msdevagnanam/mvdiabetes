@@ -15,7 +15,7 @@ export default function PrivacyPage() {
         <>
             <PageHero title="Privacy Policy" description="How we protect and manage your personal and medical information." breadcrumbs={[{ label: 'Privacy Policy' }]} />
             <section className="section-padding bg-white">
-                <div className="container-site max-w-4xl">
+                <div className="container-site max-w-4xl font-sans">
                     <div className="prose prose-lg max-w-none text-text-secondary [&_h2]:text-text-primary [&_h2]:font-extrabold [&_h2]:text-2xl [&_h2]:mt-8 [&_h2]:mb-4 [&_h3]:text-text-primary [&_h3]:font-bold [&_h3]:text-xl [&_h3]:mt-6 [&_h3]:mb-3 [&_ul]:space-y-1 [&_li]:text-text-secondary">
                         <p>Last updated: {new Date().toLocaleDateString('en-IN', { month: 'long', year: 'numeric' })}</p>
 

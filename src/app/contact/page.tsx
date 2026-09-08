@@ -24,7 +24,7 @@ export default function ContactPage() {
             <GlobalContactCards />
 
             <section className="section-padding bg-surface-muted">
-                <div className="container-site">
+                <div className="container-site font-sans">
                     <div className="grid lg:grid-cols-12 gap-8 lg:gap-12">
 
                         {/* Left Column: Branches */}

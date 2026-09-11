@@ -16,7 +16,7 @@ export const navigation: NavItem[] = [
             { label: 'Branches', href: '/about/branches' },
             { label: 'Facilities', href: '/about/facilities' },
             { label: 'Infrastructure', href: '/about/infrastructure' },
-            { label: 'CSR Activities', href: '/csr' },
+            // { label: 'CSR Activities', href: '/csr' },
         ],
     },
     {

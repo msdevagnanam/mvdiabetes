@@ -3,6 +3,7 @@
 import { useState, useEffect, useCallback } from 'react';
 import { useSearchParams, useRouter } from 'next/navigation';
 import Link from 'next/link';
+import Image from 'next/image';
 import {
     Calendar, User, MapPin, Stethoscope, Check,
     Loader2, AlertCircle, PhoneCall
@@ -156,15 +157,23 @@ export default function AppointmentForm() {
     const today = new Date().toISOString().split('T')[0];
 
     return (
-        <div id="form-top" className="min-h-screen bg-surface-muted py-4 lg:py-6 font-sans">
-            <div className="container-site max-w-4xl">
+        <div id="form-top" className="min-h-screen bg-surface-muted py-6 lg:py-10 font-sans">
+            <div className="container-site max-w-7xl">
                 {/* Header Page Title */}
-                <div className="mb-4 text-center max-w-3xl mx-auto px-4">
-                    <h1 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-text-primary leading-tight mb-2 tracking-tight">Book Your Appointment</h1>
-                    <p className="text-text-secondary text-sm sm:text-base">Schedule your visit at MV The appointments team will check the availability of the consultant and date requested and send you a confirmation mail or call you on the mobile no. shared by you.</p>
+                <div className="mb-8 text-center max-w-3xl mx-auto px-4">
+                    <h1 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-text-primary leading-tight mb-3 tracking-tight">Book Your Appointment</h1>
+                    <p className="text-text-secondary text-sm sm:text-base leading-relaxed">Schedule your visit at MV The appointments team will check the availability of the consultant and date requested and send you a confirmation mail or call you on the mobile no. shared by you.</p>
                 </div>
 
-                <div className="bg-white rounded-2xl border border-border p-4 sm:p-5 lg:p-6 shadow-sm">
+                <div className="grid lg:grid-cols-[1fr_1.5fr] gap-6 lg:gap-8 items-start max-w-6xl mx-auto">
+                    {/* Left Image Side */}
+                    <div className="hidden lg:block relative h-full min-h-[600px] w-full rounded-3xl overflow-hidden shadow-xl shadow-primary-dark/5">
+                        <Image src="/images/hero/mv-hero-img2.png" alt="Book Appointment at MV Diabetes" fill sizes="(max-width: 1024px) 0vw, 40vw" className="object-cover" />
+                        <div className="absolute inset-0 bg-primary-dark/20 mix-blend-overlay" />
+                    </div>
+
+                    {/* Right Form Side */}
+                    <div className="bg-white rounded-3xl border border-border p-5 sm:p-6 lg:p-8 shadow-xl shadow-primary-dark/5">
                     <div className="flex flex-col gap-4">
 
                         <h2 className="text-lg font-bold text-text-primary mb-1 border-b pb-2">Service Details</h2>
@@ -315,6 +324,7 @@ export default function AppointmentForm() {
                             </button>
                             <p className="text-text-secondary text-xs mt-3 font-medium text-center">We will contact you shortly to confirm your schedule.</p>
                         </div>
+                    </div>
                     </div>
                 </div>
             </div>

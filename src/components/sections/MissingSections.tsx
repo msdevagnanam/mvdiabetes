@@ -119,28 +119,28 @@ export function VideoTestimonials() {
             youtubeId: '_uJsoPkGa1M',
             patient: 'Mr. Subramanian',
             issue: 'Diabetic Retinopathy',
-            thumbnail: 'https://img.youtube.com/vi/_uJsoPkGa1M/maxresdefault.jpg'
+            thumbnail: 'https://img.youtube.com/vi/_uJsoPkGa1M/hqdefault.jpg'
         },
         {
             id: 2,
             youtubeId: 'aYXfpmniT-s',
-            patient: 'Mrs. Lakshmi',
-            issue: 'Advanced Foot Care',
-            thumbnail: 'https://img.youtube.com/vi/aYXfpmniT-s/maxresdefault.jpg'
+            patient: 'Overseas Patient',
+            issue: 'Patient Feedback',
+            thumbnail: 'https://img.youtube.com/vi/aYXfpmniT-s/hqdefault.jpg'
         },
         {
             id: 3,
-            youtubeId: '_uJsoPkGa1M',
-            patient: 'Mrs. Geetha',
-            issue: 'Gestational Diabetes Wellness',
-            thumbnail: 'https://img.youtube.com/vi/_uJsoPkGa1M/hqdefault.jpg'
+            youtubeId: 'CY-LRxHsPMY',
+            patient: 'Mr. Y.G. Mahendra',
+            issue: 'Diabetes Awareness',
+            thumbnail: 'https://img.youtube.com/vi/CY-LRxHsPMY/hqdefault.jpg'
         },
         {
             id: 4,
-            youtubeId: 'aYXfpmniT-s',
-            patient: 'Mr. Ravi',
-            issue: 'Type 2 Diabetes Reversal',
-            thumbnail: 'https://img.youtube.com/vi/aYXfpmniT-s/maxresdefault.jpg'
+            youtubeId: 'dn2Wfh4IKoQ',
+            patient: 'Mr. Innocent',
+            issue: 'Guest Speech',
+            thumbnail: 'https://img.youtube.com/vi/dn2Wfh4IKoQ/hqdefault.jpg'
         }
     ];
 

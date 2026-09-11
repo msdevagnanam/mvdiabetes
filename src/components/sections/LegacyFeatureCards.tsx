@@ -36,17 +36,17 @@ export default function LegacyFeatureCards() {
                             className="relative h-[380px] rounded-3xl overflow-hidden bg-primary-dark border border-border shadow-md hover:shadow-xl hover:-translate-y-1 transition-all duration-300 group"
                         >
                             {/* Image Background */}
-                            <div className="absolute inset-0 z-0 bg-primary-dark">
+                            <div className="absolute inset-0 z-0 bg-black">
                                 <Image
                                     src={feature.image}
                                     alt={feature.title}
                                     fill
                                     sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                                    className={`object-cover mix-blend-overlay opacity-40 group-hover:scale-105 transition-transform duration-700 ease-out ${
+                                    className={`object-cover group-hover:scale-105 transition-transform duration-700 ease-out ${
                                         feature.id === 2 ? 'object-center' : 'object-top'
                                     }`}
                                 />
-                                <div className="absolute inset-0 bg-gradient-to-t from-primary-dark/95 via-primary-dark/60 to-transparent" />
+                                <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent" />
                             </div>
 
                             {/* Content */}

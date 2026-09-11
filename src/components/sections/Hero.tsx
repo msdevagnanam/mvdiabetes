@@ -63,7 +63,7 @@ export default function Hero() {
 
     return (
         <section
-            className="relative w-full h-[600px] lg:h-[700px] bg-primary-dark overflow-hidden"
+            className="relative w-full min-h-[700px] lg:min-h-[700px] bg-primary-dark overflow-hidden flex flex-col"
             onMouseEnter={() => setIsHovered(true)}
             onMouseLeave={() => setIsHovered(false)}
         >
@@ -74,7 +74,7 @@ export default function Hero() {
                     animate={{ opacity: 1, scale: 1, zIndex: 10 }}
                     exit={{ opacity: 0, scale: 0.95, zIndex: 0 }}
                     transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
-                    className="absolute inset-0 w-full h-full"
+                    className="relative w-full flex-grow flex flex-col"
                 >
                     {/* Background Image */}
                     <div className="absolute inset-0">
@@ -90,8 +90,8 @@ export default function Hero() {
                         <div className="absolute inset-0 bg-gradient-to-t from-primary-dark via-transparent to-transparent opacity-80" />
                     </div>
 
-                    <div className="container-site h-full relative z-20 flex items-center pt-24 lg:pt-32 pb-16">
-                        <div className="max-w-2xl">
+                    <div className="container-site flex-grow relative z-20 flex items-center pt-24 lg:pt-32 pb-36 lg:pb-16">
+                        <div className="max-w-2xl w-full">
                             <motion.div
                                 initial={{ opacity: 0, y: 20 }}
                                 animate={{ opacity: 1, y: 0 }}
@@ -124,18 +124,18 @@ export default function Hero() {
                                 initial={{ opacity: 0, y: 20 }}
                                 animate={{ opacity: 1, y: 0 }}
                                 transition={{ delay: 0.6, duration: 0.6, ease: "easeOut" }}
-                                className="flex flex-wrap gap-4"
+                                className="flex flex-col sm:flex-row flex-wrap gap-4"
                             >
                                 <Link
                                     href={slides[currentSlide].primaryCta.link}
-                                    className="inline-flex items-center gap-2 px-7 py-3.5 bg-secondary text-white text-sm sm:text-base font-semibold rounded-xl hover:bg-white hover:text-secondary transition-all duration-300 shadow-xl shadow-secondary/20"
+                                    className="inline-flex items-center justify-center gap-2 px-7 py-3.5 bg-secondary text-white text-sm sm:text-base font-semibold rounded-xl hover:bg-white hover:text-secondary transition-all duration-300 shadow-xl shadow-secondary/20"
                                 >
                                     {slides[currentSlide].primaryCta.text}
                                     <ArrowRight size={18} />
                                 </Link>
                                 <Link
                                     href={slides[currentSlide].secondaryCta.link}
-                                    className="inline-flex items-center gap-2 px-7 py-3.5 bg-white/10 backdrop-blur-md text-white text-sm sm:text-base font-semibold rounded-xl border border-white/20 hover:bg-white/20 transition-colors duration-300"
+                                    className="inline-flex items-center justify-center gap-2 px-7 py-3.5 bg-white/10 backdrop-blur-md text-white text-sm sm:text-base font-semibold rounded-xl border border-white/20 hover:bg-white/20 transition-colors duration-300"
                                 >
                                     {slides[currentSlide].secondaryCta.text}
                                 </Link>
@@ -146,7 +146,7 @@ export default function Hero() {
             </AnimatePresence>
 
             {/* Navigation Controls */}
-            <div className="absolute right-4 bottom-8 lg:right-10 lg:bottom-12 z-30 flex items-center gap-4">
+            <div className="absolute right-4 bottom-8 lg:right-10 lg:bottom-12 z-30 hidden lg:flex items-center gap-4">
                 {/* Dots indicator */}
                 <div className="hidden lg:flex items-center gap-2 mr-4">
                     {slides.map((_, i) => (
@@ -182,7 +182,7 @@ export default function Hero() {
             </div>
 
             {/* Mobile Dots */}
-            <div className="absolute left-1/2 -translate-x-1/2 bottom-6 z-30 flex lg:hidden items-center gap-2">
+            <div className="absolute left-1/2 -translate-x-1/2 bottom-20 z-30 flex lg:hidden items-center gap-2">
                 {slides.map((_, i) => (
                     <button
                         key={i}

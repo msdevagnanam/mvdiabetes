@@ -54,8 +54,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={`${plusJakarta.variable} h-full`}>
-      <body className="min-h-full flex flex-col font-sans antialiased bg-background text-text-primary">
+    <html lang="en" className={`${plusJakarta.variable} h-full`} suppressHydrationWarning>
+      <body className="min-h-full flex flex-col font-sans antialiased bg-background text-text-primary" suppressHydrationWarning>
         <Header />
         <main className="flex-1">{children}</main>
         <Footer />

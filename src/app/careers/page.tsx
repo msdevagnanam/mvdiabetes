@@ -1,6 +1,5 @@
 import type { Metadata } from 'next';
-import Link from 'next/link';
-import { MapPin, Briefcase, ArrowRight, Calendar } from 'lucide-react';
+import JobFilterList from '@/components/careers/JobFilterList';
 import PageHero from '@/components/ui/PageHero';
 import { careers } from '@/data/careers';
 
@@ -12,30 +11,36 @@ export const metadata: Metadata = {
 
 export default function CareersPage() {
     return (
-        <>
-            <PageHero title="Careers at MV Diabetes" description="Join India's first exclusive diabetes hospital. Explore current openings across our centres in Chennai and Bengaluru." breadcrumbs={[{ label: 'Careers' }]} />
-            <section className="section-padding bg-white">
-                <div className="container-site max-w-4xl font-sans">
-                    <div className="space-y-4">
-                        {careers.map(job => (
-                            <Link href={`/careers/${job.slug}`} key={job.id}
-                                className="group flex flex-col sm:flex-row sm:items-center justify-between gap-4 p-5 rounded-2xl border border-border hover:shadow-lg hover:border-primary/20 transition-all">
-                                <div>
-                                    <h3 className="text-lg font-bold text-text-primary group-hover:text-primary transition-colors">{job.title}</h3>
-                                    <div className="flex flex-wrap items-center gap-3 mt-1.5 text-sm text-text-secondary">
-                                        <span className="flex items-center gap-1"><Briefcase size={12} />{job.department}</span>
-                                        <span className="flex items-center gap-1"><MapPin size={12} />{job.location}</span>
-                                        <span className="flex items-center gap-1"><Calendar size={12} />{job.type}</span>
-                                    </div>
-                                </div>
-                                <span className="flex items-center gap-1.5 text-sm text-primary font-semibold shrink-0 group-hover:gap-2.5 transition-all">
-                                    View Details <ArrowRight size={14} />
-                                </span>
-                            </Link>
-                        ))}
+        <main className="font-sans min-h-screen bg-surface">
+            {/* 1. Page Hero Section */}
+            <PageHero 
+                title="Join Our Team at MV Diabetes" 
+                description="At MV Diabetes, we are dedicated to improving the lives of our patients through compassionate, specialized diabetes treatment. We are looking for talented, driven individuals who share our commitment to quality healthcare and excellence." 
+                breadcrumbs={[{ label: 'Careers' }]} 
+            >
+                <a 
+                    href="#job-openings" 
+                    className="inline-block bg-secondary text-white font-bold px-8 py-3.5 rounded-full hover:bg-secondary-dark hover:scale-105 transition-all shadow-lg mt-2"
+                >
+                    Join Now
+                </a>
+            </PageHero>
+
+            {/* 2. Job Openings Section */}
+            <section className="py-20 bg-surface">
+                <div className="container-site max-w-4xl">
+                    <div className="text-center mb-12">
+                        <h2 className="text-3xl md:text-4xl font-extrabold text-primary mb-3">
+                            Explore Job Openings
+                        </h2>
+                        <p className="text-text-secondary text-lg">
+                            Build a career you can be proud of - join us!
+                        </p>
                     </div>
+
+                    <JobFilterList careers={careers} />
                 </div>
             </section>
-        </>
+        </main>
     );
 }

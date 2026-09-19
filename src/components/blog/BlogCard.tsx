@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import Image from 'next/image';
-import { BlogPost } from '@/data/blogData';
+import { BlogPost, hasBlogImage } from '@/data/blogData';
 import BlogPlaceholderImage from './BlogPlaceholderImage';
 
 interface BlogCardProps {
@@ -9,7 +9,7 @@ interface BlogCardProps {
 }
 
 export default function BlogCard({ post, featured = false }: BlogCardProps) {
-  const isMissingImage = !post.image || post.imageStatus === 'missing';
+  const isMissingImage = !hasBlogImage(post);
 
   return (
     <Link href={`/blog/${post.slug}`} className={`group flex flex-col bg-white rounded-2xl overflow-hidden border border-border hover:shadow-xl transition-all duration-300 font-sans ${featured ? 'md:flex-row' : ''}`}>

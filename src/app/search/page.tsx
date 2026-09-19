@@ -69,7 +69,12 @@ function SearchContent() {
 
         // Search Blogs
         blogPosts.forEach(b => {
-            if (b.title.toLowerCase().includes(q) || b.excerpt.toLowerCase().includes(q)) {
+            if (
+                b.title.toLowerCase().includes(q) || 
+                b.excerpt.toLowerCase().includes(q) ||
+                b.category?.toLowerCase().includes(q) ||
+                b.tags?.some(t => t.toLowerCase().includes(q))
+            ) {
                 found.push({ id: `blog-${b.id}`, title: b.title, type: 'blog', url: `/blog/${b.slug}`, description: b.excerpt, icon: BookOpen });
             }
         });

@@ -1,0 +1,311 @@
+================================================================================
+MV DIABETES - COMPLETE BLOG LIST (mvdiabetes.vercel.app)
+Total Blogs: 48
+================================================================================
+
+CATEGORY BREAKDOWN:
+- Diabetes Care: 13
+- Nutrition & Diet: 7
+- Lifestyle: 5
+- Foot Care: 4
+- Technology: 3
+- Prevention: 3
+- Gestational Diabetes: 3
+- Medication: 2
+- Neuropathy: 2
+- Exercise: 2
+- Heart Health: 2
+- Kidney Health: 1
+- Eye Care: 1
+
+================================================================================
+ALL 48 BLOG ARTICLES:
+================================================================================
+
+1. Title: Diabetes and Kidney Health: Early Signs of Diabetic Kidney Disease You Shouldn't Ignore
+   Category: Kidney Health
+   Slug: diabetes-and-kidney-health-early-signs-of-diabetic-kidney-disease-you-shouldnt-ignore
+   Live URL: https://mvdiabetes.vercel.app/blog/diabetes-and-kidney-health-early-signs-of-diabetic-kidney-disease-you-shouldnt-ignore
+   Local URL: http://localhost:3000/blog/diabetes-and-kidney-health-early-signs-of-diabetic-kidney-disease-you-shouldnt-ignore
+
+2. Title: Continuous Glucose Monitoring: Is CGM the Future of Diabetes Management?
+   Category: Technology
+   Slug: continuous-glucose-monitoring-is-cgm-the-future-of-diabetes-management
+   Live URL: https://mvdiabetes.vercel.app/blog/continuous-glucose-monitoring-is-cgm-the-future-of-diabetes-management
+   Local URL: http://localhost:3000/blog/continuous-glucose-monitoring-is-cgm-the-future-of-diabetes-management
+
+3. Title: GLP-1 Medicines for Type 2 Diabetes: Are They Only for Weight Loss?
+   Category: Medication
+   Slug: glp-1-medicines-for-type-2-diabetes-are-they-only-for-weight-loss
+   Live URL: https://mvdiabetes.vercel.app/blog/glp-1-medicines-for-type-2-diabetes-are-they-only-for-weight-loss
+   Local URL: http://localhost:3000/blog/glp-1-medicines-for-type-2-diabetes-are-they-only-for-weight-loss
+
+4. Title: Diabetic Neuropathy: Why Tingling, Burning or Numb Feet Should Never Be Ignored
+   Category: Neuropathy
+   Slug: diabetic-neuropathy-why-tingling-burning-or-numb-feet-should-never-be-ignored
+   Live URL: https://mvdiabetes.vercel.app/blog/diabetic-neuropathy-why-tingling-burning-or-numb-feet-should-never-be-ignored
+   Local URL: http://localhost:3000/blog/diabetic-neuropathy-why-tingling-burning-or-numb-feet-should-never-be-ignored
+
+5. Title: Diabetes Eye Care: How to Protect Your Vision from Diabetic Retinopathy
+   Category: Eye Care
+   Slug: diabetes-eye-care-how-to-protect-your-vision-from-diabetic-retinopathy
+   Live URL: https://mvdiabetes.vercel.app/blog/diabetes-eye-care-how-to-protect-your-vision-from-diabetic-retinopathy
+   Local URL: http://localhost:3000/blog/diabetes-eye-care-how-to-protect-your-vision-from-diabetic-retinopathy
+
+6. Title: Can Walking Every Day Help Control Diabetes? Benefits Explained
+   Category: Exercise
+   Slug: can-walking-every-day-help-control-diabetes-benefits-explained
+   Live URL: https://mvdiabetes.vercel.app/blog/can-walking-every-day-help-control-diabetes-benefits-explained
+   Local URL: http://localhost:3000/blog/can-walking-every-day-help-control-diabetes-benefits-explained
+
+7. Title: Understanding Diabetic Neuropathy: Causes, Symptoms & Treatment
+   Category: Neuropathy
+   Slug: understanding-diabetic-neuropathy-causes-symptoms-treatment
+   Live URL: https://mvdiabetes.vercel.app/blog/understanding-diabetic-neuropathy-causes-symptoms-treatment
+   Local URL: http://localhost:3000/blog/understanding-diabetic-neuropathy-causes-symptoms-treatment
+
+8. Title: Prediabetes: Early Warning Signs, Risk Factors & How to Prevent It
+   Category: Prevention
+   Slug: prediabetes-early-warning-signs-risk-factors-how-to-prevent-it
+   Live URL: https://mvdiabetes.vercel.app/blog/prediabetes-early-warning-signs-risk-factors-how-to-prevent-it
+   Local URL: http://localhost:3000/blog/prediabetes-early-warning-signs-risk-factors-how-to-prevent-it
+
+9. Title: Early Warning Signs of Diabetic Complications You Should Never Ignore
+   Category: Diabetes Care
+   Slug: early-warning-signs-of-diabetic-complications-you-should-never-ignore
+   Live URL: https://mvdiabetes.vercel.app/blog/early-warning-signs-of-diabetic-complications-you-should-never-ignore
+   Local URL: http://localhost:3000/blog/early-warning-signs-of-diabetic-complications-you-should-never-ignore
+
+10. Title: Diabetes and Heart Health: Understanding the Connection
+    Category: Heart Health
+    Slug: diabetes-and-heart-health-understanding-the-connection
+    Live URL: https://mvdiabetes.vercel.app/blog/diabetes-and-heart-health-understanding-the-connection
+    Local URL: http://localhost:3000/blog/diabetes-and-heart-health-understanding-the-connection
+
+11. Title: How Stress Affects Blood Sugar Levels and What You Can Do About It
+    Category: Lifestyle
+    Slug: how-stress-affects-blood-sugar-levels-and-what-you-can-do-about-it
+    Live URL: https://mvdiabetes.vercel.app/blog/how-stress-affects-blood-sugar-levels-and-what-you-can-do-about-it
+    Local URL: http://localhost:3000/blog/how-stress-affects-blood-sugar-levels-and-what-you-can-do-about-it
+
+12. Title: Understanding HbA1c: What Every Diabetes Patient Should Know
+    Category: Diabetes Care
+    Slug: understanding-hba1c-what-every-diabetes-patient-should-know
+    Live URL: https://mvdiabetes.vercel.app/blog/understanding-hba1c-what-every-diabetes-patient-should-know
+    Local URL: http://localhost:3000/blog/understanding-hba1c-what-every-diabetes-patient-should-know
+
+13. Title: Diet Mistakes Diabetics Must Avoid
+    Category: Nutrition & Diet
+    Slug: diet-mistakes-diabetics-must-avoid
+    Live URL: https://mvdiabetes.vercel.app/blog/diet-mistakes-diabetics-must-avoid
+    Local URL: http://localhost:3000/blog/diet-mistakes-diabetics-must-avoid
+
+14. Title: Warning Signs of Diabetic Foot You Should Never Ignore
+    Category: Foot Care
+    Slug: warning-signs-of-diabetic-foot-you-should-never-ignore
+    Live URL: https://mvdiabetes.vercel.app/blog/warning-signs-of-diabetic-foot-you-should-never-ignore
+    Local URL: http://localhost:3000/blog/warning-signs-of-diabetic-foot-you-should-never-ignore
+
+15. Title: How to Control Blood Sugar Naturally
+    Category: Lifestyle
+    Slug: how-to-control-blood-sugar-naturally
+    Live URL: https://mvdiabetes.vercel.app/blog/how-to-control-blood-sugar-naturally
+    Local URL: http://localhost:3000/blog/how-to-control-blood-sugar-naturally
+
+16. Title: Best Diabetes Treatment Options in Chennai
+    Category: Diabetes Care
+    Slug: best-diabetes-treatment-options-in-chennai
+    Live URL: https://mvdiabetes.vercel.app/blog/best-diabetes-treatment-options-in-chennai
+    Local URL: http://localhost:3000/blog/best-diabetes-treatment-options-in-chennai
+
+17. Title: Managing Diabetes After 50: Special Care Guidelines
+    Category: Diabetes Care
+    Slug: managing-diabetes-after-50-special-care-guidelines
+    Live URL: https://mvdiabetes.vercel.app/blog/managing-diabetes-after-50-special-care-guidelines
+    Local URL: http://localhost:3000/blog/managing-diabetes-after-50-special-care-guidelines
+
+18. Title: Is Insulin Therapy Safe? What Patients Should Know
+    Category: Medication
+    Slug: is-insulin-therapy-safe-what-patients-should-know
+    Live URL: https://mvdiabetes.vercel.app/blog/is-insulin-therapy-safe-what-patients-should-know
+    Local URL: http://localhost:3000/blog/is-insulin-therapy-safe-what-patients-should-know
+
+19. Title: Diabetic Foot Care: Prevention Tips to Avoid Amputation
+    Category: Foot Care
+    Slug: diabetic-foot-care-prevention-tips-to-avoid-amputation
+    Live URL: https://mvdiabetes.vercel.app/blog/diabetic-foot-care-prevention-tips-to-avoid-amputation
+    Local URL: http://localhost:3000/blog/diabetic-foot-care-prevention-tips-to-avoid-amputation
+
+20. Title: What Happens If Diabetes Is Left Untreated?
+    Category: Diabetes Care
+    Slug: what-happens-if-diabetes-is-left-untreated
+    Live URL: https://mvdiabetes.vercel.app/blog/what-happens-if-diabetes-is-left-untreated
+    Local URL: http://localhost:3000/blog/what-happens-if-diabetes-is-left-untreated
+
+21. Title: How Often Should Diabetics Get a Full Health Check-Up?
+    Category: Diabetes Care
+    Slug: how-often-should-diabetics-get-a-full-health-check-up
+    Live URL: https://mvdiabetes.vercel.app/blog/how-often-should-diabetics-get-a-full-health-check-up
+    Local URL: http://localhost:3000/blog/how-often-should-diabetics-get-a-full-health-check-up
+
+22. Title: Best Diet Plan for Type 2 Diabetes Patients in India
+    Category: Nutrition & Diet
+    Slug: best-diet-plan-for-type-2-diabetes-patients-in-india
+    Live URL: https://mvdiabetes.vercel.app/blog/best-diet-plan-for-type-2-diabetes-patients-in-india
+    Local URL: http://localhost:3000/blog/best-diet-plan-for-type-2-diabetes-patients-in-india
+
+23. Title: Can Diabetes Be Reversed? Myths vs Facts
+    Category: Diabetes Care
+    Slug: can-diabetes-be-reversed-myths-vs-facts
+    Live URL: https://mvdiabetes.vercel.app/blog/can-diabetes-be-reversed-myths-vs-facts
+    Local URL: http://localhost:3000/blog/can-diabetes-be-reversed-myths-vs-facts
+
+24. Title: Early Signs of Diabetes You Shouldn't Ignore
+    Category: Prevention
+    Slug: early-signs-of-diabetes-you-shouldnt-ignore
+    Live URL: https://mvdiabetes.vercel.app/blog/early-signs-of-diabetes-you-shouldnt-ignore
+    Local URL: http://localhost:3000/blog/early-signs-of-diabetes-you-shouldnt-ignore
+
+25. Title: Diabetes-Friendly Snacks You Can Eat Guilt-Free
+    Category: Nutrition & Diet
+    Slug: diabetes-friendly-snacks-you-can-eat-guilt-free
+    Live URL: https://mvdiabetes.vercel.app/blog/diabetes-friendly-snacks-you-can-eat-guilt-free
+    Local URL: http://localhost:3000/blog/diabetes-friendly-snacks-you-can-eat-guilt-free
+
+26. Title: Diabetes and Skin Health: Symptoms You Shouldn't Ignore
+    Category: Diabetes Care
+    Slug: diabetes-and-skin-health-symptoms-you-shouldnt-ignore
+    Live URL: https://mvdiabetes.vercel.app/blog/diabetes-and-skin-health-symptoms-you-shouldnt-ignore
+    Local URL: http://localhost:3000/blog/diabetes-and-skin-health-symptoms-you-shouldnt-ignore
+
+27. Title: How to Spot and Manage Gestational Diabetes Early
+    Category: Gestational Diabetes
+    Slug: how-to-spot-and-manage-gestational-diabetes-early
+    Live URL: https://mvdiabetes.vercel.app/blog/how-to-spot-and-manage-gestational-diabetes-early
+    Local URL: http://localhost:3000/blog/how-to-spot-and-manage-gestational-diabetes-early
+
+28. Title: Top 5 Exercises for Diabetics to Control Sugar Levels
+    Category: Exercise
+    Slug: top-5-exercises-for-diabetics-to-control-sugar-levels
+    Live URL: https://mvdiabetes.vercel.app/blog/top-5-exercises-for-diabetics-to-control-sugar-levels
+    Local URL: http://localhost:3000/blog/top-5-exercises-for-diabetics-to-control-sugar-levels
+
+29. Title: Beyond Sugar Levels: A Holistic Approach to Living Well with Diabetes
+    Category: Lifestyle
+    Slug: beyond-sugar-levels-a-holistic-approach-to-living-well-with-diabetes
+    Live URL: https://mvdiabetes.vercel.app/blog/beyond-sugar-levels-a-holistic-approach-to-living-well-with-diabetes
+    Local URL: http://localhost:3000/blog/beyond-sugar-levels-a-holistic-approach-to-living-well-with-diabetes
+
+30. Title: The Latest Advancements in Diabetes Treatment: What Patients Should Know
+    Category: Technology
+    Slug: the-latest-advancements-in-diabetes-treatment-what-patients-should-know
+    Live URL: https://mvdiabetes.vercel.app/blog/the-latest-advancements-in-diabetes-treatment-what-patients-should-know
+    Local URL: http://localhost:3000/blog/the-latest-advancements-in-diabetes-treatment-what-patients-should-know
+
+31. Title: Lifestyle Changes for Diabetes: Small Daily Habits That Protect You for Life
+    Category: Lifestyle
+    Slug: lifestyle-changes-for-diabetes-small-daily-habits-that-protect-you-for-life
+    Live URL: https://mvdiabetes.vercel.app/blog/lifestyle-changes-for-diabetes-small-daily-habits-that-protect-you-for-life
+    Local URL: http://localhost:3000/blog/lifestyle-changes-for-diabetes-small-daily-habits-that-protect-you-for-life
+
+32. Title: Diabetes Diet Made Simple: How to Eat Smart for Better Blood Sugar Control
+    Category: Nutrition & Diet
+    Slug: diabetes-diet-made-simple-how-to-eat-smart-for-better-blood-sugar-control
+    Live URL: https://mvdiabetes.vercel.app/blog/diabetes-diet-made-simple-how-to-eat-smart-for-better-blood-sugar-control
+    Local URL: http://localhost:3000/blog/diabetes-diet-made-simple-how-to-eat-smart-for-better-blood-sugar-control
+
+33. Title: Why Foot Care Is Essential for Every Diabetic - Complete Guide to Preventing Ulcers & Amputations
+    Category: Foot Care
+    Slug: why-foot-care-is-essential-for-every-diabetic-complete-guide-to-preventing-ulcers-amputations
+    Live URL: https://mvdiabetes.vercel.app/blog/why-foot-care-is-essential-for-every-diabetic-complete-guide-to-preventing-ulcers-amputations
+    Local URL: http://localhost:3000/blog/why-foot-care-is-essential-for-every-diabetic-complete-guide-to-preventing-ulcers-amputations
+
+34. Title: How Diabetes Affects the Heart: The Hidden Link Every Patient Must Know
+    Category: Heart Health
+    Slug: how-diabetes-affects-the-heart-the-hidden-link-every-patient-must-know
+    Live URL: https://mvdiabetes.vercel.app/blog/how-diabetes-affects-the-heart-the-hidden-link-every-patient-must-know
+    Local URL: http://localhost:3000/blog/how-diabetes-affects-the-heart-the-hidden-link-every-patient-must-know
+
+35. Title: The Best Indian Diet Plan for Diabetes: What to Eat for Better Sugar Control
+    Category: Nutrition & Diet
+    Slug: the-best-indian-diet-plan-for-diabetes-what-to-eat-for-better-sugar-control
+    Live URL: https://mvdiabetes.vercel.app/blog/the-best-indian-diet-plan-for-diabetes-what-to-eat-for-better-sugar-control
+    Local URL: http://localhost:3000/blog/the-best-indian-diet-plan-for-diabetes-what-to-eat-for-better-sugar-control
+
+36. Title: Early Warning Signs of Diabetes Most Indians Ignore - And Why Acting Early Can Save Your Life
+    Category: Prevention
+    Slug: early-warning-signs-of-diabetes-most-indians-ignore-and-why-acting-early-can-save-your-life
+    Live URL: https://mvdiabetes.vercel.app/blog/early-warning-signs-of-diabetes-most-indians-ignore-and-why-acting-early-can-save-your-life
+    Local URL: http://localhost:3000/blog/early-warning-signs-of-diabetes-most-indians-ignore-and-why-acting-early-can-save-your-life
+
+37. Title: Continuous Glucose Monitoring (CGM) vs Traditional Methods: Which Is Right for You?
+    Category: Technology
+    Slug: continuous-glucose-monitoring-cgm-vs-traditional-methods-which-is-right-for-you
+    Live URL: https://mvdiabetes.vercel.app/blog/continuous-glucose-monitoring-cgm-vs-traditional-methods-which-is-right-for-you
+    Local URL: http://localhost:3000/blog/continuous-glucose-monitoring-cgm-vs-traditional-methods-which-is-right-for-you
+
+38. Title: Understanding and Preventing Diabetic Foot Complications
+    Category: Foot Care
+    Slug: understanding-and-preventing-diabetic-foot-complications
+    Live URL: https://mvdiabetes.vercel.app/blog/understanding-and-preventing-diabetic-foot-complications
+    Local URL: http://localhost:3000/blog/understanding-and-preventing-diabetic-foot-complications
+
+39. Title: Gestational Diabetes: What Every Pregnant Woman Needs to Know in Tamil Nadu
+    Category: Gestational Diabetes
+    Slug: gestational-diabetes-care-mv-hospital-for-diabetes-chennai-bangalore
+    Live URL: https://mvdiabetes.vercel.app/blog/gestational-diabetes-care-mv-hospital-for-diabetes-chennai-bangalore
+    Local URL: http://localhost:3000/blog/gestational-diabetes-care-mv-hospital-for-diabetes-chennai-bangalore
+
+40. Title: How to Manage Type 2 Diabetes in India: Diet, Exercise & Monitoring Tips
+    Category: Diabetes Care
+    Slug: how-to-manage-type-2-diabetes-in-india-diet-exercise-monitoring-tips
+    Live URL: https://mvdiabetes.vercel.app/blog/how-to-manage-type-2-diabetes-in-india-diet-exercise-monitoring-tips
+    Local URL: http://localhost:3000/blog/how-to-manage-type-2-diabetes-in-india-diet-exercise-monitoring-tips
+
+41. Title: The Impact of Diabetes on Your Body
+    Category: Diabetes Care
+    Slug: the-impact-of-diabetes-on-your-body-a-study
+    Live URL: https://mvdiabetes.vercel.app/blog/the-impact-of-diabetes-on-your-body-a-study
+    Local URL: http://localhost:3000/blog/the-impact-of-diabetes-on-your-body-a-study
+
+42. Title: Managing Diabetes Effectively: How Lifestyle Choices Can Make a Difference
+    Category: Lifestyle
+    Slug: managing-diabetes-effectively-how-lifestyle-choices-can-make-a-difference
+    Live URL: https://mvdiabetes.vercel.app/blog/managing-diabetes-effectively-how-lifestyle-choices-can-make-a-difference
+    Local URL: http://localhost:3000/blog/managing-diabetes-effectively-how-lifestyle-choices-can-make-a-difference
+
+43. Title: Nutritional Value of Dal
+    Category: Nutrition & Diet
+    Slug: nutritional-value-of-dal
+    Live URL: https://mvdiabetes.vercel.app/blog/nutritional-value-of-dal
+    Local URL: http://localhost:3000/blog/nutritional-value-of-dal
+
+44. Title: Diet for Diabetic Patient Chart
+    Category: Nutrition & Diet
+    Slug: diet-for-diabetic-patient-chart
+    Live URL: https://mvdiabetes.vercel.app/blog/diet-for-diabetic-patient-chart
+    Local URL: http://localhost:3000/blog/diet-for-diabetic-patient-chart
+
+45. Title: The Do's and Don'ts of Diabetes: Simple Steps for Everyday Care
+    Category: Diabetes Care
+    Slug: the-dos-and-donts-of-diabetes-simple-steps-for-everyday-care
+    Live URL: https://mvdiabetes.vercel.app/blog/the-dos-and-donts-of-diabetes-simple-steps-for-everyday-care
+    Local URL: http://localhost:3000/blog/the-dos-and-donts-of-diabetes-simple-steps-for-everyday-care
+
+46. Title: Understanding Normal Blood Sugar Levels: A Clear Guide from MV Diabetes
+    Category: Diabetes Care
+    Slug: understanding-normal-blood-sugar-levels-a-clear-guide-from-mv-diabetes
+    Live URL: https://mvdiabetes.vercel.app/blog/understanding-normal-blood-sugar-levels-a-clear-guide-from-mv-diabetes
+    Local URL: http://localhost:3000/blog/understanding-normal-blood-sugar-levels-a-clear-guide-from-mv-diabetes
+
+47. Title: A Simple Guide to Diabetes: From Basics to Best Care
+    Category: Diabetes Care
+    Slug: a-simple-guide-to-diabetes-from-basics-to-best-care
+    Live URL: https://mvdiabetes.vercel.app/blog/a-simple-guide-to-diabetes-from-basics-to-best-care
+    Local URL: http://localhost:3000/blog/a-simple-guide-to-diabetes-from-basics-to-best-care
+
+48. Title: Pregnancy and Diabetes: What You Need to Know
+    Category: Gestational Diabetes
+    Slug: pregnancy-and-diabetes-what-you-need-to-know
+    Live URL: https://mvdiabetes.vercel.app/blog/pregnancy-and-diabetes-what-you-need-to-know
+    Local URL: http://localhost:3000/blog/pregnancy-and-diabetes-what-you-need-to-know

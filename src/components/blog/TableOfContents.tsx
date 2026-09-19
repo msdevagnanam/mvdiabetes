@@ -14,15 +14,24 @@ export default function TableOfContents() {
 
   useEffect(() => {
     // Find all headings within the article content
-    const articleContent = document.querySelector('.prose');
+    const articleContent = 
+      document.querySelector('.blog-article-content') || 
+      document.querySelector('.prose') || 
+      document.querySelector('article');
     if (!articleContent) return;
 
-    const elements = Array.from(articleContent.querySelectorAll('h2, h3'));
+    const elements = Array.from(articleContent.querySelectorAll('h2, h3')) as HTMLElement[];
     
     // Add IDs to headings if they don't have them
     const items: TOCItem[] = elements.map((element, index) => {
       if (!element.id) {
-        element.id = `heading-${index}`;
+        const text = element.textContent || '';
+        const slugId = text
+          .toLowerCase()
+          .trim()
+          .replace(/[^\w\s-]/g, '')
+          .replace(/\s+/g, '-');
+        element.id = slugId || `heading-${index}`;
       }
       return {
         id: element.id,
@@ -31,8 +40,11 @@ export default function TableOfContents() {
       };
     });
 
-    // eslint-disable-next-line
     setHeadings(items);
+
+    if (items.length > 0) {
+      setActiveId(items[0].id);
+    }
 
     // Setup intersection observer to highlight active section
     const observer = new IntersectionObserver(
@@ -43,7 +55,7 @@ export default function TableOfContents() {
           }
         });
       },
-      { rootMargin: '0px 0px -80% 0px' }
+      { rootMargin: '-100px 0px -60% 0px' }
     );
 
     elements.forEach((elem) => observer.observe(elem));

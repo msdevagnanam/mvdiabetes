@@ -1,0 +1,77 @@
+# TASK: Update Content for 48 Specific Blogs from mvdiabetes.com
+
+You are tasked with updating the blog content for only the 48 existing blog articles in this Next.js project. The original, comprehensive content needs to be fetched from the live WordPress website (https://mvdiabetes.com/).
+
+---
+
+### 1. Target Files & Reference
+- File to update: src/data/blogData.ts (contains allBlogPosts, blogPosts, and blogPostsContinued defining 48 blogs: b01 through b48)
+- Reference list: blogs_list.txt in the root directory (contains all 48 blog titles, categories, and slugs)
+- Local preview: http://localhost:3000/blog and http://localhost:3000/blog/[slug]
+
+---
+
+### 2. Primary Data Source (WordPress REST API)
+The live site mvdiabetes.com exposes a public WordPress REST API which gives clean post data without having to parse raw web pages:
+
+GET https://mvdiabetes.com/wp-json/wp/v2/posts?slug=<blog-slug>
+
+Example:
+https://mvdiabetes.com/wp-json/wp/v2/posts?slug=continuous-glucose-monitoring-is-cgm-the-future-of-diabetes-management
+
+Fields available in response:
+- title.rendered: Full article title
+- content.rendered: Full HTML article content
+- excerpt.rendered: Article excerpt / summary
+- date: Publication date (YYYY-MM-DD)
+- slug: WordPress slug matching our project
+
+Fallback: If the REST API endpoint is not available for a particular slug, fetch the web page directly from https://mvdiabetes.com/<slug>/.
+
+---
+
+### 3. Data Structure to Maintain in src/data/blogData.ts
+Each blog post object implements the BlogPost interface:
+
+export interface BlogPost {
+  id: string;             // e.g., 'b01', 'b02', ..., 'b48' (DO NOT change existing IDs)
+  slug: string;           // URL slug
+  title: string;          // Full article title
+  excerpt: string;        // 1-2 sentence compelling summary
+  category: string;       // Existing category (Diabetes Care, Nutrition & Diet, etc.)
+  date: string;           // ISO date string (YYYY-MM-DD)
+  image: string;          // Image path
+  imageStatus: 'available' | 'missing' | 'placeholder';
+  author: string;         // e.g., 'MV Diabetes Medical Team' or author name
+  readTime: string;       // e.g., '5 min read'
+  tags: string[];         // Relevant topic tags
+  seoTitle: string;       // SEO Title
+  seoDescription: string; // Meta description
+  originalUrl: string;    // 'https://mvdiabetes.com/<slug>/'
+  content: string;        // Full article body in clean Markdown format
+}
+
+---
+
+### 4. Content Conversion & Cleaning Rules
+When converting content.rendered (HTML) into content (Markdown):
+1. Clean Markdown: Convert HTML tags (<h2>, <h3>, <p>, <ul>, <ol>, <li>, <strong>, <em>, <blockquote>) into clean GitHub Flavored Markdown.
+2. Strip WordPress & Elementor Bloat:
+   - Remove Elementor wrapper tags, div[data-elementor-*], classes, and inline styles.
+   - Remove shortcodes (e.g. [elementor-template ...], [contact-form-7 ...]).
+   - Remove embedded appointment booking buttons, WhatsApp CTA banners, headers, and footers that are part of WordPress theme templates.
+   - Strip out script tags, style tags, and tracking pixels.
+3. Preserve Medical & Practical Content:
+   - Keep all medical explanations, diet charts/tables, symptom lists, dos and don'ts, guidelines, and FAQs.
+   - Maintain logical heading hierarchy (## for main sections, ### for sub-sections).
+   - Ensure proper escaping for backticks, quotation marks, and template literals (${...}) to prevent TypeScript syntax errors.
+
+---
+
+### 5. Scope & Constraints
+- ONLY update the 48 blogs listed in blogs_list.txt (IDs b01 to b48).
+- Do not add new blogs and do not delete existing blogs.
+- Preserve Routing: Do not change existing slugs unless providing an alias in getBlogBySlug() and generateStaticParams() to prevent breaking links.
+- Verification: After updating src/data/blogData.ts:
+  1. Run npx tsc --noEmit to ensure there are no TypeScript syntax or typing errors.
+  2. Verify that npm run build or http://localhost:3000/blog renders without runtime crashes.

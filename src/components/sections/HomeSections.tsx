@@ -159,7 +159,7 @@ function BlogPreview() {
                             <Link href={`/blog/${post.slug}`} className="block">
                                 <div className="aspect-[16/10] rounded-xl bg-gradient-to-br from-surface-muted to-border mb-4 overflow-hidden relative">
                                     <Image
-                                        src={`/images/blogs/blog-img${i + 1}.png`}
+                                        src={post.image && post.imageStatus !== 'missing' ? post.image : `/images/blogs/blog-img${(i % 3) + 1}.png`}
                                         alt={post.title}
                                         fill
                                         sizes="(max-width: 768px) 100vw, 33vw"

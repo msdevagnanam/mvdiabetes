@@ -1,7 +1,7 @@
 'use client';
 
 import { useState, useMemo } from 'react';
-import { BlogPost, allBlogPosts, getAllCategories } from '@/data/blogData';
+import { BlogPost, allBlogPosts, getAllCategories, hasBlogImage } from '@/data/blogData';
 import BlogCard from './BlogCard';
 
 export default function BlogListing() {
@@ -12,8 +12,8 @@ export default function BlogListing() {
   const categories = ['All', ...getAllCategories()];
   const postsPerPage = 9;
 
-  // Find the featured post (first post, or most recent)
-  const featuredPost = allBlogPosts[0];
+  // Find the featured post (prefer post with image)
+  const featuredPost = allBlogPosts.find(p => hasBlogImage(p)) || allBlogPosts[0];
   
   // Filter remaining posts
   const filteredPosts = useMemo(() => {
@@ -33,7 +33,14 @@ export default function BlogListing() {
       );
     }
     
-    return posts;
+    // Cards with available images come first, preserving original order within each group
+    return [...posts].sort((a, b) => {
+      const aHas = hasBlogImage(a);
+      const bHas = hasBlogImage(b);
+      if (aHas && !bHas) return -1;
+      if (!aHas && bHas) return 1;
+      return 0;
+    });
   }, [searchQuery, selectedCategory, featuredPost.id]);
 
   const totalPages = Math.ceil(filteredPosts.length / postsPerPage);

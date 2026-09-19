@@ -8,10 +8,11 @@ interface BreadcrumbItem {
     href?: string;
 }
 
-export default function Breadcrumbs({ items }: { items: BreadcrumbItem[] }) {
+export default function Breadcrumbs({ items, className = '' }: { items: BreadcrumbItem[], className?: string }) {
+    const isCentered = className.includes('justify-center');
     return (
-        <nav aria-label="Breadcrumb" className="py-4">
-            <ol className="flex items-center gap-1.5 text-sm text-text-secondary flex-wrap">
+        <nav aria-label="Breadcrumb" className={`py-4 ${isCentered ? 'flex justify-center w-full' : ''}`}>
+            <ol className={`flex items-center gap-1.5 text-sm text-text-secondary flex-wrap ${className}`}>
                 <li>
                     <Link href="/" className="hover:text-primary transition-colors">Home</Link>
                 </li>

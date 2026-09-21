@@ -412,7 +412,7 @@ const koramangalaFacilities: InfrastructureFacility[] = [
     location: 'koramangala',
     category: 'patient-care',
     images: [
-      { src: `${IMG}/koramangala1.jpg`, alt: 'Reception at M.V. Hospital for Diabetes, Koramangala', width: 1200, height: 800 },
+      { src: `${IMG}/koramangala2.jpg`, alt: 'Reception at M.V. Hospital for Diabetes, Koramangala', width: 1200, height: 800 },
     ],
   },
   {
@@ -422,8 +422,7 @@ const koramangalaFacilities: InfrastructureFacility[] = [
     location: 'koramangala',
     category: 'patient-care',
     images: [
-      { src: `${IMG}/koramangala5-scaled.jpg`, alt: 'Waiting hall at M.V. Hospital for Diabetes, Koramangala', width: 2560, height: 1707 },
-      { src: `${IMG}/SAVE_20230602_140602-min-min-scaled.jpg`, alt: 'Patient waiting area at M.V. Hospital Koramangala', width: 2560, height: 1920 },
+      { src: `${IMG}/koramangala1.jpg`, alt: 'Reception at M.V. Hospital for Diabetes, Koramangala', width: 1200, height: 800 },
     ],
   },
   {
@@ -433,7 +432,8 @@ const koramangalaFacilities: InfrastructureFacility[] = [
     location: 'koramangala',
     category: 'diagnostics',
     images: [
-      { src: `${IMG}/koramangala8-scaled.jpg`, alt: 'Department of Biochemistry at M.V. Hospital, Koramangala', width: 2560, height: 1707 },
+      { src: `${IMG}/koramangala5-scaled.jpg`, alt: 'Waiting hall at M.V. Hospital for Diabetes, Koramangala', width: 2560, height: 1707 },
+      { src: `${IMG}/SAVE_20230602_140602-min-min-scaled.jpg`, alt: 'Patient waiting area at M.V. Hospital Koramangala', width: 2560, height: 1920 },
     ],
   },
   {
@@ -443,7 +443,7 @@ const koramangalaFacilities: InfrastructureFacility[] = [
     location: 'koramangala',
     category: 'clinical-services',
     images: [
-      { src: `${IMG}/koramangala7-scaled.jpg`, alt: 'Foot care department at M.V. Hospital, Koramangala', width: 2560, height: 1707 },
+      { src: `${IMG}/koramangala8-scaled.jpg`, alt: 'Department of Biochemistry at M.V. Hospital, Koramangala', width: 2560, height: 1707 },
     ],
   },
   {
@@ -453,7 +453,7 @@ const koramangalaFacilities: InfrastructureFacility[] = [
     location: 'koramangala',
     category: 'clinical-services',
     images: [
-      { src: `${IMG}/koramangala6.jpg`, alt: 'Eye clinic at M.V. Hospital for Diabetes, Koramangala', width: 1200, height: 800 },
+      { src: `${IMG}/koramangala7-scaled.jpg`, alt: 'Foot care department at M.V. Hospital, Koramangala', width: 2560, height: 1707 },
     ],
   },
   {
@@ -463,8 +463,7 @@ const koramangalaFacilities: InfrastructureFacility[] = [
     location: 'koramangala',
     category: 'clinical-services',
     images: [
-      { src: `${IMG}/koramangala3-scaled.jpg`, alt: 'Dental clinic at M.V. Hospital for Diabetes, Koramangala', width: 2560, height: 1707 },
-      { src: `${IMG}/koramangala4-scaled.jpg`, alt: 'Dental treatment room at M.V. Hospital Koramangala', width: 2560, height: 1707 },
+      { src: `${IMG}/koramangala6.jpg`, alt: 'Eye clinic at M.V. Hospital for Diabetes, Koramangala', width: 1200, height: 800 },
     ],
   },
   {
@@ -474,7 +473,8 @@ const koramangalaFacilities: InfrastructureFacility[] = [
     location: 'koramangala',
     category: 'patient-care',
     images: [
-      { src: `${IMG}/SAVE_20230602_140617-min-min-scaled.jpg`, alt: 'Diabetes consultation room at M.V. Hospital, Koramangala', width: 2560, height: 1920 },
+      { src: `${IMG}/koramangala3-scaled.jpg`, alt: 'Dental clinic at M.V. Hospital for Diabetes, Koramangala', width: 2560, height: 1707 },
+      { src: `${IMG}/koramangala4-scaled.jpg`, alt: 'Dental treatment room at M.V. Hospital Koramangala', width: 2560, height: 1707 },
     ],
   },
   {
@@ -484,7 +484,7 @@ const koramangalaFacilities: InfrastructureFacility[] = [
     location: 'koramangala',
     category: 'clinical-services',
     images: [
-      { src: `${IMG}/koramangala1.jpg`, alt: 'M.V. Hospital for Diabetes, Koramangala', width: 1200, height: 800 },
+      { src: `${IMG}/SAVE_20230602_140617-min-min-scaled.jpg`, alt: 'Diabetes consultation room at M.V. Hospital, Koramangala', width: 2560, height: 1920 },
     ],
   },
 ];

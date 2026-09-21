@@ -40,6 +40,8 @@ const nextConfig: NextConfig = {
       { source: '/jobs/tn-regd-staff-nurses', destination: '/careers/tn-regd-staff-nurses', permanent: true },
       { source: '/academic-courses', destination: '/academics', permanent: true },
       { source: '/academic-courses/', destination: '/academics', permanent: true },
+      { source: '/facilities', destination: '/about/facilities', permanent: true },
+      { source: '/facilities/', destination: '/about/facilities', permanent: true },
     ];
   },
 };

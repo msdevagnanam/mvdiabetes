@@ -8,9 +8,9 @@ import Link from 'next/link';
 // ─── Bin color legend tokens ───
 const binColors = {
     yellow: { bg: 'bg-[#EEC642]', text: 'text-[#8B6914]', light: 'bg-[#EEC642]/10', border: 'border-[#EEC642]/30', label: 'Yellow Bin' },
-    red:    { bg: 'bg-red-500',    text: 'text-red-600',    light: 'bg-red-500/10',    border: 'border-red-500/30',    label: 'Red Bin' },
-    blue:   { bg: 'bg-blue-500',   text: 'text-blue-600',   light: 'bg-blue-500/10',   border: 'border-blue-500/30',   label: 'Blue Bin' },
-    white:  { bg: 'bg-gray-400',   text: 'text-gray-600',   light: 'bg-gray-400/10',   border: 'border-gray-400/30',   label: 'White Bin' },
+    red: { bg: 'bg-red-500', text: 'text-red-600', light: 'bg-red-500/10', border: 'border-red-500/30', label: 'Red Bin' },
+    blue: { bg: 'bg-blue-500', text: 'text-blue-600', light: 'bg-blue-500/10', border: 'border-blue-500/30', label: 'Blue Bin' },
+    white: { bg: 'bg-gray-400', text: 'text-gray-600', light: 'bg-gray-400/10', border: 'border-gray-400/30', label: 'White Bin' },
 };
 
 // ─── Summary Card ───
@@ -201,11 +201,10 @@ export default function BMWDashboard() {
                             role="tab"
                             aria-selected={year === selectedYear}
                             onClick={() => { setSelectedYear(year); setSelectedLocation('All'); }}
-                            className={`px-6 py-2.5 rounded-lg text-sm font-bold transition-all ${
-                                year === selectedYear
+                            className={`px-6 py-2.5 rounded-lg text-sm font-bold transition-all ${year === selectedYear
                                     ? 'bg-primary text-white shadow-md shadow-primary/20'
                                     : 'text-text-secondary hover:text-text-primary'
-                            }`}
+                                }`}
                         >
                             {year}
                         </button>
@@ -229,11 +228,10 @@ export default function BMWDashboard() {
                         role="tab"
                         aria-selected={loc === selectedLocation}
                         onClick={() => setSelectedLocation(loc)}
-                        className={`px-5 py-2.5 rounded-xl text-sm font-bold whitespace-nowrap transition-all border ${
-                            loc === selectedLocation
+                        className={`px-5 py-2.5 rounded-xl text-sm font-bold whitespace-nowrap transition-all border ${loc === selectedLocation
                                 ? 'bg-secondary text-white border-secondary shadow-md shadow-secondary/20'
                                 : 'bg-white text-text-secondary border-border hover:border-secondary/50 hover:text-secondary'
-                        }`}
+                            }`}
                     >
                         {loc === 'All' ? 'All Locations' : loc}
                     </button>

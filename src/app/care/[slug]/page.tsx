@@ -6,8 +6,13 @@ import Breadcrumbs from '@/components/ui/Breadcrumbs';
 import { specialties, getSpecialtyBySlug } from '@/data/specialties';
 import { doctors } from '@/data/doctors';
 
+/** Specialties that have their own hand-built route under /care and must not be prerendered here. */
+const DEDICATED_ROUTES = new Set(['podiatry', 'yoga']);
+
 export async function generateStaticParams() {
-    return specialties.map(s => ({ slug: s.slug }));
+    return specialties
+        .filter(s => !DEDICATED_ROUTES.has(s.slug))
+        .map(s => ({ slug: s.slug }));
 }
 
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {

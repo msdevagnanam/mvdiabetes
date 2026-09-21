@@ -48,16 +48,18 @@ export const specialties: Specialty[] = [
         id: 'podiatry',
         slug: 'podiatry',
         name: 'Podiatry',
-        shortDescription: 'Specialized foot, ankle, and lower extremity care including corrective procedures, ozone therapy, and magneto therapy.',
+        // Podiatry is rendered by the dedicated route at src/app/care/podiatry/page.tsx,
+        // built from the mvdiabetes.com/podiatry source content in src/data/podiatry.ts.
+        // Only the fields the /care listing and global search read are kept here, and
+        // they are worded from that same source — the previous generic conditions and
+        // FAQs were not supported by it and have been removed.
+        shortDescription: 'Specialized foot, ankle, and lower extremity care — including ozone therapy, magneto therapy, foot education and our in-house Foot Clinic & Podiatry unit.',
         icon: 'HeartPulse',
-        description: 'Our podiatry department provides specialised foot, ankle, and lower extremity care for diabetes patients. Services include biomechanical assessment, corrective procedures, therapeutic interventions, and preventive foot care.',
-        conditions: ['Foot Deformities', 'Calluses & Corns', 'Ingrown Toenails', 'Plantar Fasciitis', 'Flat Feet', 'Diabetic Foot Complications'],
-        approach: 'We combine biomechanical assessment with therapeutic interventions including ozone therapy, magneto therapy, and custom orthotic solutions for comprehensive foot health.',
+        description: 'Podiatry is a medical specialty focused on foot, ankle, and lower extremity conditions. Podiatrists diagnose, treat, and prevent foot-related issues including injuries, deformities, skin and nail conditions, sports-related injuries, and diabetic foot care.',
+        conditions: [],
+        approach: 'Podiatrists assess the complexities of the foot and its associated structures to plan corrective procedures for limb salvage.',
         relatedSpecialties: ['diabetic-foot-care', 'diabetes-care'],
-        faqs: [
-            { question: 'What does a podiatrist do?', answer: 'A podiatrist specialises in the diagnosis, treatment, and prevention of foot and lower limb conditions — particularly important for diabetes patients.' },
-            { question: 'How often should diabetics see a podiatrist?', answer: 'Diabetes patients should have a podiatric assessment at least once a year, or more frequently if they have existing foot complications.' },
-        ],
+        faqs: [],
     },
     {
         id: 'kidney-care',
@@ -122,16 +124,18 @@ export const specialties: Specialty[] = [
         id: 'yoga',
         slug: 'yoga',
         name: 'Yoga for Diabetes',
-        shortDescription: 'Guided yoga classes designed to improve insulin sensitivity, reduce stress, and support diabetes management.',
+        // Yoga is rendered by the dedicated route at src/app/care/yoga/page.tsx,
+        // built from the mvdiabetes.com/yoga source content in src/data/yoga.ts.
+        // Only the fields the /care listing and global search read are kept here,
+        // worded from that source. The previous invented condition taxonomy and
+        // the "at least 3 times a week" recommendation were unsupported and are gone.
+        shortDescription: 'Dedicated yoga classes at MV Diabetes — gentle asanas, breathing exercises and guided meditation, including online yoga classes.',
         icon: 'Leaf',
-        description: 'Our yoga program is specifically designed for diabetes patients. Regular yoga practice has been shown to improve insulin sensitivity, reduce stress hormones, lower blood pressure, and support overall diabetes management.',
-        conditions: ['Diabetes Stress Management', 'Insulin Sensitivity', 'Blood Pressure Management', 'General Wellness'],
-        approach: 'Guided yoga sessions specifically designed for diabetes patients, focusing on asanas and breathing techniques that improve metabolic health and reduce stress.',
+        description: 'M V Hospital for Diabetes has seamlessly integrated yoga into its healthcare services, ensuring patients receive comprehensive care. The hospital offers dedicated yoga classes led by experienced instructors who understand the specific needs and limitations of individuals with diabetes.',
+        conditions: [],
+        approach: 'These classes focus on gentle asanas, breathing exercises, and guided meditation, creating a safe and supportive environment for patients to practice yoga.',
         relatedSpecialties: ['diabetes-care', 'nutrition', 'obesity-management'],
-        faqs: [
-            { question: 'Is yoga safe for diabetics?', answer: 'Yes, our yoga program is specifically designed for diabetes patients and supervised by trained instructors who understand diabetes management.' },
-            { question: 'How often should I attend yoga classes?', answer: 'We recommend attending yoga sessions at least 3 times a week for optimal benefits in diabetes management.' },
-        ],
+        faqs: [],
     },
     {
         id: 'eye-care',

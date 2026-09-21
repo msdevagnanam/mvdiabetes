@@ -42,6 +42,10 @@ const nextConfig: NextConfig = {
       { source: '/academic-courses/', destination: '/academics', permanent: true },
       { source: '/facilities', destination: '/about/facilities', permanent: true },
       { source: '/facilities/', destination: '/about/facilities', permanent: true },
+      { source: '/podiatry', destination: '/care/podiatry', permanent: true },
+      { source: '/podiatry/', destination: '/care/podiatry', permanent: true },
+      { source: '/yoga', destination: '/care/yoga', permanent: true },
+      { source: '/yoga/', destination: '/care/yoga', permanent: true },
     ];
   },
 };

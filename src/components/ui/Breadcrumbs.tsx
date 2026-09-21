@@ -8,21 +8,27 @@ interface BreadcrumbItem {
     href?: string;
 }
 
-export default function Breadcrumbs({ items, className = '' }: { items: BreadcrumbItem[], className?: string }) {
-    const isCentered = className.includes('justify-center');
+interface BreadcrumbsProps {
+    items: BreadcrumbItem[];
+    variant?: 'light' | 'dark';
+}
+
+export default function Breadcrumbs({ items, variant = 'light' }: BreadcrumbsProps) {
+    const isDark = variant === 'dark';
+
     return (
-        <nav aria-label="Breadcrumb" className={`py-4 ${isCentered ? 'flex justify-center w-full' : ''}`}>
-            <ol className={`flex items-center gap-1.5 text-sm text-text-secondary flex-wrap ${className}`}>
+        <nav aria-label="Breadcrumb" className="py-4">
+            <ol className={`flex items-center gap-1.5 text-sm flex-wrap ${isDark ? 'text-white/70' : 'text-text-secondary'}`}>
                 <li>
-                    <Link href="/" className="hover:text-primary transition-colors">Home</Link>
+                    <Link href="/" className={`transition-colors ${isDark ? 'hover:text-white' : 'hover:text-primary'}`}>Home</Link>
                 </li>
                 {items.map((item, i) => (
                     <li key={i} className="flex items-center gap-1.5">
-                        <ChevronRight size={14} className="text-text-secondary/40" />
+                        <ChevronRight size={14} className={isDark ? 'text-white/30' : 'text-text-secondary/40'} />
                         {item.href ? (
-                            <Link href={item.href} className="hover:text-primary transition-colors">{item.label}</Link>
+                            <Link href={item.href} className={`transition-colors ${isDark ? 'hover:text-white' : 'hover:text-primary'}`}>{item.label}</Link>
                         ) : (
-                            <span className="text-text-primary font-medium">{item.label}</span>
+                            <span className={`font-medium ${isDark ? 'text-white' : 'text-text-primary'}`}>{item.label}</span>
                         )}
                     </li>
                 ))}

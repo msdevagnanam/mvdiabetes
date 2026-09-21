@@ -37,6 +37,7 @@ const footerLinks = {
         { label: 'FAQ', href: '/faq' },
         { label: 'News & Events', href: '/news' },
         { label: 'Videos', href: '/videos' },
+        { label: 'BMW Data', href: '/bmw-data' },
     ],
 };
 

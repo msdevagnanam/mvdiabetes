@@ -1,40 +1,154 @@
-import type { Metadata } from 'next';
+import { Metadata } from 'next';
+import { Suspense } from 'react';
 import Link from 'next/link';
-import { Calendar, MapPin, ArrowRight } from 'lucide-react';
-import PageHero from '@/components/ui/PageHero';
-import { newsEvents } from '@/data/events';
+import { ArrowRight } from 'lucide-react';
+import NewsHero from '@/components/news/NewsHero';
+import NewsFilters from '@/components/news/NewsFilters';
+import NewsArchive from '@/components/news/NewsArchive';
+import { newsEvents } from '@/data/news-events';
 
 export const metadata: Metadata = {
-    title: 'News & Events — MV Diabetes',
-    description: 'Latest news, events, health camps, and conferences from MV Diabetes.',
+    title: 'News & Events | Latest Updates & Research — MV Diabetes',
+    description: 'Explore the latest developments, medical events, research milestones, community initiatives and institutional moments from MV Diabetes.',
     alternates: { canonical: '/news' },
 };
 
-export default function NewsPage() {
+export default async function NewsPage({
+    searchParams,
+}: {
+    searchParams: Promise<{ [key: string]: string | string[] | undefined }>;
+}) {
+    const params = await searchParams;
+    const yearParam = params.year as string | undefined;
+    const categoryParam = params.category as string | undefined;
+    const searchParam = params.q as string | undefined;
+    
+    // Pagination (simplified for server component)
+    const page = params.page ? parseInt(params.page as string) : 1;
+    const itemsPerPage = 12;
+
+    // Filter items based on query params
+    let filteredItems = [...newsEvents];
+
+    if (yearParam && yearParam !== 'all') {
+        filteredItems = filteredItems.filter((e) => e.year === parseInt(yearParam));
+    }
+
+    if (categoryParam && categoryParam !== 'all') {
+        filteredItems = filteredItems.filter((e) => e.category === categoryParam);
+    }
+
+    if (searchParam) {
+        const query = searchParam.toLowerCase();
+        filteredItems = filteredItems.filter(
+            (e) =>
+                e.title.toLowerCase().includes(query) ||
+                e.excerpt.toLowerCase().includes(query) ||
+                (e.category && e.category.toLowerCase().includes(query))
+        );
+    }
+
+    // Calculate pagination
+    const totalItems = filteredItems.length;
+    const totalPages = Math.ceil(totalItems / itemsPerPage);
+    const startIndex = (page - 1) * itemsPerPage;
+    const paginatedItems = filteredItems.slice(startIndex, startIndex + itemsPerPage);
+
+    // Extract available filters from ALL items (not filtered)
+    const availableYears = Array.from(new Set(newsEvents.map((e) => e.year))).sort(
+        (a, b) => b - a
+    );
+    const availableCategories = Array.from(
+        new Set(newsEvents.map((e) => e.category).filter(Boolean))
+    ).sort();
+
     return (
-        <>
-            <PageHero title="News & Events" description="Stay updated with the latest from MV Diabetes — conferences, health camps, research, and community initiatives." breadcrumbs={[{ label: 'News & Events' }]} />
-            <section className="section-padding bg-white">
-                <div className="container-site font-sans">
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                        {newsEvents.map(event => (
-                            <Link href={`/news/${event.slug}`} key={event.id}
-                                className="group bg-white rounded-2xl border border-border overflow-hidden hover:shadow-lg hover:border-primary/20 transition-all">
-                                <div className="aspect-[16/9] bg-gradient-to-br from-primary/10 to-accent/10" />
-                                <div className="p-5">
-                                    <div className="flex items-center gap-3 mb-3">
-                                        <span className="text-xs text-primary font-medium px-2 py-0.5 bg-primary/5 rounded-full border border-primary/10">{event.category}</span>
-                                        <span className="text-xs text-text-secondary flex items-center gap-1"><Calendar size={10} />{new Date(event.date).toLocaleDateString('en-IN', { month: 'short', day: 'numeric', year: 'numeric' })}</span>
-                                    </div>
-                                    <h3 className="font-bold text-text-primary leading-snug mb-2 line-clamp-2">{event.title}</h3>
-                                    <p className="text-sm text-text-secondary line-clamp-2 mb-4">{event.excerpt}</p>
-                                    <span className="inline-flex items-center gap-1.5 text-sm text-primary font-semibold group-hover:gap-2.5 transition-all">Read More <ArrowRight size={14} /></span>
-                                </div>
-                            </Link>
-                        ))}
+        <main className="bg-surface font-sans min-h-screen">
+            <NewsHero />
+
+            <section className="section-padding bg-surface -mt-8 relative z-20">
+                <div className="container-site">
+                    <Suspense fallback={<div className="h-20 bg-white rounded-2xl animate-pulse mb-10" />}>
+                        <NewsFilters
+                            years={availableYears}
+                            categories={availableCategories}
+                            currentYear={yearParam}
+                            currentCategory={categoryParam}
+                            searchQuery={searchParam}
+                        />
+                    </Suspense>
+
+                    <div className="mb-6 flex justify-between items-center text-sm font-medium text-text-secondary px-2">
+                        <span>
+                            Showing {totalItems === 0 ? 0 : startIndex + 1}–
+                            {Math.min(startIndex + itemsPerPage, totalItems)} of {totalItems} articles
+                        </span>
+                    </div>
+
+                    <NewsArchive items={paginatedItems} />
+
+                    {/* Pagination Controls */}
+                    {totalPages > 1 && (
+                        <div className="mt-16 flex justify-center gap-2">
+                            {Array.from({ length: totalPages }).map((_, i) => {
+                                const pageNum = i + 1;
+                                const isCurrent = pageNum === page;
+                                
+                                // Build query string for pagination preserving other filters
+                                const queryParams = new URLSearchParams();
+                                if (yearParam) queryParams.set('year', yearParam);
+                                if (categoryParam) queryParams.set('category', categoryParam);
+                                if (searchParam) queryParams.set('q', searchParam);
+                                if (pageNum > 1) queryParams.set('page', pageNum.toString());
+                                
+                                const href = `/news${queryParams.toString() ? `?${queryParams.toString()}` : ''}`;
+
+                                return (
+                                    <Link
+                                        key={pageNum}
+                                        href={href}
+                                        scroll={false}
+                                        className={`w-10 h-10 flex items-center justify-center rounded-xl text-sm font-bold transition-all ${
+                                            isCurrent
+                                                ? 'bg-primary text-white shadow-md shadow-primary/20'
+                                                : 'bg-white border border-border text-text-secondary hover:border-primary/50 hover:text-primary'
+                                        }`}
+                                    >
+                                        {pageNum}
+                                    </Link>
+                                );
+                            })}
+                        </div>
+                    )}
+                </div>
+            </section>
+
+            {/* Final CTA */}
+            <section className="section-padding bg-white border-t border-border">
+                <div className="container-site text-center">
+                    <h2 className="text-3xl md:text-4xl font-extrabold text-text-primary mb-6">
+                        Your Health Journey Starts Here
+                    </h2>
+                    <p className="text-lg text-text-secondary max-w-2xl mx-auto mb-10">
+                        Join thousands of patients who trust MV Diabetes for their comprehensive diabetes care and management.
+                    </p>
+                    <div className="flex flex-col sm:flex-row justify-center gap-4">
+                        <Link 
+                            href="/appointment" 
+                            className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl bg-secondary text-white font-bold hover:bg-secondary/90 transition-all shadow-lg shadow-secondary/20 hover:-translate-y-0.5"
+                        >
+                            Book Appointment
+                            <ArrowRight size={18} />
+                        </Link>
+                        <Link 
+                            href="/care/comprehensive" 
+                            className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl bg-white border-2 border-border text-text-primary font-bold hover:bg-surface-muted hover:border-text-secondary/30 transition-all"
+                        >
+                            Explore Diabetes Care
+                        </Link>
                     </div>
                 </div>
             </section>
-        </>
+        </main>
     );
 }

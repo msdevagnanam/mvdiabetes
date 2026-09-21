@@ -16,6 +16,7 @@ export const navigation: NavItem[] = [
             { label: 'Branches', href: '/about/branches' },
             { label: 'Facilities', href: '/about/facilities' },
             { label: 'Infrastructure', href: '/about/infrastructure' },
+            { label: 'BMW Data', href: '/bmw-data' },
             // { label: 'CSR Activities', href: '/csr' },
         ],
     },

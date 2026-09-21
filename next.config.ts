@@ -46,6 +46,10 @@ const nextConfig: NextConfig = {
       { source: '/podiatry/', destination: '/care/podiatry', permanent: true },
       { source: '/yoga', destination: '/care/yoga', permanent: true },
       { source: '/yoga/', destination: '/care/yoga', permanent: true },
+      { source: '/csr-activity', destination: '/csr', permanent: true },
+      { source: '/csr-activity/', destination: '/csr', permanent: true },
+      { source: '/research-publications', destination: '/research', permanent: true },
+      { source: '/research-publications/', destination: '/research', permanent: true },
     ];
   },
 };

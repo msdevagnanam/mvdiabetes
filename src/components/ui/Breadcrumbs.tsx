@@ -11,13 +11,14 @@ interface BreadcrumbItem {
 interface BreadcrumbsProps {
     items: BreadcrumbItem[];
     variant?: 'light' | 'dark';
+    className?: string;
 }
 
-export default function Breadcrumbs({ items, variant = 'light' }: BreadcrumbsProps) {
+export default function Breadcrumbs({ items, variant = 'light', className = '' }: BreadcrumbsProps) {
     const isDark = variant === 'dark';
 
     return (
-        <nav aria-label="Breadcrumb" className="py-4">
+        <nav aria-label="Breadcrumb" className={`py-4 ${className}`}>
             <ol className={`flex items-center gap-1.5 text-sm flex-wrap ${isDark ? 'text-white/70' : 'text-text-secondary'}`}>
                 <li>
                     <Link href="/" className={`transition-colors ${isDark ? 'hover:text-white' : 'hover:text-primary'}`}>Home</Link>

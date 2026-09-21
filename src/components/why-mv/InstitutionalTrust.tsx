@@ -1,7 +1,7 @@
 'use client';
 
 import { whyMVContent } from '@/data/why-mv-diabetes';
-import LegacyImagePlaceholder from '@/components/ui/LegacyImagePlaceholder';
+import Image from 'next/image';
 import { Award, Users, ShieldCheck, Activity } from 'lucide-react';
 
 export default function InstitutionalTrust() {
@@ -27,13 +27,22 @@ export default function InstitutionalTrust() {
                             {/* Decorative background framing */}
                             <div className="absolute -inset-4 bg-white rounded-[2rem] shadow-sm border border-border transform -rotate-2" />
                             
-                            <div className="relative z-10">
-                                <LegacyImagePlaceholder 
-                                    title="Prof. M. Viswanathan"
-                                    subtitle="Historical Portrait"
-                                    aspectRatio="portrait"
-                                />
-                            </div>
+                            <figure className="relative z-10">
+                                <div className="overflow-hidden rounded-2xl border border-border bg-white shadow-sm">
+                                    <Image
+                                        src="/images/why-mv/founder-prof-m-viswanathan.jpg"
+                                        alt="Portrait of Prof. M. Viswanathan, founder of MV Hospital for Diabetes"
+                                        width={459}
+                                        height={489}
+                                        sizes="(max-width: 1024px) 70vw, 420px"
+                                        className="h-auto w-full object-contain"
+                                    />
+                                </div>
+                                <figcaption className="mt-4 text-sm leading-relaxed text-text-secondary">
+                                    <span className="font-bold text-text-primary">Prof. M. Viswanathan</span>
+                                    <span className="mt-0.5 block">Founder, MV Hospital for Diabetes</span>
+                                </figcaption>
+                            </figure>
                             
                             {/* Floating decorative element */}
                             <div className="absolute -bottom-8 -right-8 w-40 h-40 bg-[radial-gradient(circle_at_center,var(--mv-cyan)_1px,transparent_1px)] [background-size:16px_16px] opacity-20 pointer-events-none rounded-full" style={{ '--mv-cyan': '#03B9D5' } as React.CSSProperties} />

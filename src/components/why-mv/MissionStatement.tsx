@@ -16,13 +16,13 @@ export default function MissionStatement() {
                     <h2 className="text-3xl md:text-4xl lg:text-5xl font-serif font-bold text-primary-dark leading-tight relative z-10">
                         {/* Decorative quote marks */}
                         <span className="absolute -top-10 -left-6 md:-left-12 text-6xl md:text-8xl text-surface-muted -z-10 font-serif leading-none select-none">
-                            "
+                            &ldquo;
                         </span>
                         
                         {mission.statement.replace(/[“”"]/g, '')}
                         
                         <span className="absolute -bottom-12 -right-4 md:-right-8 text-6xl md:text-8xl text-surface-muted -z-10 font-serif leading-none select-none">
-                            "
+                            &rdquo;
                         </span>
                     </h2>
                     

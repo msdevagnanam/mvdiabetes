@@ -19,8 +19,8 @@ export default function CoreValues() {
     const gridValues = values.items.slice(1);
 
     return (
-        <section id="values" className="section-padding bg-white relative">
-            {/* Background elements */}
+        <section id="values" className="section-padding bg-white relative overflow-hidden">
+            {/* Background elements — clipped by the section so they cannot widen the page */}
             <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-primary/5 rounded-full blur-[100px] translate-x-1/2 -translate-y-1/2 pointer-events-none" />
 
             <div className="container-site relative z-10">

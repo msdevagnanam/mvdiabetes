@@ -1,7 +1,7 @@
 'use client';
 
 import { whyMVContent } from '@/data/why-mv-diabetes';
-import LegacyImagePlaceholder from '@/components/ui/LegacyImagePlaceholder';
+import Image from 'next/image';
 import { ArrowRight, CheckCircle2 } from 'lucide-react';
 import Link from 'next/link';
 
@@ -54,18 +54,21 @@ export default function WorkplaceCulture() {
                             </div>
                         </div>
 
-                        {/* Right: Visual */}
-                        <div className="relative h-full min-h-[500px]">
+                        {/* Right: Visual — kept at the photograph's own aspect so the
+                            whole team stays in frame rather than being cropped to fill */}
+                        <div className="relative">
                             {/* Decorative background framing */}
                             <div className="absolute inset-0 bg-primary/5 rounded-[2rem] transform rotate-3" />
                             <div className="absolute inset-0 bg-secondary/5 rounded-[2rem] transform -rotate-3" />
                             
-                            <div className="relative z-10 h-full w-full">
-                                <LegacyImagePlaceholder 
-                                    title="Our People"
-                                    subtitle="MV Diabetes Staff"
-                                    aspectRatio="auto"
-                                    className="rounded-[2rem] !h-full"
+                            <div className="relative z-10 overflow-hidden rounded-[2rem] border border-border shadow-lg shadow-black/5">
+                                <Image
+                                    src="/images/why-mv/mv-team.jpg"
+                                    alt="Doctors, nurses and coordinators from MV Hospital for Diabetes at a community health camp"
+                                    width={1080}
+                                    height={810}
+                                    sizes="(max-width: 1024px) 92vw, 560px"
+                                    className="aspect-[4/3] w-full object-cover"
                                 />
                             </div>
                         </div>

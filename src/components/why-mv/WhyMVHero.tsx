@@ -1,6 +1,6 @@
 'use client';
 
-import LegacyImagePlaceholder from '@/components/ui/LegacyImagePlaceholder';
+import Image from 'next/image';
 import { whyMVContent } from '@/data/why-mv-diabetes';
 import { ArrowDown } from 'lucide-react';
 
@@ -8,7 +8,7 @@ export default function WhyMVHero() {
     const { hero } = whyMVContent;
 
     return (
-        <section className="relative overflow-hidden bg-surface pt-32 pb-24 md:pt-40 md:pb-32">
+        <section className="relative overflow-hidden bg-surface pt-12 pb-16 md:pt-16 md:pb-24">
             {/* Background elements */}
             <div className="absolute inset-0 font-sans pointer-events-none">
                 <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-primary/5 rounded-full blur-[120px] translate-x-1/3 -translate-y-1/4" />
@@ -65,13 +65,16 @@ export default function WhyMVHero() {
                         {/* Decorative background framing */}
                         <div className="absolute inset-0 bg-gradient-to-tr from-primary/10 to-secondary/10 rounded-[40px] transform rotate-3 scale-105 pointer-events-none" />
                         
-                        {/* Placeholder for Institutional Image */}
-                        <div className="relative z-10">
-                            <LegacyImagePlaceholder 
-                                title="MV Diabetes"
-                                subtitle="Institutional Excellence"
-                                aspectRatio="auto"
-                                className="aspect-[4/5] rounded-[32px]"
+                        {/* MV Centre for Diabetic Footcare, Podiatry, Research & Management */}
+                        <div className="relative z-10 overflow-hidden rounded-[32px] border border-border shadow-lg shadow-black/5">
+                            <Image
+                                src="/images/why-mv/mv-centre.jpg"
+                                alt="Reception at the MV Centre for Diabetic Footcare, Podiatry, Research and Management"
+                                width={1600}
+                                height={1067}
+                                priority
+                                sizes="(max-width: 1024px) 92vw, 560px"
+                                className="aspect-[4/3] w-full object-cover"
                             />
                         </div>
                         

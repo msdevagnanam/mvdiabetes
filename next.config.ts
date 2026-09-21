@@ -50,6 +50,9 @@ const nextConfig: NextConfig = {
       { source: '/csr-activity/', destination: '/csr', permanent: true },
       { source: '/research-publications', destination: '/research', permanent: true },
       { source: '/research-publications/', destination: '/research', permanent: true },
+      // Superseded in-site legal routes
+      { source: '/privacy', destination: '/privacy-policy', permanent: true },
+      { source: '/terms', destination: '/terms-and-condition', permanent: true },
     ];
   },
 };

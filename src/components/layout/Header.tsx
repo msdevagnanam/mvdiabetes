@@ -228,12 +228,6 @@ export default function Header() {
 
                         {/* Actions */}
                         <div className="flex items-center gap-2">
-                            <button
-                                className="p-2 text-text-secondary hover:text-primary hover:bg-surface-muted rounded-lg transition-colors"
-                                aria-label="Search"
-                            >
-                                <Search size={20} />
-                            </button>
                             <Link
                                 href="/appointment"
                                 className="hidden md:inline-flex items-center px-5 py-2.5 bg-primary text-white text-sm font-semibold rounded-xl hover:bg-primary-dark transition-colors"

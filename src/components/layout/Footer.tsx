@@ -30,6 +30,7 @@ const footerLinks = {
         { label: 'Research', href: '/research' },
         { label: 'Blog', href: '/blog' },
         { label: 'Careers', href: '/careers' },
+        { label: 'FAQ', href: '/faq' },
     ],
     support: [
         { label: 'Contact Us', href: '/contact' },
@@ -168,8 +169,8 @@ export default function Footer() {
                             © {new Date().getFullYear()} {siteConfig.fullName}. All Rights Reserved.
                         </p>
                         <div className="flex items-center gap-4">
-                            <Link href="/privacy" className="text-xs text-white/40 hover:text-white/70 transition-colors">Privacy Policy</Link>
-                            <Link href="/terms" className="text-xs text-white/40 hover:text-white/70 transition-colors">Terms</Link>
+                            <Link href="/privacy-policy" className="text-xs text-white/40 hover:text-white/70 transition-colors">Privacy Policy</Link>
+                            <Link href="/terms-and-condition" className="text-xs text-white/40 hover:text-white/70 transition-colors">Terms</Link>
                             <Link href="/disclaimer" className="text-xs text-white/40 hover:text-white/70 transition-colors">Disclaimer</Link>
                         </div>
                     </div>

@@ -305,7 +305,7 @@ export default function AppointmentForm() {
                                     className="w-4 h-4 rounded border border-border text-primary focus:ring-primary focus:ring-2 mt-0.5 cursor-pointer shrink-0 transition-all" />
                                 <div>
                                     <label htmlFor="consent" className="text-xs font-medium text-text-primary leading-relaxed cursor-pointer select-none mb-0">
-                                        I consent to MV Diabetes contacting me via phone or email for this appointment. My information will be handled securely per the <Link href="/privacy" className="text-primary hover:underline font-bold">Privacy Policy</Link>.<span className="text-red-500">*</span>
+                                        I consent to MV Diabetes contacting me via phone or email for this appointment. My information will be handled securely per the <Link href="/privacy-policy" className="text-primary hover:underline font-bold">Privacy Policy</Link>.<span className="text-red-500">*</span>
                                     </label>
                                     {errors.consent && <p className="text-red-500 text-xs mt-1 flex items-center gap-1 font-semibold"><AlertCircle size={12} />{errors.consent}</p>}
                                 </div>

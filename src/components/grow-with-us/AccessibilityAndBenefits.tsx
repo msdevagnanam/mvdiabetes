@@ -1,10 +1,28 @@
 'use client';
 
+import { useState } from 'react';
 import { growWithUsContent } from '@/data/grow-with-us';
-import { MapPin, Building, Banknote, ShieldPlus, Coffee, Gift } from 'lucide-react';
+import { branches } from '@/data/branches';
+import { MapPin, Building, Banknote, ShieldPlus, Coffee, Gift, ExternalLink } from 'lucide-react';
+
+// Map pins come from the real branch records so this stays in sync with
+// /about/branches instead of drifting into hardcoded copy.
+const locations = branches.map((b) => ({
+    id: b.id,
+    label: b.shortName.replace(/ Branch$/, '').replace('(Main Hospital)', '(Main)'),
+    city: b.city,
+    address: b.address,
+    mapUrl: b.mapUrl,
+    isMain: Boolean(b.isMainBranch),
+    query: b.address,
+}));
+
+const cityCount = new Set(locations.map((l) => l.city)).size;
 
 export default function AccessibilityAndBenefits() {
     const { accessibility, benefits } = growWithUsContent;
+    const [activeId, setActiveId] = useState(locations[0].id);
+    const active = locations.find((l) => l.id === activeId) ?? locations[0];
 
     const getBenefitIcon = (id: string) => {
         switch (id) {
@@ -22,7 +40,7 @@ export default function AccessibilityAndBenefits() {
                 
                 {/* 1. Accessibility / Locations */}
                 <div className="bg-white rounded-[2rem] p-8 md:p-12 shadow-sm border border-border mb-16 md:mb-24">
-                    <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+                    <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-start">
                         <div>
                             <span className="text-secondary font-bold tracking-[0.2em] uppercase text-sm mb-4 block">
                                 Our Reach
@@ -56,30 +74,76 @@ export default function AccessibilityAndBenefits() {
                             </div>
                         </div>
 
-                        {/* Visual Map Concept */}
-                        <div className="relative h-full min-h-[300px] bg-surface rounded-[1.5rem] border border-border overflow-hidden flex items-center justify-center p-8">
-                            <div className="absolute inset-0 opacity-[0.03]" style={{ backgroundImage: 'radial-gradient(circle at 1px 1px, black 1px, transparent 0)', backgroundSize: '16px 16px' }} />
-                            
-                            <div className="relative w-full max-w-sm aspect-square bg-gradient-to-br from-primary-dark/5 to-secondary/5 rounded-full border border-primary/10 flex items-center justify-center">
-                                {/* Royapuram Main */}
-                                <div className="absolute top-[20%] right-[30%] group">
-                                    <div className="w-4 h-4 rounded-full bg-primary shadow-[0_0_15px_rgba(3,65,127,0.4)] animate-pulse" />
-                                    <div className="absolute top-6 -translate-x-1/2 left-1/2 bg-white px-3 py-1.5 rounded-lg shadow-md border border-border text-xs font-bold whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity">
-                                        Royapuram (Main)
-                                    </div>
+                        {/* Interactive branch map */}
+                        <div className="bg-surface rounded-[1.5rem] border border-border overflow-hidden flex flex-col">
+                            <div className="px-5 pt-5 pb-4 border-b border-border">
+                                <div className="flex items-baseline justify-between gap-3 mb-3">
+                                    <h3 className="text-sm font-bold text-text-primary">Where you could work</h3>
+                                    <span className="text-xs font-semibold text-text-secondary whitespace-nowrap">
+                                        {locations.length} centres · {cityCount} cities
+                                    </span>
                                 </div>
-                                {/* Adyar Branch */}
-                                <div className="absolute bottom-[30%] right-[40%] group">
-                                    <div className="w-3 h-3 rounded-full bg-secondary shadow-[0_0_10px_rgba(3,185,213,0.4)]" />
-                                    <div className="absolute top-5 -translate-x-1/2 left-1/2 bg-white px-3 py-1.5 rounded-lg shadow-md border border-border text-xs font-bold whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity">
-                                        Adyar
-                                    </div>
+
+                                <div className="flex flex-wrap gap-2">
+                                    {locations.map((loc) => {
+                                        const isActive = loc.id === active.id;
+                                        return (
+                                            <button
+                                                key={loc.id}
+                                                type="button"
+                                                onClick={() => setActiveId(loc.id)}
+                                                aria-pressed={isActive}
+                                                className={`px-3 py-1.5 rounded-full text-xs font-bold border transition-all ${
+                                                    isActive
+                                                        ? 'bg-primary text-white border-primary shadow-sm'
+                                                        : 'bg-white text-text-secondary border-border hover:border-primary/40 hover:text-primary'
+                                                }`}
+                                            >
+                                                {loc.label}
+                                            </button>
+                                        );
+                                    })}
                                 </div>
-                                {/* Bengaluru Branch */}
-                                <div className="absolute bottom-[20%] left-[20%] group">
-                                    <div className="w-3 h-3 rounded-full bg-secondary shadow-[0_0_10px_rgba(3,185,213,0.4)]" />
-                                    <div className="absolute top-5 -translate-x-1/2 left-1/2 bg-white px-3 py-1.5 rounded-lg shadow-md border border-border text-xs font-bold whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity">
-                                        Bengaluru (Koramangala)
+                            </div>
+
+                            <div className="relative w-full aspect-[4/3] min-h-[260px] bg-black/5">
+                                <iframe
+                                    key={active.id}
+                                    title={`Map of MV Diabetes ${active.label}, ${active.city}`}
+                                    src={`https://maps.google.com/maps?q=${encodeURIComponent(active.query)}&t=&z=15&ie=UTF8&iwloc=&output=embed`}
+                                    className="absolute inset-0 w-full h-full border-0"
+                                    loading="lazy"
+                                    allowFullScreen
+                                    referrerPolicy="no-referrer-when-downgrade"
+                                />
+                            </div>
+
+                            <div className="p-5 bg-white border-t border-border">
+                                <div className="flex items-start gap-3">
+                                    <div className="w-9 h-9 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
+                                        <MapPin className="w-4 h-4 text-primary" />
+                                    </div>
+                                    <div className="min-w-0">
+                                        <p className="font-bold text-text-primary text-sm leading-snug">
+                                            {active.label}
+                                            {active.isMain && (
+                                                <span className="ml-2 align-middle text-[10px] font-bold uppercase tracking-wider text-secondary bg-secondary/10 border border-secondary/20 px-1.5 py-0.5 rounded">
+                                                    Main hospital
+                                                </span>
+                                            )}
+                                        </p>
+                                        <p className="text-xs text-text-secondary leading-relaxed mt-1">
+                                            {active.address}
+                                        </p>
+                                        <a
+                                            href={active.mapUrl}
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            className="mt-2 inline-flex items-center gap-1 text-xs font-bold text-primary hover:gap-1.5 transition-all"
+                                        >
+                                            Get directions
+                                            <ExternalLink className="w-3 h-3" />
+                                        </a>
                                     </div>
                                 </div>
                             </div>

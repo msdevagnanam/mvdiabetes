@@ -188,7 +188,31 @@ export default async function EventDetailPage({ params }: { params: Promise<{ sl
                             })
                         )}
                     </div>
-                    
+
+                    {/* Event photo gallery */}
+                    {event.gallery && event.gallery.length > 0 && (
+                        <div className="mt-12 pt-8 border-t border-border">
+                            <h2 className="text-xl font-bold text-primary-dark mb-5">Event Gallery</h2>
+                            <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 sm:gap-4">
+                                {event.gallery.map((photo, i) => (
+                                    <div
+                                        key={photo.src}
+                                        className="relative aspect-[4/3] rounded-xl overflow-hidden bg-surface-muted border border-border"
+                                    >
+                                        <Image
+                                            src={photo.src}
+                                            alt={photo.alt}
+                                            fill
+                                            sizes="(max-width: 640px) 50vw, 33vw"
+                                            loading={i < 3 ? undefined : 'lazy'}
+                                            className="object-cover hover:scale-105 transition-transform duration-500"
+                                        />
+                                    </div>
+                                ))}
+                            </div>
+                        </div>
+                    )}
+
                     {event.sourceUrl && (
                         <div className="mt-12 pt-6 border-t border-border flex justify-end">
                             <a 

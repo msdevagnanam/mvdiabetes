@@ -17,7 +17,7 @@ export const products: Product[] = [
         code: 'DDF G029',
         category: 'men',
         description: 'Premium diabetic footwear for men combining style with therapeutic support. Designed for optimal comfort and foot health.',
-        image: '/images/products/ddf-g029.jpg',
+        image: '/images/products/ddf-g029.webp',
         shopUrl: 'https://stepwisehealth.in/product/designer-diabetic-footwear-ddf-g029/',
     },
     {
@@ -26,7 +26,7 @@ export const products: Product[] = [
         code: 'DDF G028',
         category: 'men',
         description: 'Carefully crafted men\'s diabetic footwear offering a balance of comfort, protection, and everyday style.',
-        image: '/images/products/ddf-g028.jpg',
+        image: '/images/products/ddf-g028.webp',
         shopUrl: 'https://stepwisehealth.in/product/designer-diabetic-footwear-ddf-g028/',
     },
     {
@@ -34,7 +34,7 @@ export const products: Product[] = [
         name: 'Special Diabetic Velcro Shoe',
         category: 'unisex',
         description: 'Easy-close Velcro diabetic shoe designed for ease of use, comfort, and therapeutic foot support.',
-        image: '/images/products/velcro-shoe.jpg',
+        image: '/images/products/velcro-shoe.webp',
         shopUrl: 'https://stepwisehealth.in/product/special-diabetic-velcro-shoe/',
     },
     {
@@ -42,7 +42,7 @@ export const products: Product[] = [
         name: 'Precision Design: Men\'s Specially Crafted Diabetic Cut Shoe',
         category: 'men',
         description: 'Specially crafted diabetic cut shoe for men, designed with precision for foot pressure relief and protection.',
-        image: '/images/products/diabetic-cut-shoe.jpg',
+        image: '/images/products/diabetic-cut-shoe.webp',
         shopUrl: 'https://stepwisehealth.in/product/special-diabetic-cut-shoe/',
     },
     {
@@ -51,7 +51,7 @@ export const products: Product[] = [
         code: 'DDF LR002',
         category: 'women',
         description: 'Elegant designer diabetic footwear for women that prioritises foot health without compromising on style.',
-        image: '/images/products/ddf-lr002.jpg',
+        image: '/images/products/ddf-lr002.webp',
         shopUrl: 'https://stepwisehealth.in/product/designer-diabetic-footwear-ddf-lr002/',
     },
     {
@@ -60,7 +60,7 @@ export const products: Product[] = [
         code: 'DDF LR003',
         category: 'women',
         description: 'Thoughtfully designed women\'s diabetic footwear offering excellent support for daily movement and foot health.',
-        image: '/images/products/ddf-lr003.jpg',
+        image: '/images/products/ddf-lr003.webp',
         shopUrl: 'https://stepwisehealth.in/product/designer-diabetic-footwear-ddf-lr003/',
     },
     {
@@ -69,7 +69,7 @@ export const products: Product[] = [
         code: 'DDF LF001',
         category: 'women',
         description: 'Premium designer diabetic footwear for women, crafted for therapeutic comfort with modern aesthetics.',
-        image: '/images/products/ddf-lf001.jpg',
+        image: '/images/products/ddf-lf001.webp',
         shopUrl: 'https://stepwisehealth.in/product/step-in-style-designer-diabetic-footwear-for-women-ddf-lf001/',
     },
     {
@@ -78,7 +78,7 @@ export const products: Product[] = [
         code: 'DDF LF002',
         category: 'women',
         description: 'Beautifully crafted women\'s therapeutic footwear delivering comfort, support, and a refined finish.',
-        image: '/images/products/ddf-lf002.jpg',
+        image: '/images/products/ddf-lf002.webp',
         shopUrl: 'https://stepwisehealth.in/product/designer-diabetic-footwear-ddf-lf002/',
     },
 ];

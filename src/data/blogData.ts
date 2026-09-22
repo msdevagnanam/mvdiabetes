@@ -6433,3 +6433,12 @@ export function calculateReadTime(content: string): string {
   return `${minutes} min read`;
 }
 
+
+// Most recently published articles, newest first.
+// `allBlogPosts` is ordered by image availability, so sort by date here.
+export function getRecentPosts(limit = 5, excludeSlug?: string): BlogPost[] {
+  return [...allBlogPosts]
+    .filter((b) => b.slug !== excludeSlug)
+    .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
+    .slice(0, limit);
+}

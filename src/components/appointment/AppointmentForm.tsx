@@ -5,7 +5,7 @@ import { useSearchParams, useRouter } from 'next/navigation';
 import Link from 'next/link';
 import Image from 'next/image';
 import {
-    Calendar, User, MapPin, Stethoscope, Check,
+    Calendar, User, MapPin, Stethoscope, Check, CheckCircle2,
     Loader2, AlertCircle, PhoneCall
 } from 'lucide-react';
 import { branches } from '@/data/branches';
@@ -18,6 +18,13 @@ const APPOINTMENT_TYPES = [
     { id: 'package', label: 'Health Package' },
     { id: 'footcare', label: 'Foot Care' },
     { id: 'other', label: 'Other' },
+];
+
+const APPOINTMENT_HIGHLIGHTS = [
+    'India\'s first exclusive diabetes hospital, caring for patients since 1954.',
+    'Specialist consultants across Chennai and Bengaluru branches.',
+    'On-site diagnostics, foot care and dietetics under one roof.',
+    'Our team confirms your slot by call or email before the visit.',
 ];
 
 interface FormState {
@@ -166,10 +173,32 @@ export default function AppointmentForm() {
                 </div>
 
                 <div className="grid lg:grid-cols-[1fr_1.5fr] gap-6 lg:gap-8 items-start max-w-6xl mx-auto">
-                    {/* Left Image Side */}
-                    <div className="hidden lg:block relative h-full min-h-[600px] w-full rounded-3xl overflow-hidden shadow-xl shadow-primary-dark/5">
-                        <Image src="/images/hero/mv-hero-img2.png" alt="Book Appointment at MV Diabetes" fill sizes="(max-width: 1024px) 0vw, 40vw" className="object-cover" />
-                        <div className="absolute inset-0 bg-primary-dark/20 mix-blend-overlay" />
+                    {/* Left Image Side — sticks alongside the long form */}
+                    <div className="hidden lg:block sticky top-24">
+                        {/* The photo is 1536x1024, so the frame keeps a 3:2 ratio
+                            and nothing gets cropped. */}
+                        <div className="relative w-full aspect-[3/2] rounded-3xl overflow-hidden border border-border bg-white shadow-xl shadow-primary-dark/5">
+                            <Image
+                                src="/images/hero/mv-hero-img2.png"
+                                alt="An MV Diabetes doctor examining a patient's foot during a consultation"
+                                fill
+                                priority
+                                sizes="(max-width: 1024px) 0px, 450px"
+                                className="object-cover"
+                            />
+                        </div>
+
+                        <div className="mt-5 bg-white rounded-2xl border border-border p-5 shadow-xl shadow-primary-dark/5">
+                            <h2 className="text-sm font-bold text-text-primary mb-3">Why book with MV Diabetes</h2>
+                            <ul className="flex flex-col gap-2.5">
+                                {APPOINTMENT_HIGHLIGHTS.map((point) => (
+                                    <li key={point} className="flex items-start gap-2.5 text-sm text-text-secondary leading-snug">
+                                        <CheckCircle2 size={16} className="text-primary shrink-0 mt-0.5" />
+                                        {point}
+                                    </li>
+                                ))}
+                            </ul>
+                        </div>
                     </div>
 
                     {/* Right Form Side */}

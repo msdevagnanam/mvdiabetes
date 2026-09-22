@@ -1,7 +1,7 @@
 import { Metadata } from 'next';
 import Image from 'next/image';
 import { notFound } from 'next/navigation';
-import { getBlogBySlug, allBlogPosts, hasBlogImage } from '@/data/blogData';
+import { getBlogBySlug, allBlogPosts, hasBlogImage, getRecentPosts } from '@/data/blogData';
 import Breadcrumbs from '@/components/ui/Breadcrumbs';
 import ShareButtons from '@/components/blog/ShareButtons';
 import TableOfContents from '@/components/blog/TableOfContents';
@@ -9,6 +9,7 @@ import ArticleRenderer from '@/components/blog/ArticleRenderer';
 import RelatedArticles from '@/components/blog/RelatedArticles';
 import BlogCTA from '@/components/blog/BlogCTA';
 import BlogPlaceholderImage from '@/components/blog/BlogPlaceholderImage';
+import RecentPosts from '@/components/blog/RecentPosts';
 
 interface BlogArticlePageProps {
   params: Promise<{
@@ -60,6 +61,9 @@ export default async function BlogArticlePage({ params }: BlogArticlePageProps) 
   }
 
   const isMissingImage = !hasBlogImage(post);
+
+  // Sidebar: latest articles, excluding the one being read
+  const recentPosts = getRecentPosts(5, post.slug);
   
   // Format date
   const formattedDate = new Date(post.date).toLocaleDateString('en-US', {
@@ -67,13 +71,12 @@ export default async function BlogArticlePage({ params }: BlogArticlePageProps) 
     day: 'numeric',
     year: 'numeric'
   });
-
   // Calculate read time (approx 200 words per min)
   const wordCount = post.content.split(/\s+/).length;
   const readTime = Math.max(1, Math.ceil(wordCount / 200));
 
   return (
-    <main className="bg-background min-h-screen pt-24 pb-0 font-sans">
+    <main className="bg-background min-h-screen pb-0 font-sans">
       <article>
         {/* Article Header */}
         <header className="container-site max-w-3xl mx-auto pt-6 pb-6 text-center flex flex-col items-center">
@@ -158,7 +161,7 @@ export default async function BlogArticlePage({ params }: BlogArticlePageProps) 
             </aside>
             
             {/* Main Content */}
-            <div className="lg:col-span-7">
+            <div className="lg:col-span-6">
               <ArticleRenderer content={post.content} />
               
               {/* Tags */}
@@ -182,8 +185,8 @@ export default async function BlogArticlePage({ params }: BlogArticlePageProps) 
             </div>
             
             {/* Right Sidebar */}
-            <aside className="hidden lg:block lg:col-span-2">
-              {/* Space for ads, author bio, or quick links if needed in the future */}
+            <aside className="hidden lg:block lg:col-span-3">
+              <RecentPosts posts={recentPosts} />
             </aside>
           </div>
         </div>

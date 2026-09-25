@@ -19,6 +19,16 @@ export interface PageSeo {
     ogType?: 'website' | 'article' | 'profile';
 }
 
+/**
+ * The address this build is served from, used to make canonical and share-image URLs absolute.
+ * NEXT_PUBLIC_SITE_URL wins if set; on Vercel it falls back to the project's production domain
+ * (mvdiabetes.vercel.app today, mvdiabetes.com once that domain is attached), so share images
+ * always point at files that actually exist on the deployment.
+ */
+export const siteUrl =
+    process.env.NEXT_PUBLIC_SITE_URL ??
+    (process.env.VERCEL_PROJECT_PRODUCTION_URL ? `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}` : siteConfig.url);
+
 export const DEFAULT_OG_IMAGE = {
     url: '/images/og/mv-diabetes.jpg',
     width: 1200,
@@ -27,9 +37,12 @@ export const DEFAULT_OG_IMAGE = {
 };
 
 export const pageSeo = {
+    // Matches the live home page's title, share text and share card exactly (minus the trailing
+    // "Read More + Book … Read More" button text WordPress scraped into its description).
     '/': {
-        title: 'MV Diabetes — India\'s Leading Diabetes Super Specialty Hospital',
-        description: siteConfig.description,
+        title: 'MV Home - MV Diabetes',
+        description: 'Why MV Diabetes? Simplify Your Diabetes Journey With personalized treatments and a holistic approach, we’re dedicated to empowering your health. Experience the difference with our innovative care and join the thousands who trust us with their wellness. Take action towards a better life, start your simplified diabetes journey with us today.',
+        image: { url: '/images/og/home-card.jpg', width: 674, height: 808, alt: '360° Diabetes Footcare at MV Diabetes' },
     },
     '/about-us': {
         title: 'About Us | Specialized Diabetic Care Center Chennai',

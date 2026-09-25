@@ -16,7 +16,7 @@ import {
   AppointmentCTASection,
 } from '@/components/sections/HomeSections';
 import { StatsCounter, PatientEducation, VideoTestimonials, Accreditations, AwardsAndAchievements, TPAPartnerships } from '@/components/sections/MissingSections';
-import { buildPageMetadata } from '@/data/seo';
+import { buildPageMetadata, siteUrl } from '@/data/seo';
 import { siteConfig } from '@/data/site';
 
 export const metadata = buildPageMetadata('/');
@@ -31,8 +31,8 @@ const homeJsonLd = {
       name: siteConfig.name,
       legalName: siteConfig.fullName,
       url: `${siteConfig.url}/`,
-      logo: `${siteConfig.url}/images/logo/mv-logo.png`,
-      image: `${siteConfig.url}/images/og/mv-diabetes.jpg`,
+      logo: `${siteUrl}/images/logo/mv-logo.png`,
+      image: `${siteUrl}/images/og/home-card.jpg`,
       description: siteConfig.description,
       telephone: siteConfig.phone,
       email: siteConfig.email,

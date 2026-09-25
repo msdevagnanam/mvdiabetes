@@ -4,7 +4,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { MapPin, Award, BookOpen, ArrowRight, Calendar } from 'lucide-react';
 import Breadcrumbs from '@/components/ui/Breadcrumbs';
-import { doctors, getDoctorBySlug } from '@/data/doctors';
+import { doctors, getDoctorBySlug, getDoctorInitials } from '@/data/doctors';
 
 export async function generateStaticParams() {
     return doctors.map(d => ({ slug: d.slug }));
@@ -41,10 +41,10 @@ export default async function DoctorProfilePage({ params }: { params: Promise<{ 
                         {/* Photo */}
                         <div className="w-48 h-48 md:w-56 md:h-56 rounded-2xl overflow-hidden shrink-0 bg-white/10 border-2 border-white/20">
                             {doc.image ? (
-                                <Image src={doc.image} alt={doc.name} width={224} height={224} className="w-full h-full object-cover object-top" />
+                                <Image src={doc.image} alt={doc.name} width={448} height={448} priority className="w-full h-full object-cover" />
                             ) : (
-                                <div className="w-full h-full flex items-center justify-center text-white/30 text-6xl font-bold">
-                                    {doc.name.charAt(0)}
+                                <div className="w-full h-full flex items-center justify-center text-white/40 text-6xl font-bold">
+                                    {getDoctorInitials(doc.name)}
                                 </div>
                             )}
                         </div>

@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 import Link from 'next/link';
 import Image from 'next/image';
 import { ArrowRight, MapPin, Calendar } from 'lucide-react';
-import { doctors } from '@/data/doctors';
+import { doctors, getDoctorInitials } from '@/data/doctors';
 
 export default function DoctorSection() {
     const featuredDocs = doctors.slice(0, 7);
@@ -61,7 +61,7 @@ export default function DoctorSection() {
                                 ) : (
                                     <div className="w-20 h-20 rounded-full bg-primary/10 flex items-center justify-center">
                                         <span className="text-2xl font-bold text-primary/40">
-                                            {doc.name.split(' ').map(n => n.replace('Dr.', '').trim()).filter(Boolean).map(n => n[0]).join('').slice(0, 2).toUpperCase()}
+                                            {getDoctorInitials(doc.name)}
                                         </span>
                                     </div>
                                 )}

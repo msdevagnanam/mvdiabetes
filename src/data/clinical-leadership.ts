@@ -17,7 +17,7 @@ export const clinicalDoctors: ClinicalDoctor[] = [
         designation: 'Consultant Physician & Diabetologist',
         qualifications: 'M.B.B.S., D-DIAB (AIMS)',
         experience: '19 years',
-        image: '/images/our-doctors/Dr. B S Sanjay.png',
+        image: '/images/our-doctors/dr-bs-sanjay.jpg',
         expertise: [
             'Internal Medicine and Diabetology',
             'Complex diabetes cases and complications',
@@ -33,7 +33,7 @@ export const clinicalDoctors: ClinicalDoctor[] = [
         designation: 'Senior Consultant Surgeon',
         qualifications: 'MBBS, MS, MCh (Plastic Surgery)',
         experience: '25+ years',
-        image: '/images/our-doctors/Dr. G. Senthil.png',
+        image: '/images/our-doctors/dr-g-senthil.jpg',
         expertise: [
             'Diabetic foot surgery',
             'Plastic & reconstructive surgery',
@@ -49,7 +49,7 @@ export const clinicalDoctors: ClinicalDoctor[] = [
         designation: 'Diabetologist',
         qualifications: 'MBBS, MD',
         experience: '3+ years',
-        image: '/images/our-doctors/Dr. Abishek S.R.png',
+        image: '/images/our-doctors/dr-abishek-sr.jpg',
         expertise: [
             'Newer forms of diabetes',
             'Diabetes prevention strategies',
@@ -65,7 +65,7 @@ export const clinicalDoctors: ClinicalDoctor[] = [
         designation: 'Consultant Diabetologist',
         qualifications: 'MBBS, Fellowship in Diabetology, MBA (Hospital Management)',
         experience: '9+ years',
-        image: '/images/our-doctors/Dr. Leela Baid.png',
+        image: '/images/our-doctors/dr-leela-baid.jpg',
         expertise: [
             'Type 1 and Type 2 diabetes',
             'Advanced diabetes technologies & insulin pumps',
@@ -81,7 +81,7 @@ export const clinicalDoctors: ClinicalDoctor[] = [
         designation: 'Senior Consultant Diabetologist',
         qualifications: 'MBBS, MDRC',
         experience: '25+ years',
-        image: '/images/our-doctors/Dr Uma Mahesh.png',
+        image: '/images/our-doctors/dr-uma-mahesh.jpg',
         expertise: [
             'Type 2 diabetes management',
             'Advanced diabetes therapeutics',
@@ -97,7 +97,7 @@ export const clinicalDoctors: ClinicalDoctor[] = [
         designation: 'Consultant Physician & Diabetologist',
         qualifications: 'MBBS, MD, PG Diploma in Diabetology (Royal College, UK)',
         experience: '12+ years',
-        image: '/images/our-doctors/Dr. Prashanth Arun.png',
+        image: '/images/our-doctors/dr-prashanth-arun.jpg',
         expertise: [
             'Complex diabetes management',
             'Internal Medicine and Diabetology',

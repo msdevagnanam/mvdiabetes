@@ -99,15 +99,16 @@ export default function CareJourney() {
 
                     {/* Desktop Horizontal Timeline (Sticky) */}
                     <div className="hidden lg:block sticky top-[80px] z-50 bg-surface-muted/95 backdrop-blur-sm pt-6 pb-8 mb-12 border-b border-border/50">
-                        <div className="relative flex justify-between px-4">
+                        <div className="relative flex justify-between">
                             {/* Progress line */}
-                            <div className="absolute top-5 left-8 right-8 h-[2px] bg-border" />
-                            <motion.div
-                                className="absolute top-5 left-8 h-[2px] bg-primary"
-                                initial={{ width: 0 }}
-                                animate={{ width: `${(activeStep / (steps.length - 1)) * 100}%` }}
-                                transition={{ duration: 0.5, ease: 'easeInOut' }}
-                            />
+                            <div className="absolute top-5 left-5 right-5 h-[2px] bg-border">
+                                <motion.div
+                                    className="absolute top-0 left-0 h-full bg-primary"
+                                    initial={{ width: 0 }}
+                                    animate={{ width: `${(activeStep / (steps.length - 1)) * 100}%` }}
+                                    transition={{ duration: 0.5, ease: 'easeInOut' }}
+                                />
+                            </div>
                             {steps.map((step, i) => (
                                 <div
                                     key={step.num}

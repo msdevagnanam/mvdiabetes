@@ -3,7 +3,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { MapPin, ArrowRight, Stethoscope } from 'lucide-react';
 import PageHero from '@/components/ui/PageHero';
-import { doctors } from '@/data/doctors';
+import { doctors, getDoctorInitials } from '@/data/doctors';
 
 export const metadata: Metadata = {
     title: 'Our Doctors — MV Diabetes',
@@ -40,10 +40,12 @@ export default function DoctorsPage() {
                                 {/* Photo */}
                                 <div className="aspect-[4/3] bg-gradient-to-br from-primary/10 to-secondary/10 relative overflow-hidden">
                                     {doc.image ? (
-                                        <Image src={doc.image} alt={doc.name} fill className="object-cover object-top group-hover:scale-105 transition-transform duration-500" />
+                                        <Image src={doc.image} alt={doc.name} fill sizes="(max-width: 640px) 100vw, (max-width: 1280px) 33vw, 25vw" className="object-cover group-hover:scale-105 transition-transform duration-500" />
                                     ) : (
-                                        <div className="w-full h-full flex items-center justify-center text-primary/30 text-5xl font-bold">
-                                            {doc.name.charAt(0)}
+                                        <div className="w-full h-full flex items-center justify-center">
+                                            <span className="w-24 h-24 rounded-full bg-white/70 ring-4 ring-white shadow-sm flex items-center justify-center text-3xl font-bold text-primary/60">
+                                                {getDoctorInitials(doc.name)}
+                                            </span>
                                         </div>
                                     )}
                                 </div>

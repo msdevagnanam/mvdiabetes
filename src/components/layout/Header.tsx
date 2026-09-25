@@ -59,7 +59,7 @@ function DesktopNav() {
 
     return (
         <nav className="hidden lg:flex items-center gap-1">
-            {navigation.slice(1).map((item) => (
+            {navigation.map((item) => (
                 <div
                     key={item.label}
                     className="relative"

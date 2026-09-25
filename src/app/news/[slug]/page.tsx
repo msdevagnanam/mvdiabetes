@@ -237,21 +237,25 @@ export default async function EventDetailPage({ params }: { params: Promise<{ sl
             />
 
             {/* Final CTA */}
-            <section className="section-padding bg-white border-t border-border">
-                <div className="container-site text-center max-w-3xl">
-                    <h2 className="text-3xl font-extrabold text-text-primary mb-4">
-                        Your Health Journey Starts Here
-                    </h2>
-                    <p className="text-text-secondary mb-8">
-                        Join thousands of patients who trust MV Diabetes for their comprehensive diabetes care.
-                    </p>
-                    <Link 
-                        href="/appointment" 
-                        className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl bg-secondary text-white font-bold hover:bg-secondary/90 transition-all shadow-lg shadow-secondary/20 hover:-translate-y-0.5"
-                    >
-                        Book Appointment
-                        <ArrowRight size={18} />
-                    </Link>
+            <section className="bg-white pb-16 md:pb-20 lg:pb-24">
+                <div className="container-site">
+                    <div className="bg-primary text-white rounded-3xl p-8 md:p-12 text-center shadow-xl shadow-primary/10">
+                        <div className="max-w-3xl mx-auto">
+                            <h2 className="text-3xl font-extrabold mb-4">
+                                Your Health Journey Starts Here
+                            </h2>
+                            <p className="text-white/80 mb-8">
+                                Join thousands of patients who trust MV Diabetes for their comprehensive diabetes care.
+                            </p>
+                            <Link 
+                                href="/appointment" 
+                                className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl bg-secondary text-white font-bold hover:bg-secondary/90 transition-all shadow-lg hover:shadow-xl hover:-translate-y-0.5"
+                            >
+                                Book Appointment
+                                <ArrowRight size={18} />
+                            </Link>
+                        </div>
+                    </div>
                 </div>
             </section>
         </main>

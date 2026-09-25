@@ -101,19 +101,24 @@ export default function ContactForm() {
                                     type="text"
                                     value={form.name}
                                     onChange={e => update('name', e.target.value)}
-                                    placeholder="John Doe"
+                                    placeholder="Rahul Sharma"
                                     className="w-full px-5 py-4 rounded-xl border-2 border-border focus:border-primary focus:ring-4 focus:ring-primary/10 outline-none transition-all bg-surface-muted/30 focus:bg-white text-text-primary placeholder:text-text-secondary/50 font-medium hover:border-black/20"
                                 />
                             </div>
                             <div>
                                 <label className="block text-sm font-bold text-text-primary mb-2">Phone Number <span className="text-red-500">*</span></label>
-                                <input
-                                    type="tel"
-                                    value={form.phone}
-                                    onChange={e => update('phone', e.target.value)}
-                                    placeholder="+91 98765 43210"
-                                    className="w-full px-5 py-4 rounded-xl border-2 border-border focus:border-primary focus:ring-4 focus:ring-primary/10 outline-none transition-all bg-surface-muted/30 focus:bg-white text-text-primary placeholder:text-text-secondary/50 font-medium hover:border-black/20"
-                                />
+                                <div className="flex rounded-xl border-2 border-border focus-within:border-primary focus-within:ring-4 focus-within:ring-primary/10 overflow-hidden transition-all bg-surface-muted/30 focus-within:bg-white hover:border-black/20">
+                                    <span className="inline-flex items-center px-5 font-bold text-text-secondary bg-border/20 border-r-2 border-border select-none">+91</span>
+                                    <input
+                                        type="tel"
+                                        maxLength={10}
+                                        inputMode="numeric"
+                                        value={form.phone}
+                                        onChange={e => update('phone', e.target.value.replace(/\D/g, ''))}
+                                        placeholder="98765 43210"
+                                        className="flex-1 min-w-0 px-5 py-4 bg-transparent outline-none text-text-primary placeholder:text-text-secondary/50 font-medium"
+                                    />
+                                </div>
                             </div>
                         </div>
 
@@ -124,7 +129,7 @@ export default function ContactForm() {
                                     type="email"
                                     value={form.email}
                                     onChange={e => update('email', e.target.value)}
-                                    placeholder="john@example.com"
+                                    placeholder="rahul@example.com"
                                     className="w-full px-5 py-4 rounded-xl border-2 border-border focus:border-primary focus:ring-4 focus:ring-primary/10 outline-none transition-all bg-surface-muted/30 focus:bg-white text-text-primary placeholder:text-text-secondary/50 font-medium hover:border-black/20"
                                 />
                             </div>

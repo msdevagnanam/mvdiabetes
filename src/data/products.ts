@@ -18,7 +18,7 @@ export const products: Product[] = [
         category: 'men',
         description: 'Premium diabetic footwear for men combining style with therapeutic support. Designed for optimal comfort and foot health.',
         image: '/images/products/ddf-g029.webp',
-        shopUrl: 'https://stepwisehealth.in/product/designer-diabetic-footwear-ddf-g029/',
+        shopUrl: 'https://stepwisehealth.in/products/stepwise-atlas-black',
     },
     {
         id: 'ddf-g028',
@@ -27,7 +27,7 @@ export const products: Product[] = [
         category: 'men',
         description: 'Carefully crafted men\'s diabetic footwear offering a balance of comfort, protection, and everyday style.',
         image: '/images/products/ddf-g028.webp',
-        shopUrl: 'https://stepwisehealth.in/product/designer-diabetic-footwear-ddf-g028/',
+        shopUrl: 'https://stepwisehealth.in/products/stepwise-voyage-brown',
     },
     {
         id: 'velcro-shoe',
@@ -35,7 +35,7 @@ export const products: Product[] = [
         category: 'unisex',
         description: 'Easy-close Velcro diabetic shoe designed for ease of use, comfort, and therapeutic foot support.',
         image: '/images/products/velcro-shoe.webp',
-        shopUrl: 'https://stepwisehealth.in/product/special-diabetic-velcro-shoe/',
+        shopUrl: 'https://stepwisehealth.in/products/stepwise-prestige-brown',
     },
     {
         id: 'diabetic-cut-shoe',
@@ -43,7 +43,7 @@ export const products: Product[] = [
         category: 'men',
         description: 'Specially crafted diabetic cut shoe for men, designed with precision for foot pressure relief and protection.',
         image: '/images/products/diabetic-cut-shoe.webp',
-        shopUrl: 'https://stepwisehealth.in/product/special-diabetic-cut-shoe/',
+        shopUrl: 'https://stepwisehealth.in/products/stepwise-noble-black',
     },
     {
         id: 'ddf-lr002',
@@ -52,7 +52,7 @@ export const products: Product[] = [
         category: 'women',
         description: 'Elegant designer diabetic footwear for women that prioritises foot health without compromising on style.',
         image: '/images/products/ddf-lr002.webp',
-        shopUrl: 'https://stepwisehealth.in/product/designer-diabetic-footwear-ddf-lr002/',
+        shopUrl: 'https://stepwisehealth.in/collections/women-s-diabetic-footwear-india-soft-safe-stylish-shoes',
     },
     {
         id: 'ddf-lr003',
@@ -61,7 +61,7 @@ export const products: Product[] = [
         category: 'women',
         description: 'Thoughtfully designed women\'s diabetic footwear offering excellent support for daily movement and foot health.',
         image: '/images/products/ddf-lr003.webp',
-        shopUrl: 'https://stepwisehealth.in/product/designer-diabetic-footwear-ddf-lr003/',
+        shopUrl: 'https://stepwisehealth.in/collections/women-s-diabetic-footwear-india-soft-safe-stylish-shoes',
     },
     {
         id: 'ddf-lf001',
@@ -70,7 +70,7 @@ export const products: Product[] = [
         category: 'women',
         description: 'Premium designer diabetic footwear for women, crafted for therapeutic comfort with modern aesthetics.',
         image: '/images/products/ddf-lf001.webp',
-        shopUrl: 'https://stepwisehealth.in/product/step-in-style-designer-diabetic-footwear-for-women-ddf-lf001/',
+        shopUrl: 'https://stepwisehealth.in/collections/women-s-diabetic-footwear-india-soft-safe-stylish-shoes',
     },
     {
         id: 'ddf-lf002',
@@ -79,7 +79,7 @@ export const products: Product[] = [
         category: 'women',
         description: 'Beautifully crafted women\'s therapeutic footwear delivering comfort, support, and a refined finish.',
         image: '/images/products/ddf-lf002.webp',
-        shopUrl: 'https://stepwisehealth.in/product/designer-diabetic-footwear-ddf-lf002/',
+        shopUrl: 'https://stepwisehealth.in/products/stepwise-luxe-black',
     },
 ];
 
@@ -87,5 +87,5 @@ export const menProducts = products.filter((p) => p.category === 'men' || p.cate
 export const womenProducts = products.filter((p) => p.category === 'women' || p.category === 'unisex');
 
 export const SHOP_URL = 'https://stepwisehealth.in/shop/';
-export const WOMEN_CATEGORY_URL = 'https://stepwisehealth.in/diabetic-women-footwear/';
-export const MEN_CATEGORY_URL = 'https://stepwisehealth.in/diabetic-male-footwear/';
+export const WOMEN_CATEGORY_URL = 'https://stepwisehealth.in/collections/women-s-diabetic-footwear-india-soft-safe-stylish-shoes';
+export const MEN_CATEGORY_URL = 'https://stepwisehealth.in/collections/men-s-diabetic-footwear-in-chennai-orthopedic-medical-shoes';

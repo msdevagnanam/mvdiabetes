@@ -53,7 +53,7 @@ export default function Footer() {
     const mainBranch = branches.find((b) => b.isMainBranch);
 
     return (
-        <div className="pb-4 lg:pb-6 pt-12 lg:pt-16 px-4 xl:px-0 bg-surface-muted">
+        <div className="pb-24 md:pb-4 lg:pb-6 pt-12 lg:pt-16 px-4 xl:px-0 bg-surface-muted">
             <footer className="container-site !max-w-[1320px] mx-auto bg-primary-dark text-white/80 rounded-3xl overflow-hidden shadow-2xl relative mb-4">
                 {/* Main Footer */}
                 <div className="px-6 lg:px-8 pt-16 pb-12">
@@ -165,9 +165,11 @@ export default function Footer() {
                 {/* Bottom Bar */}
                 <div className="border-t border-white/10">
                     <div className="container-site flex flex-col sm:flex-row items-center justify-between py-5 gap-3">
-                        <p className="text-xs text-white/40">
-                            © {new Date().getFullYear()} {siteConfig.fullName}. All Rights Reserved.
-                        </p>
+                        <div className="text-xs text-white/40 flex flex-col xl:flex-row items-center gap-1 xl:gap-1.5 text-center xl:text-left">
+                            <span>© {new Date().getFullYear()} {siteConfig.fullName}. All Rights Reserved.</span>
+                            <span className="hidden xl:inline">|</span>
+                            <span>Designed and Developed by <a href="https://efficienza.in/" target="_blank" rel="noopener noreferrer" className="text-white/50 hover:text-white transition-colors">Efficienza&reg;</a></span>
+                        </div>
                         <div className="flex items-center gap-4">
                             <Link href="/privacy-policy" className="text-xs text-white/40 hover:text-white/70 transition-colors">Privacy Policy</Link>
                             <Link href="/terms-and-condition" className="text-xs text-white/40 hover:text-white/70 transition-colors">Terms</Link>

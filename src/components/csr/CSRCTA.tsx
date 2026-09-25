@@ -26,7 +26,7 @@ export default function CSRCTA() {
 
                     <Link
                         href={csrCta.href}
-                        className="relative z-10 inline-flex min-h-12 w-full shrink-0 items-center justify-center gap-2 rounded-xl bg-secondary px-8 font-bold text-primary-dark shadow-lg transition-all hover:bg-secondary/90 hover:shadow-xl hover:shadow-secondary/20 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white md:w-auto"
+                        className="relative z-10 inline-flex min-h-12 w-full shrink-0 items-center justify-center gap-2 rounded-xl bg-secondary px-8 font-bold text-white shadow-lg transition-all hover:bg-secondary/90 hover:shadow-xl hover:shadow-secondary/20 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white md:w-auto"
                     >
                         {csrCta.buttonLabel}
                         <ArrowRight size={18} aria-hidden="true" />

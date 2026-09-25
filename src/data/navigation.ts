@@ -13,6 +13,7 @@ export const navigation: NavItem[] = [
             { label: 'Our Story', href: '/about-us' },
             { label: 'Vision, Mission & Values', href: '/about-us#vision-mission' },
             { label: 'Prof. M. Viswanathan', href: '/prof-m-viswanathan' },
+            { label: 'Our Doctors', href: '/doctors' },
             { label: 'Branches', href: '/about/branches' },
             { label: 'Facilities', href: '/about/facilities' },
             { label: 'Infrastructure', href: '/about/infrastructure' },
@@ -36,7 +37,6 @@ export const navigation: NavItem[] = [
             { label: 'Urology', href: '/care/urology' },
         ],
     },
-    { label: 'Doctors', href: '/doctors' },
     {
         label: 'Packages & Checkups',
         href: '/packages',

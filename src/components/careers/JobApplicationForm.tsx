@@ -63,19 +63,24 @@ export default function JobApplicationForm({ jobTitle }: JobApplicationFormProps
                         required 
                         autoComplete="name"
                         className="w-full bg-surface border border-border rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all"
-                        placeholder="John Doe"
+                        placeholder="Rahul Sharma"
                     />
                 </div>
                 <div>
                     <label htmlFor="phone" className="block text-sm font-bold text-text-primary mb-2">Phone <span className="text-red-500">*</span></label>
-                    <input 
-                        type="tel" 
-                        id="phone"
-                        required 
-                        autoComplete="tel"
-                        className="w-full bg-surface border border-border rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all"
-                        placeholder="+91 98765 43210"
-                    />
+                    <div className="flex w-full bg-surface border border-border rounded-xl focus-within:ring-2 focus-within:ring-primary focus-within:border-transparent transition-all overflow-hidden">
+                        <span className="inline-flex items-center px-4 font-bold text-text-secondary bg-surface border-r border-border select-none">+91</span>
+                        <input 
+                            type="tel" 
+                            id="phone"
+                            required 
+                            maxLength={10}
+                            inputMode="numeric"
+                            autoComplete="tel-national"
+                            className="flex-1 min-w-0 bg-transparent px-4 py-3 focus:outline-none"
+                            placeholder="98765 43210"
+                        />
+                    </div>
                 </div>
             </div>
 
@@ -87,7 +92,7 @@ export default function JobApplicationForm({ jobTitle }: JobApplicationFormProps
                     required 
                     autoComplete="email"
                     className="w-full bg-surface border border-border rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all"
-                    placeholder="john@example.com"
+                    placeholder="rahul@example.com"
                 />
             </div>
 

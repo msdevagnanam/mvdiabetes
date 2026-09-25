@@ -27,7 +27,7 @@ export default function YogaCTA() {
                     <div className="relative z-10 flex w-full flex-col gap-3 sm:flex-row md:w-auto md:shrink-0">
                         <Link
                             href={yogaAppointmentHref}
-                            className="inline-flex min-h-12 items-center justify-center gap-2 rounded-xl bg-secondary px-8 font-bold text-primary-dark shadow-lg transition-all hover:bg-secondary/90 hover:shadow-xl hover:shadow-secondary/20 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
+                            className="inline-flex min-h-12 items-center justify-center gap-2 rounded-xl bg-secondary px-8 font-bold text-white shadow-lg transition-all hover:bg-secondary/90 hover:shadow-xl hover:shadow-secondary/20 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
                         >
                             {getStarted.buttonLabel}
                             <ArrowRight size={18} aria-hidden="true" />

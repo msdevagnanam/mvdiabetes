@@ -25,7 +25,7 @@ export const metadata: Metadata = {
         type: 'website',
         images: [
             {
-                url: 'https://mvdiabetes.vercel.app/images/products-hero.jpg',
+                url: 'https://mvdiabetes.vercel.app/images/products/shop-hero.jpg',
                 width: 1200,
                 height: 630,
                 alt: 'MV Diabetes Therapeutic Diabetic Footwear',

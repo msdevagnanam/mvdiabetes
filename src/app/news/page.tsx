@@ -27,8 +27,9 @@ export default async function NewsPage({
     const page = params.page ? parseInt(params.page as string) : 1;
     const itemsPerPage = 12;
 
-    // Filter items based on query params
-    let filteredItems = [...newsEvents];
+    // Filter items based on query params. Newest year first, then newest date — year leads because a few
+    // archive posts are filed under a different year than their event date (matching mvdiabetes.com).
+    let filteredItems = [...newsEvents].sort((a, b) => b.year - a.year || b.date.localeCompare(a.date));
 
     if (yearParam && yearParam !== 'all') {
         filteredItems = filteredItems.filter((e) => e.year === parseInt(yearParam));
@@ -124,28 +125,32 @@ export default async function NewsPage({
             </section>
 
             {/* Final CTA */}
-            <section className="section-padding bg-white border-t border-border">
-                <div className="container-site text-center">
-                    <h2 className="text-3xl md:text-4xl font-extrabold text-text-primary mb-6">
-                        Your Health Journey Starts Here
-                    </h2>
-                    <p className="text-lg text-text-secondary max-w-2xl mx-auto mb-10">
-                        Join thousands of patients who trust MV Diabetes for their comprehensive diabetes care and management.
-                    </p>
-                    <div className="flex flex-col sm:flex-row justify-center gap-4">
-                        <Link 
-                            href="/appointment" 
-                            className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl bg-secondary text-white font-bold hover:bg-secondary/90 transition-all shadow-lg shadow-secondary/20 hover:-translate-y-0.5"
-                        >
-                            Book Appointment
-                            <ArrowRight size={18} />
-                        </Link>
-                        <Link 
-                            href="/care/comprehensive" 
-                            className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl bg-white border-2 border-border text-text-primary font-bold hover:bg-surface-muted hover:border-text-secondary/30 transition-all"
-                        >
-                            Explore Diabetes Care
-                        </Link>
+            <section className="bg-white pb-16 md:pb-20 lg:pb-24">
+                <div className="container-site">
+                    <div className="bg-primary text-white rounded-3xl p-8 md:p-16 text-center shadow-xl shadow-primary/10">
+                        <div className="max-w-3xl mx-auto">
+                            <h2 className="text-3xl md:text-4xl font-extrabold mb-6">
+                                Your Health Journey Starts Here
+                            </h2>
+                            <p className="text-lg text-white/80 mb-10">
+                                Join thousands of patients who trust MV Diabetes for their comprehensive diabetes care and management.
+                            </p>
+                            <div className="flex flex-col sm:flex-row justify-center gap-4">
+                                <Link 
+                                    href="/appointment" 
+                                    className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl bg-secondary text-white font-bold hover:bg-secondary/90 transition-all shadow-lg hover:shadow-xl hover:-translate-y-0.5"
+                                >
+                                    Book Appointment
+                                    <ArrowRight size={18} />
+                                </Link>
+                                <Link 
+                                    href="/care/comprehensive" 
+                                    className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl bg-transparent border-2 border-white/30 text-white font-bold hover:bg-white/10 transition-all"
+                                >
+                                    Explore Diabetes Care
+                                </Link>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </section>

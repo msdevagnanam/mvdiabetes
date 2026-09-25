@@ -26,7 +26,7 @@ export default function PodiatryCTA() {
 
                     <Link
                         href={podiatryCta.href}
-                        className="relative z-10 inline-flex min-h-12 w-full shrink-0 items-center justify-center gap-2 rounded-xl bg-secondary px-8 md:w-auto font-semibold text-white shadow-lg transition-all hover:bg-white hover:text-secondary hover:shadow-xl hover:shadow-secondary/20 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
+                        className="relative z-10 inline-flex min-h-12 w-full shrink-0 items-center justify-center gap-2 rounded-xl bg-secondary px-8 md:w-auto font-semibold text-white shadow-lg transition-all hover:bg-secondary/90 hover:shadow-xl hover:shadow-secondary/20 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
                     >
                         {podiatryCta.buttonLabel}
                         <ArrowRight size={18} aria-hidden="true" />

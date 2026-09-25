@@ -12,14 +12,15 @@ export default function ProductsHero() {
             {/* Background Image */}
             <div className="absolute inset-0 z-0">
                 <Image
-                    src="/images/products-hero.jpg"
+                    src="/images/products/shop-hero.jpg"
                     alt="MV Diabetes therapeutic diabetic footwear"
                     fill
                     priority
-                    className="object-cover object-center opacity-30 mix-blend-overlay"
+                    sizes="100vw"
+                    className="object-cover object-[75%_center]"
                 />
-                <div className="absolute inset-0 bg-gradient-to-r from-primary-dark/95 via-primary-dark/80 to-primary-dark/50" />
-                <div className="absolute inset-0 bg-gradient-to-t from-primary-dark/80 via-transparent to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-r from-primary-dark via-primary-dark/85 to-primary-dark/20" />
+                <div className="absolute inset-0 bg-gradient-to-t from-primary-dark/70 via-transparent to-transparent" />
             </div>
 
             {/* Cyan accent line */}

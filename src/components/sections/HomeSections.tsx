@@ -7,7 +7,7 @@ import Image from 'next/image';
 import { ArrowRight, Quote, MapPin, ChevronLeft, ChevronRight } from 'lucide-react';
 import { testimonials } from '@/data/testimonials';
 import { blogPosts } from '@/data/blogs';
-import { newsEvents } from '@/data/events';
+import { newsEvents } from '@/data/news-events';
 
 function TestimonialSlider() {
     const scrollRef = useRef<HTMLDivElement>(null);
@@ -223,7 +223,7 @@ function NewsEventsPreview() {
                             <Link href={`/news/${event.slug}`} className="block bg-white rounded-2xl border border-border overflow-hidden hover:shadow-lg hover:border-primary/20 transition-all">
                                 <div className="aspect-[16/10] bg-gradient-to-br from-primary/5 to-primary/10 flex items-center justify-center relative overflow-hidden">
                                     <Image
-                                        src={`/images/new-and-events/nande-img${i + 1}.png`}
+                                        src={event.image?.src || '/images/placeholder.png'}
                                         alt={event.title}
                                         fill
                                         sizes="(max-width: 768px) 100vw, 25vw"

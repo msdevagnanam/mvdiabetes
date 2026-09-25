@@ -2,21 +2,9 @@ import type { Metadata } from 'next';
 import LegalPage from '@/components/legal/LegalPage';
 import { privacyPolicy } from '@/data/legal';
 import { siteConfig } from '@/data/site';
+import { buildPageMetadata } from '@/data/seo';
 
-const description =
-    'Read the MV Diabetes privacy policy, covering the personal and usage data we collect, cookies, how information is used and shared, retention, security and your choices.';
-
-export const metadata: Metadata = {
-    title: 'Privacy Policy',
-    description,
-    openGraph: {
-        title: 'Privacy Policy | MV Diabetes',
-        description,
-        url: `${siteConfig.url}/privacy-policy`,
-    },
-    twitter: { card: 'summary_large_image', title: 'Privacy Policy | MV Diabetes', description },
-    alternates: { canonical: '/privacy-policy' },
-};
+export const metadata: Metadata = buildPageMetadata('/privacy-policy');
 
 export default function Page() {
     const breadcrumbSchema = {

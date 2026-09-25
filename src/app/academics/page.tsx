@@ -4,12 +4,9 @@ import Link from 'next/link';
 import { BookOpen, GraduationCap, Award, FileText, ArrowRight, MapPin, Calendar, Clock, Users } from 'lucide-react';
 import { academicData } from '@/data/academics';
 import FacultySection from '@/components/academics/FacultySection';
+import { buildPageMetadata } from '@/data/seo';
 
-export const metadata: Metadata = {
-    title: 'Academic Courses & Diabetology Training | MV Diabetes',
-    description: 'Explore academic courses and professional training programs in Diabetology at MV Hospital for Diabetes, including the Fellowship in Clinical Diabetology and Advanced Certificate Course in Diabetology.',
-    alternates: { canonical: '/academics' }
-};
+export const metadata: Metadata = buildPageMetadata('/academics');
 
 export default function AcademicsPage() {
     const advancedCourse = academicData.courses.find(c => c.id === 'advanced-certificate');

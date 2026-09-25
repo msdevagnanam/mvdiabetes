@@ -5,6 +5,7 @@ import { ArrowRight, HelpCircle, Stethoscope } from 'lucide-react';
 import Breadcrumbs from '@/components/ui/Breadcrumbs';
 import { specialties, getSpecialtyBySlug } from '@/data/specialties';
 import { doctors } from '@/data/doctors';
+import { pageSeo, buildPageMetadata, buildMetadata, type SeoRoute } from '@/data/seo';
 
 /** Specialties that have their own hand-built route under /care and must not be prerendered here. */
 const DEDICATED_ROUTES = new Set(['podiatry', 'yoga']);
@@ -19,11 +20,10 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
     const { slug } = await params;
     const spec = getSpecialtyBySlug(slug);
     if (!spec) return {};
-    return {
-        title: `${spec.name} — MV Diabetes`,
-        description: spec.shortDescription,
-        alternates: { canonical: `/care/${spec.slug}` },
-    };
+    const route = `/care/${spec.slug}`;
+    // Specialties with a matching live mvdiabetes.com page reuse its SEO copy.
+    if (route in pageSeo) return buildPageMetadata(route as SeoRoute);
+    return buildMetadata(route, { title: `${spec.name} | MV Diabetes`, description: spec.shortDescription });
 }
 
 export default async function CareDetailPage({ params }: { params: Promise<{ slug: string }> }) {

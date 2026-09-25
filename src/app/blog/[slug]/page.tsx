@@ -10,6 +10,7 @@ import RelatedArticles from '@/components/blog/RelatedArticles';
 import BlogCTA from '@/components/blog/BlogCTA';
 import BlogPlaceholderImage from '@/components/blog/BlogPlaceholderImage';
 import RecentPosts from '@/components/blog/RecentPosts';
+import { DEFAULT_OG_IMAGE } from '@/data/seo';
 
 interface BlogArticlePageProps {
   params: Promise<{
@@ -38,16 +39,21 @@ export async function generateMetadata({ params }: BlogArticlePageProps): Promis
     };
   }
   
+  // SEO title/description come from the original mvdiabetes.com post; the layout template appends "| MV Diabetes".
+  const title = post.seoTitle || post.title;
+  const description = post.seoDescription || post.excerpt;
   return {
-    title: `${post.title} | MV Diabetes Blog`,
-    description: post.excerpt,
+    title,
+    description,
+    alternates: { canonical: `/blog/${post.slug}` },
     openGraph: {
-      title: post.title,
-      description: post.excerpt,
+      title,
+      description,
+      url: `/blog/${post.slug}`,
       type: 'article',
       publishedTime: post.date,
       authors: ['MV Diabetes Specialist'],
-      images: hasBlogImage(post) ? [post.image] : [],
+      images: [hasBlogImage(post) ? post.image : DEFAULT_OG_IMAGE],
     },
   };
 }

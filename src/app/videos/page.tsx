@@ -5,11 +5,9 @@ import Breadcrumbs from '@/components/ui/Breadcrumbs';
 import VideoGallery from '@/components/videos/VideoGallery';
 import FeaturedVideoPlayer from '@/components/videos/FeaturedVideoPlayer';
 import { videos } from '@/data/videos';
+import { buildPageMetadata } from '@/data/seo';
 
-export const metadata: Metadata = {
-    title: 'Videos | MV Diabetes',
-    description: 'Explore videos from MV Diabetes featuring diabetes education, patient stories, institutional milestones, events and insights from our medical community.',
-};
+export const metadata: Metadata = buildPageMetadata('/videos');
 
 export default function VideosPage() {
     // Get the featured video (fallback to first if none marked)

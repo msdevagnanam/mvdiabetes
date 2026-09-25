@@ -5,6 +5,7 @@ import { ArrowRight, Stethoscope, Building2, Camera, Quote } from 'lucide-react'
 import Breadcrumbs from '@/components/ui/Breadcrumbs';
 import FacilitiesExplorer from '@/components/facilities/FacilitiesExplorer';
 import DepartmentsSection from '@/components/facilities/DepartmentsSection';
+import { buildPageMetadata } from '@/data/seo';
 import {
     heroCollage,
     featuredFacility,
@@ -12,25 +13,7 @@ import {
     getFacilitiesStats,
 } from '@/data/facilities';
 
-export const metadata: Metadata = {
-    title: 'Hospital Facilities & Patient Services',
-    description:
-        'Explore patient facilities, specialized services and hospital departments available at MV Hospital for Diabetes.',
-    openGraph: {
-        title: 'Hospital Facilities & Patient Services',
-        description:
-            'Explore patient facilities, specialized services and hospital departments available at MV Hospital for Diabetes.',
-        images: [
-            {
-                url: facilitiesOgImage.src,
-                width: facilitiesOgImage.width,
-                height: facilitiesOgImage.height,
-                alt: facilitiesOgImage.alt,
-            },
-        ],
-    },
-    alternates: { canonical: '/about/facilities' },
-};
+export const metadata: Metadata = buildPageMetadata('/about/facilities', { image: { url: facilitiesOgImage.src, width: facilitiesOgImage.width, height: facilitiesOgImage.height, alt: facilitiesOgImage.alt } });
 
 export default function FacilitiesPage() {
     const stats = getFacilitiesStats();

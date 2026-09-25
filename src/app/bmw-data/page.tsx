@@ -2,18 +2,9 @@ import { Metadata } from 'next';
 import Breadcrumbs from '@/components/ui/Breadcrumbs';
 import BMWDashboard from '@/components/bmw/BMWDashboard';
 import { ShieldCheck, Leaf, BarChart3, MapPin, Calendar, Layers } from 'lucide-react';
+import { buildPageMetadata } from '@/data/seo';
 
-export const metadata: Metadata = {
-    title: 'Biomedical Waste Management Data 2021–2022 | MV Diabetes',
-    description: 'View MV Diabetes biomedical waste management data for 2021 and 2022, organized by location, month and waste category.',
-    alternates: { canonical: 'https://mvdiabetes.vercel.app/bmw-data' },
-    openGraph: {
-        title: 'Biomedical Waste Management Data 2021–2022 | MV Diabetes',
-        description: 'View MV Diabetes biomedical waste management data for 2021 and 2022, organized by location, month and waste category.',
-        url: 'https://mvdiabetes.vercel.app/bmw-data',
-        type: 'website',
-    }
-};
+export const metadata: Metadata = buildPageMetadata('/bmw-data');
 
 export default function BMWDataPage() {
     const jsonLd = {
@@ -21,7 +12,7 @@ export default function BMWDataPage() {
         '@type': 'WebPage',
         name: 'Biomedical Waste Management Data',
         description: 'View MV Diabetes biomedical waste management data for 2021 and 2022, organized by location, month and waste category.',
-        url: 'https://mvdiabetes.vercel.app/bmw-data',
+        url: 'https://mvdiabetes.com/bmw-data',
         publisher: {
             '@type': 'MedicalOrganization',
             name: 'MV Hospital for Diabetes',

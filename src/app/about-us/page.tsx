@@ -15,21 +15,9 @@ import ClinicalLeadership from '@/components/sections/about/ClinicalLeadership';
 import ModernInstitution from '@/components/sections/about/ModernInstitution';
 import AboutCTA from '@/components/sections/about/AboutCTA';
 import AboutProducts from '@/components/sections/about/AboutProducts';
+import { buildPageMetadata } from '@/data/seo';
 
-export const metadata: Metadata = {
-    title: 'About Us — MV Diabetes | India\'s First Exclusive Diabetes Hospital',
-    description:
-        'Discover the legacy of MV Diabetes — India\'s first hospital exclusively for diabetes. Over 60 years of pioneering diabetes care, research, education, and training. 3,50,000+ patients served. Founded by Prof. M. Viswanathan.',
-    openGraph: {
-        title: 'About Us — MV Diabetes',
-        description:
-            'India\'s first exclusive diabetes hospital. 60+ years of diabetes care, research, education & prevention. Learn about our legacy, leadership, and patient-first values.',
-        type: 'website',
-    },
-    alternates: {
-        canonical: '/about-us',
-    },
-};
+export const metadata: Metadata = buildPageMetadata('/about-us');
 
 export default function AboutUsPage() {
     return (

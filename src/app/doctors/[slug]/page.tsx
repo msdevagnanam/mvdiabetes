@@ -5,6 +5,7 @@ import Image from 'next/image';
 import { MapPin, Award, BookOpen, ArrowRight, Calendar } from 'lucide-react';
 import Breadcrumbs from '@/components/ui/Breadcrumbs';
 import { doctors, getDoctorBySlug, getDoctorInitials } from '@/data/doctors';
+import { DEFAULT_OG_IMAGE } from '@/data/seo';
 
 export async function generateStaticParams() {
     return doctors.map(d => ({ slug: d.slug }));
@@ -14,10 +15,20 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
     const { slug } = await params;
     const doc = getDoctorBySlug(slug);
     if (!doc) return {};
+    // The root layout template appends "| MV Diabetes".
+    const title = `${doc.name} — ${doc.designation}`;
+    const description = doc.about || `${doc.name}, ${doc.designation} at MV Diabetes. ${doc.qualifications}.`;
     return {
-        title: `${doc.name} — ${doc.designation} | MV Diabetes`,
-        description: doc.about || `${doc.name}, ${doc.designation} at MV Diabetes. ${doc.qualifications}.`,
+        title,
+        description,
         alternates: { canonical: `/doctors/${doc.slug}` },
+        openGraph: {
+            title,
+            description,
+            url: `/doctors/${doc.slug}`,
+            type: 'profile',
+            images: [doc.image ? { url: doc.image, alt: doc.name } : DEFAULT_OG_IMAGE],
+        },
     };
 }
 

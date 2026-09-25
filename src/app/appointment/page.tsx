@@ -1,12 +1,9 @@
 import type { Metadata } from 'next';
 import { Suspense } from 'react';
 import AppointmentForm from '@/components/appointment/AppointmentForm';
+import { buildPageMetadata } from '@/data/seo';
 
-export const metadata: Metadata = {
-    title: 'Book Appointment — MV Diabetes',
-    description: 'Book an appointment at MV Diabetes — India\'s first exclusive diabetes hospital. Choose your location, doctor, and preferred time.',
-    alternates: { canonical: '/appointment' },
-};
+export const metadata: Metadata = buildPageMetadata('/appointment');
 
 export default function AppointmentPage() {
     return (

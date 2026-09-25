@@ -11,33 +11,9 @@ import YogaMembership from '@/components/yoga/YogaMembership';
 import YogaCTA from '@/components/yoga/YogaCTA';
 import { whyYoga, yogaHeroImage, yogaRoles } from '@/data/yoga';
 import { siteConfig } from '@/data/site';
+import { buildPageMetadata } from '@/data/seo';
 
-const description =
-    'Explore Yoga at MV Diabetes, including diabetes-focused yoga classes, breathing and relaxation practices, special classes, and structured Yoga programs.';
-
-export const metadata: Metadata = {
-    title: 'Yoga for Diabetes | Online Yoga Classes',
-    description,
-    openGraph: {
-        title: 'Yoga for Diabetes | Online Yoga Classes | MV Diabetes',
-        description,
-        url: `${siteConfig.url}/care/yoga`,
-        images: [
-            {
-                url: `${siteConfig.url}${yogaHeroImage.src}`,
-                width: yogaHeroImage.width,
-                height: yogaHeroImage.height,
-                alt: yogaHeroImage.alt,
-            },
-        ],
-    },
-    twitter: {
-        card: 'summary_large_image',
-        title: 'Yoga for Diabetes | Online Yoga Classes | MV Diabetes',
-        description,
-    },
-    alternates: { canonical: '/care/yoga' },
-};
+export const metadata: Metadata = buildPageMetadata('/care/yoga', { image: { url: yogaHeroImage.src, width: yogaHeroImage.width, height: yogaHeroImage.height, alt: yogaHeroImage.alt } });
 
 export default function YogaPage() {
     const breadcrumbSchema = {

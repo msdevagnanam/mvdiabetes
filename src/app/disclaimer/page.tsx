@@ -2,21 +2,9 @@ import type { Metadata } from 'next';
 import LegalPage from '@/components/legal/LegalPage';
 import { disclaimer } from '@/data/legal';
 import { siteConfig } from '@/data/site';
+import { buildPageMetadata } from '@/data/seo';
 
-const description =
-    'Important information about the MV Diabetes website, including that its content is for general information only and is not a substitute for professional medical advice.';
-
-export const metadata: Metadata = {
-    title: 'Disclaimer',
-    description,
-    openGraph: {
-        title: 'Disclaimer | MV Diabetes',
-        description,
-        url: `${siteConfig.url}/disclaimer`,
-    },
-    twitter: { card: 'summary_large_image', title: 'Disclaimer | MV Diabetes', description },
-    alternates: { canonical: '/disclaimer' },
-};
+export const metadata: Metadata = buildPageMetadata('/disclaimer');
 
 export default function Page() {
     const breadcrumbSchema = {

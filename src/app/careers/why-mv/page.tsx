@@ -5,18 +5,9 @@ import MissionStatement from '@/components/why-mv/MissionStatement';
 import InstitutionalTrust from '@/components/why-mv/InstitutionalTrust';
 import CoreValues from '@/components/why-mv/CoreValues';
 import WorkplaceCulture from '@/components/why-mv/WorkplaceCulture';
+import { buildPageMetadata } from '@/data/seo';
 
-export const metadata: Metadata = {
-    title: 'Why MV Diabetes | Trusted Diabetes Care & Excellence | MV Diabetes',
-    description: 'Discover why over 300,000 patients trust MV Diabetes. A legacy of patient-centered care, compassion, research excellence, and innovation since 1954.',
-    alternates: { canonical: 'https://mvdiabetes.com/careers/why-mv' },
-    openGraph: {
-        title: 'Why MV Diabetes | Trusted Diabetes Care & Excellence',
-        description: 'Discover why over 300,000 patients trust MV Diabetes. A legacy of patient-centered care, compassion, research excellence, and innovation since 1954.',
-        url: 'https://mvdiabetes.com/careers/why-mv',
-        type: 'website',
-    }
-};
+export const metadata: Metadata = buildPageMetadata('/careers/why-mv');
 
 export default function WhyMVPage() {
     const jsonLd = {

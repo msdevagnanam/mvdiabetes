@@ -7,33 +7,9 @@ import WhyFootCareSection from '@/components/podiatry/WhyFootCareSection';
 import PodiatryCTA from '@/components/podiatry/PodiatryCTA';
 import { podiatryHeroImage, podiatryIntro, podiatryServices } from '@/data/podiatry';
 import { siteConfig } from '@/data/site';
+import { buildPageMetadata } from '@/data/seo';
 
-const description =
-    'Specialized podiatry and diabetic foot care at MV Diabetes — foot and lower extremity assessment, corrective procedures for limb salvage, ozone therapy, magneto therapy, foot education and our Foot Clinic & Podiatry unit.';
-
-export const metadata: Metadata = {
-    title: 'Podiatry & Diabetic Foot Care',
-    description,
-    openGraph: {
-        title: 'Podiatry & Diabetic Foot Care | MV Diabetes',
-        description,
-        url: `${siteConfig.url}/care/podiatry`,
-        images: [
-            {
-                url: `${siteConfig.url}${podiatryHeroImage.src}`,
-                width: podiatryHeroImage.width,
-                height: podiatryHeroImage.height,
-                alt: podiatryHeroImage.alt,
-            },
-        ],
-    },
-    twitter: {
-        card: 'summary_large_image',
-        title: 'Podiatry & Diabetic Foot Care | MV Diabetes',
-        description,
-    },
-    alternates: { canonical: '/care/podiatry' },
-};
+export const metadata: Metadata = buildPageMetadata('/care/podiatry', { image: { url: podiatryHeroImage.src, width: podiatryHeroImage.width, height: podiatryHeroImage.height, alt: podiatryHeroImage.alt } });
 
 export default function PodiatryPage() {
     const breadcrumbSchema = {

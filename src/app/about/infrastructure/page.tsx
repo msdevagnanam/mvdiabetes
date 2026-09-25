@@ -4,17 +4,9 @@ import { ArrowRight, MapPin, Building2, Camera } from 'lucide-react';
 import Breadcrumbs from '@/components/ui/Breadcrumbs';
 import InfrastructureExplorer from '@/components/infrastructure/InfrastructureExplorer';
 import { infrastructureHeroImage, getInfrastructureStats } from '@/data/infrastructure';
+import { buildPageMetadata } from '@/data/seo';
 
-export const metadata: Metadata = {
-    title: 'Hospital Infrastructure | MV Diabetes — Royapuram & Koramangala',
-    description: 'Explore the infrastructure of M.V. Hospital for Diabetes across Royapuram and Koramangala, including clinical, research, diagnostic, patient care and support facilities.',
-    openGraph: {
-        title: 'Hospital Infrastructure | MV Diabetes',
-        description: 'Explore the infrastructure of M.V. Hospital for Diabetes across Royapuram and Koramangala.',
-        images: [{ url: infrastructureHeroImage, width: 2560, height: 1707 }],
-    },
-    alternates: { canonical: '/about/infrastructure' },
-};
+export const metadata: Metadata = buildPageMetadata('/about/infrastructure', { image: { url: infrastructureHeroImage, width: 2560, height: 1707, alt: 'M.V. Hospital for Diabetes building' } });
 
 export default function InfrastructurePage() {
     const stats = getInfrastructureStats();

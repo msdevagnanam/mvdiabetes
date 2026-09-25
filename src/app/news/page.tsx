@@ -6,12 +6,9 @@ import NewsHero from '@/components/news/NewsHero';
 import NewsFilters from '@/components/news/NewsFilters';
 import NewsArchive from '@/components/news/NewsArchive';
 import { newsEvents } from '@/data/news-events';
+import { buildPageMetadata } from '@/data/seo';
 
-export const metadata: Metadata = {
-    title: 'News & Events | Latest Updates & Research — MV Diabetes',
-    description: 'Explore the latest developments, medical events, research milestones, community initiatives and institutional moments from MV Diabetes.',
-    alternates: { canonical: '/news' },
-};
+export const metadata: Metadata = buildPageMetadata('/news');
 
 export default async function NewsPage({
     searchParams,

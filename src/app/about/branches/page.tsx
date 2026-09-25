@@ -3,12 +3,9 @@ import Link from 'next/link';
 import { Phone, Mail, MapPin, Clock, ArrowRight } from 'lucide-react';
 import PageHero from '@/components/ui/PageHero';
 import { branches } from '@/data/branches';
+import { buildPageMetadata } from '@/data/seo';
 
-export const metadata: Metadata = {
-    title: 'Our Branches — MV Diabetes',
-    description: 'Find MV Diabetes hospital and centres across Chennai and Bengaluru.',
-    alternates: { canonical: '/about/branches' },
-};
+export const metadata: Metadata = buildPageMetadata('/about/branches');
 
 export default function BranchesPage() {
     return (

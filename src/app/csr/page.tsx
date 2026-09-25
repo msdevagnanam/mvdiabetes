@@ -7,33 +7,12 @@ import CSRTimelineSection from '@/components/csr/CSRTimelineSection';
 import CSRCTA from '@/components/csr/CSRCTA';
 import { csrSourceTitle, madhaviammaTrust } from '@/data/csr';
 import { siteConfig } from '@/data/site';
+import { buildPageMetadata } from '@/data/seo';
 
 const description =
     'Explore MV Diabetes Hospital CSR activities, including the Diabetic Amputation Support Fund, the Dr. Madhaviamma Charitable Trust, free health camps, vaccination initiatives and community support.';
 
-export const metadata: Metadata = {
-    title: 'CSR Activities | Community & Social Initiatives',
-    description,
-    openGraph: {
-        title: `${csrSourceTitle} | MV Diabetes`,
-        description,
-        url: `${siteConfig.url}/csr`,
-        images: [
-            {
-                url: `${siteConfig.url}/images/csr/2019/karunalaya-support.jpg`,
-                width: 1600,
-                height: 1067,
-                alt: 'Financial support handed over to Karunalaya, an organisation working for street and working children',
-            },
-        ],
-    },
-    twitter: {
-        card: 'summary_large_image',
-        title: `${csrSourceTitle} | MV Diabetes`,
-        description,
-    },
-    alternates: { canonical: '/csr' },
-};
+export const metadata: Metadata = buildPageMetadata('/csr', { image: { url: '/images/csr/2019/karunalaya-support.jpg', width: 1600, height: 1067, alt: 'Financial support handed over to Karunalaya, an organisation working for street and working children' } });
 
 export default function CSRPage() {
     const breadcrumbSchema = {

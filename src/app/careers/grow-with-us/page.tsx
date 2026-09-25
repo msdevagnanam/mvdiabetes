@@ -6,18 +6,9 @@ import CareerCategories from '@/components/grow-with-us/CareerCategories';
 import GrowthPathways from '@/components/grow-with-us/GrowthPathways';
 import AccessibilityAndBenefits from '@/components/grow-with-us/AccessibilityAndBenefits';
 import CareerCTA from '@/components/grow-with-us/CareerCTA';
+import { buildPageMetadata } from '@/data/seo';
 
-export const metadata: Metadata = {
-    title: 'Grow With Us | Careers at MV Diabetes',
-    description: 'Explore career opportunities, professional growth, leadership development and employee benefits at MV Diabetes.',
-    alternates: { canonical: 'https://mvdiabetes.com/careers/grow-with-us' },
-    openGraph: {
-        title: 'Grow With Us | Careers at MV Diabetes',
-        description: 'Explore career opportunities, professional growth, leadership development and employee benefits at MV Diabetes.',
-        url: 'https://mvdiabetes.com/careers/grow-with-us',
-        type: 'website',
-    }
-};
+export const metadata: Metadata = buildPageMetadata('/careers/grow-with-us');
 
 export default function GrowWithUsPage() {
     // Structured Data (Organization / Employment context)

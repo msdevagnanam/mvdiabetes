@@ -16,36 +16,9 @@ import LegacyToday from '@/components/legacy/LegacyToday';
 import LegacyClosing from '@/components/legacy/LegacyClosing';
 import LegacyFullTimeline from '@/components/legacy/LegacyFullTimeline';
 import LegacyFinalCTA from '@/components/legacy/LegacyFinalCTA';
+import { buildPageMetadata } from '@/data/seo';
 
-export const metadata: Metadata = {
-    title: seoMetadata.title,
-    description: seoMetadata.description,
-    alternates: {
-        canonical: seoMetadata.canonical,
-    },
-    openGraph: {
-        title: seoMetadata.title,
-        description: seoMetadata.description,
-        url: `https://mvdiabetes.vercel.app${seoMetadata.canonical}`,
-        siteName: 'M.V. Hospital for Diabetes',
-        images: [
-            {
-                url: '/images/about/Dr.viswanathan.png',
-                width: 800,
-                height: 600,
-                alt: 'Prof. M. Viswanathan',
-            },
-        ],
-        locale: 'en_IN',
-        type: 'profile',
-    },
-    twitter: {
-        card: 'summary_large_image',
-        title: seoMetadata.title,
-        description: seoMetadata.description,
-        images: ['/images/about/Dr.viswanathan.png'],
-    },
-};
+export const metadata: Metadata = buildPageMetadata('/prof-m-viswanathan', { image: { url: '/images/about/Dr.viswanathan.png', width: 459, height: 489, alt: 'Prof. M. Viswanathan' } });
 
 export default function ProfViswanathanPage() {
     // Structured Data (JSON-LD)

@@ -2,12 +2,9 @@ import type { Metadata } from 'next';
 import JobFilterList from '@/components/careers/JobFilterList';
 import PageHero from '@/components/ui/PageHero';
 import { careers } from '@/data/careers';
+import { buildPageMetadata } from '@/data/seo';
 
-export const metadata: Metadata = {
-    title: 'Careers — MV Diabetes',
-    description: 'Join the MV Diabetes team. Explore current openings across our centres in Chennai and Bengaluru.',
-    alternates: { canonical: '/careers' },
-};
+export const metadata: Metadata = buildPageMetadata('/careers');
 
 export default function CareersPage() {
     return (

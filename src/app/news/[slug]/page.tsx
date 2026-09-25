@@ -8,6 +8,7 @@ import NewsImagePlaceholder from '@/components/ui/NewsImagePlaceholder';
 import RelatedNews from '@/components/news/RelatedNews';
 import SocialShare from '@/components/news/SocialShare';
 import { newsEvents, getEventBySlug } from '@/data/news-events';
+import { DEFAULT_OG_IMAGE } from '@/data/seo';
 
 export async function generateStaticParams() {
     return newsEvents.map(e => ({ slug: e.slug }));
@@ -19,16 +20,17 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
     if (!event) return {};
     
     return {
-        title: `${event.title} | MV Diabetes News`,
+        // The root layout template appends "| MV Diabetes".
+        title: event.title,
         description: event.excerpt,
-        alternates: { canonical: `https://mvdiabetes.com/news/${event.slug}` },
+        alternates: { canonical: `/news/${event.slug}` },
         openGraph: {
             title: event.title,
             description: event.excerpt,
-            url: `https://mvdiabetes.com/news/${event.slug}`,
+            url: `/news/${event.slug}`,
             type: 'article',
             publishedTime: event.date,
-            images: event.image.status === 'available' && event.image.src ? [event.image.src] : [],
+            images: [event.image.status === 'available' && event.image.src ? event.image.src : DEFAULT_OG_IMAGE],
         }
     };
 }

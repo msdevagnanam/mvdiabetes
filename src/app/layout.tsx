@@ -6,6 +6,7 @@ import Footer from "@/components/layout/Footer";
 import MobileBottomBar from "@/components/layout/MobileBottomBar";
 import FloatingActions from "@/components/layout/FloatingActions";
 import { siteConfig } from "@/data/site";
+import { DEFAULT_OG_IMAGE } from "@/data/seo";
 
 const plusJakarta = Plus_Jakarta_Sans({
   subsets: ["latin"],
@@ -14,6 +15,8 @@ const plusJakarta = Plus_Jakarta_Sans({
 });
 
 export const metadata: Metadata = {
+  // Resolves every relative canonical / Open Graph URL against the production domain.
+  metadataBase: new URL(siteConfig.url),
   title: {
     default: "MV Diabetes — India's Leading Diabetes Super Specialty Hospital",
     template: "%s | MV Diabetes",
@@ -36,11 +39,13 @@ export const metadata: Metadata = {
     siteName: siteConfig.name,
     title: "MV Diabetes — India's Leading Diabetes Super Specialty Hospital",
     description: siteConfig.description,
+    images: [DEFAULT_OG_IMAGE],
   },
   twitter: {
     card: "summary_large_image",
     title: "MV Diabetes — India's Leading Diabetes Super Specialty Hospital",
     description: siteConfig.description,
+    images: [DEFAULT_OG_IMAGE.url],
   },
   robots: {
     index: true,

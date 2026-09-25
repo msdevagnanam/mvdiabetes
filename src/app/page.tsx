@@ -16,10 +16,52 @@ import {
   AppointmentCTASection,
 } from '@/components/sections/HomeSections';
 import { StatsCounter, PatientEducation, VideoTestimonials, Accreditations, AwardsAndAchievements, TPAPartnerships } from '@/components/sections/MissingSections';
+import { buildPageMetadata } from '@/data/seo';
+import { siteConfig } from '@/data/site';
+
+export const metadata = buildPageMetadata('/');
+
+// Organization + WebSite structured data, mirroring what mvdiabetes.com publishes on its home page.
+const homeJsonLd = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': ['MedicalOrganization', 'Hospital'],
+      '@id': `${siteConfig.url}/#organization`,
+      name: siteConfig.name,
+      legalName: siteConfig.fullName,
+      url: `${siteConfig.url}/`,
+      logo: `${siteConfig.url}/images/logo/mv-logo.png`,
+      image: `${siteConfig.url}/images/og/mv-diabetes.jpg`,
+      description: siteConfig.description,
+      telephone: siteConfig.phone,
+      email: siteConfig.email,
+      medicalSpecialty: 'Endocrine',
+      sameAs: Object.values(siteConfig.social),
+    },
+    {
+      '@type': 'WebSite',
+      '@id': `${siteConfig.url}/#website`,
+      url: `${siteConfig.url}/`,
+      name: siteConfig.name,
+      publisher: { '@id': `${siteConfig.url}/#organization` },
+      inLanguage: 'en-IN',
+      potentialAction: {
+        '@type': 'SearchAction',
+        target: { '@type': 'EntryPoint', urlTemplate: `${siteConfig.url}/search?q={search_term_string}` },
+        'query-input': 'required name=search_term_string',
+      },
+    },
+  ],
+};
 
 export default function HomePage() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(homeJsonLd).replace(/</g, '\\u003c') }}
+      />
       <Hero />
       <LegacyFeatureCards />
       <TrustStrip />

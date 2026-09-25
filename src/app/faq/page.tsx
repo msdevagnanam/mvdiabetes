@@ -5,21 +5,9 @@ import Breadcrumbs from '@/components/ui/Breadcrumbs';
 import FAQAccordion from '@/components/faq/FAQAccordion';
 import { faq, faqCategories, legalCta } from '@/data/legal';
 import { siteConfig } from '@/data/site';
+import { buildPageMetadata } from '@/data/seo';
 
-const description =
-    'Answers to common questions about M.V. Diabetes Hospital, including our services, appointments, insurance, patient support and careers.';
-
-export const metadata: Metadata = {
-    title: 'Frequently Asked Questions',
-    description,
-    openGraph: {
-        title: 'Frequently Asked Questions | MV Diabetes',
-        description,
-        url: `${siteConfig.url}/faq`,
-    },
-    twitter: { card: 'summary_large_image', title: 'Frequently Asked Questions | MV Diabetes', description },
-    alternates: { canonical: '/faq' },
-};
+export const metadata: Metadata = buildPageMetadata('/faq');
 
 export default function FAQPage() {
     const breadcrumbSchema = {

@@ -5,12 +5,9 @@ import PageHero from '@/components/ui/PageHero';
 import { branches } from '@/data/branches';
 import ContactForm from '@/components/contact/ContactForm';
 import GlobalContactCards from '@/components/contact/GlobalContactCards';
+import { buildPageMetadata } from '@/data/seo';
 
-export const metadata: Metadata = {
-    title: 'Contact Us — MV Diabetes',
-    description: 'Contact MV Diabetes. Find addresses, phone numbers, email, and maps for all locations in Chennai and Bengaluru.',
-    alternates: { canonical: '/contact' },
-};
+export const metadata: Metadata = buildPageMetadata('/contact');
 
 export default function ContactPage() {
     return (

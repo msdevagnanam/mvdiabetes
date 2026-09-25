@@ -8,37 +8,9 @@ import ProductsEducation from '@/components/sections/products/ProductsEducation'
 import ProductsInfo from '@/components/sections/products/ProductsInfo';
 import ProductsFAQ from '@/components/sections/products/ProductsFAQ';
 import ProductsFinalCTA from '@/components/sections/products/ProductsFinalCTA';
+import { buildPageMetadata } from '@/data/seo';
 
-export const metadata: Metadata = {
-    title: 'Diabetic Footwear & Therapeutic Shoes | MV Diabetes',
-    description:
-        'Explore therapeutic and diabetic footwear featured by MV Diabetes, designed with patented technology and clinical testing for comfort, support and foot health.',
-    alternates: {
-        canonical: 'https://mvdiabetes.vercel.app/our-products',
-    },
-    openGraph: {
-        title: 'Diabetic Footwear & Therapeutic Shoes | MV Diabetes',
-        description:
-            'Explore therapeutic and diabetic footwear featured by MV Diabetes, designed with patented technology and clinical testing for comfort, support and foot health.',
-        url: 'https://mvdiabetes.vercel.app/our-products',
-        siteName: 'MV Diabetes',
-        type: 'website',
-        images: [
-            {
-                url: 'https://mvdiabetes.vercel.app/images/products/shop-hero.jpg',
-                width: 1200,
-                height: 630,
-                alt: 'MV Diabetes Therapeutic Diabetic Footwear',
-            },
-        ],
-    },
-    twitter: {
-        card: 'summary_large_image',
-        title: 'Diabetic Footwear & Therapeutic Shoes | MV Diabetes',
-        description:
-            'Explore therapeutic and diabetic footwear featured by MV Diabetes, designed with patented technology and clinical testing for comfort, support and foot health.',
-    },
-};
+export const metadata: Metadata = buildPageMetadata('/our-products', { image: { url: '/images/products/shop-hero.jpg', width: 2560, height: 1179, alt: 'MV Diabetes therapeutic diabetic footwear' } });
 
 export default function OurProductsPage() {
     return (

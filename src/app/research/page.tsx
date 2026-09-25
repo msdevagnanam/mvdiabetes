@@ -5,25 +5,12 @@ import ResearchArchive from '@/components/research/ResearchArchive';
 import ResearchCTA from '@/components/research/ResearchCTA';
 import { researchStats, type SortOrder } from '@/data/research/publications';
 import { siteConfig } from '@/data/site';
+import { buildPageMetadata } from '@/data/seo';
 
 const description =
     'Explore the MV Diabetes research publications archive, featuring scientific publications and research contributions spanning from 1958 onwards.';
 
-export const metadata: Metadata = {
-    title: 'Research Publications',
-    description,
-    openGraph: {
-        title: 'Research Publications | MV Diabetes',
-        description,
-        url: `${siteConfig.url}/research`,
-    },
-    twitter: {
-        card: 'summary_large_image',
-        title: 'Research Publications | MV Diabetes',
-        description,
-    },
-    alternates: { canonical: '/research' },
-};
+export const metadata: Metadata = buildPageMetadata('/research');
 
 const SORTS: SortOrder[] = ['newest', 'oldest', 'source'];
 

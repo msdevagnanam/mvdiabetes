@@ -63,7 +63,7 @@ export default function Hero() {
 
     return (
         <section
-            className="relative w-full min-h-[700px] lg:min-h-[700px] bg-primary-dark overflow-hidden flex flex-col"
+            className="relative w-full min-h-[85vh] sm:min-h-[600px] lg:min-h-[700px] bg-primary-dark overflow-hidden flex flex-col"
             onMouseEnter={() => setIsHovered(true)}
             onMouseLeave={() => setIsHovered(false)}
         >
@@ -83,14 +83,14 @@ export default function Hero() {
                             alt="Background"
                             fill
                             priority
-                            className="object-cover object-center opacity-60 mix-blend-overlay"
+                            className="object-cover object-[75%_center] lg:object-center opacity-60 mix-blend-overlay"
                         />
                         {/* Gradients for readability */}
                         <div className="absolute inset-0 bg-gradient-to-r from-primary-dark/95 via-primary-dark/70 to-transparent" />
                         <div className="absolute inset-0 bg-gradient-to-t from-primary-dark via-transparent to-transparent opacity-80" />
                     </div>
 
-                    <div className="container-site flex-grow relative z-20 flex items-center pt-24 lg:pt-32 pb-36 lg:pb-16">
+                    <div className="container-site flex-grow relative z-20 flex items-start lg:items-center pt-20 lg:pt-32 pb-20 lg:pb-16">
                         <div className="max-w-2xl w-full">
                             <motion.div
                                 initial={{ opacity: 0, y: 20 }}
@@ -115,7 +115,7 @@ export default function Hero() {
                                 initial={{ opacity: 0, y: 20 }}
                                 animate={{ opacity: 1, y: 0 }}
                                 transition={{ delay: 0.5, duration: 0.6, ease: "easeOut" }}
-                                className="text-base sm:text-lg text-white/80 leading-relaxed max-w-xl mb-10"
+                                className="hidden lg:block text-base sm:text-lg text-white/80 leading-relaxed max-w-xl mb-10"
                             >
                                 {slides[currentSlide].description}
                             </motion.p>
@@ -124,18 +124,18 @@ export default function Hero() {
                                 initial={{ opacity: 0, y: 20 }}
                                 animate={{ opacity: 1, y: 0 }}
                                 transition={{ delay: 0.6, duration: 0.6, ease: "easeOut" }}
-                                className="flex flex-col sm:flex-row flex-wrap gap-4"
+                                className="flex flex-row w-full sm:w-auto gap-2 sm:gap-4"
                             >
                                 <Link
                                     href={slides[currentSlide].primaryCta.link}
-                                    className="inline-flex items-center justify-center gap-2 px-7 py-3.5 bg-secondary text-white text-sm sm:text-base font-semibold rounded-xl hover:bg-white hover:text-secondary transition-all duration-300 shadow-xl shadow-secondary/20"
+                                    className="flex-1 sm:flex-none inline-flex items-center justify-center gap-1 sm:gap-2 px-2 sm:px-7 py-3 sm:py-3.5 bg-secondary text-white text-[0.8rem] sm:text-base font-semibold rounded-xl hover:bg-white hover:text-secondary transition-all duration-300 shadow-xl shadow-secondary/20 text-center"
                                 >
                                     {slides[currentSlide].primaryCta.text}
-                                    <ArrowRight size={18} />
+                                    <ArrowRight size={16} className="hidden sm:block" />
                                 </Link>
                                 <Link
                                     href={slides[currentSlide].secondaryCta.link}
-                                    className="inline-flex items-center justify-center gap-2 px-7 py-3.5 bg-white/10 backdrop-blur-md text-white text-sm sm:text-base font-semibold rounded-xl border border-white/20 hover:bg-white/20 transition-colors duration-300"
+                                    className="flex-1 sm:flex-none inline-flex items-center justify-center gap-1 sm:gap-2 px-2 sm:px-7 py-3 sm:py-3.5 bg-white/10 backdrop-blur-md text-white text-[0.8rem] sm:text-base font-semibold rounded-xl border border-white/20 hover:bg-white/20 transition-colors duration-300 text-center"
                                 >
                                     {slides[currentSlide].secondaryCta.text}
                                 </Link>

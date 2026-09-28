@@ -176,12 +176,22 @@ function MobileMenu({ isOpen, onClose }: { isOpen: boolean; onClose: () => void 
                     >
                         Book Appointment
                     </Link>
-                    <a
-                        href={`tel:${siteConfig.phone}`}
-                        className="block w-full py-3 bg-surface-muted text-text-primary text-center font-medium rounded-xl hover:bg-border transition-colors"
-                    >
-                        Call {siteConfig.phone}
-                    </a>
+                    <div className="flex items-center gap-3">
+                        <a
+                            href={`tel:${siteConfig.phone}`}
+                            className="flex-1 flex items-center justify-center gap-1.5 py-3 bg-surface-muted text-text-primary text-sm font-medium rounded-xl hover:bg-border transition-colors"
+                        >
+                            <Phone size={15} /> Call
+                        </a>
+                        <a
+                            href={`https://wa.me/${siteConfig.whatsapp}`}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="flex-1 flex items-center justify-center gap-1.5 py-3 bg-surface-muted text-text-primary text-sm font-medium rounded-xl hover:bg-border transition-colors"
+                        >
+                            <WhatsAppIcon className="w-4 h-4 text-[#25D366]" /> WhatsApp
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>

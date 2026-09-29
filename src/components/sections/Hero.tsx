@@ -90,7 +90,7 @@ export default function Hero() {
                         <div className="absolute inset-0 bg-gradient-to-t from-primary-dark via-transparent to-transparent opacity-80" />
                     </div>
 
-                    <div className="container-site flex-grow relative z-20 flex items-start lg:items-center pt-20 lg:pt-32 pb-20 lg:pb-16">
+                    <div className="container-site flex-grow relative z-20 flex items-start lg:items-center pt-60 lg:pt-32 pb-20 lg:pb-16">
                         <div className="max-w-2xl w-full">
                             <motion.div
                                 initial={{ opacity: 0, y: 20 }}
@@ -182,7 +182,7 @@ export default function Hero() {
             </div>
 
             {/* Mobile Dots */}
-            <div className="absolute left-1/2 -translate-x-1/2 bottom-20 z-30 flex lg:hidden items-center gap-2">
+            <div className="absolute left-1/2 -translate-x-1/2 bottom-8 z-30 flex lg:hidden items-center gap-2">
                 {slides.map((_, i) => (
                     <button
                         key={i}

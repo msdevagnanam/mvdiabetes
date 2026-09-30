@@ -86,11 +86,11 @@ export default function Hero() {
                             className="object-cover object-[75%_center] lg:object-center opacity-60 mix-blend-overlay"
                         />
                         {/* Gradients for readability */}
-                        <div className="absolute inset-0 bg-gradient-to-r from-primary-dark/95 via-primary-dark/70 to-transparent" />
-                        <div className="absolute inset-0 bg-gradient-to-t from-primary-dark via-transparent to-transparent opacity-80" />
+                        <div className="absolute inset-0 hidden lg:block bg-gradient-to-r from-primary-dark/95 via-primary-dark/70 to-transparent" />
+                        <div className="absolute inset-0 bg-gradient-to-t from-primary-dark via-primary-dark/80 lg:via-transparent to-transparent opacity-100 lg:opacity-80" />
                     </div>
 
-                    <div className="container-site flex-grow relative z-20 flex items-start lg:items-center pt-60 lg:pt-32 pb-20 lg:pb-16">
+                    <div className="container-site flex-grow relative z-20 flex items-end lg:items-center pt-32 pb-24 lg:pb-16">
                         <div className="max-w-2xl w-full">
                             <motion.div
                                 initial={{ opacity: 0, y: 20 }}
@@ -128,14 +128,14 @@ export default function Hero() {
                             >
                                 <Link
                                     href={slides[currentSlide].primaryCta.link}
-                                    className="flex-1 sm:flex-none inline-flex items-center justify-center gap-1 sm:gap-2 px-2 sm:px-7 py-3 sm:py-3.5 bg-secondary text-white text-[0.8rem] sm:text-base font-semibold rounded-xl hover:bg-white hover:text-secondary transition-all duration-300 shadow-xl shadow-secondary/20 text-center"
+                                    className="flex-1 sm:flex-none inline-flex items-center justify-center gap-1 sm:gap-2 px-1 sm:px-7 py-3 sm:py-3.5 bg-secondary text-white text-[0.75rem] sm:text-base font-semibold rounded-xl hover:bg-white hover:text-secondary transition-all duration-300 shadow-xl shadow-secondary/20 text-center leading-tight"
                                 >
                                     {slides[currentSlide].primaryCta.text}
-                                    <ArrowRight size={16} className="hidden sm:block" />
+                                    <ArrowRight size={16} className="hidden sm:block shrink-0" />
                                 </Link>
                                 <Link
                                     href={slides[currentSlide].secondaryCta.link}
-                                    className="flex-1 sm:flex-none inline-flex items-center justify-center gap-1 sm:gap-2 px-2 sm:px-7 py-3 sm:py-3.5 bg-white/10 backdrop-blur-md text-white text-[0.8rem] sm:text-base font-semibold rounded-xl border border-white/20 hover:bg-white/20 transition-colors duration-300 text-center"
+                                    className="flex-1 sm:flex-none inline-flex items-center justify-center gap-1 sm:gap-2 px-1 sm:px-7 py-3 sm:py-3.5 bg-white/10 backdrop-blur-md text-white text-[0.75rem] sm:text-base font-semibold rounded-xl border border-white/20 hover:bg-white/20 transition-colors duration-300 text-center leading-tight"
                                 >
                                     {slides[currentSlide].secondaryCta.text}
                                 </Link>

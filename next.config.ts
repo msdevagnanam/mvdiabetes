@@ -19,16 +19,15 @@ const nextConfig: NextConfig = {
   },
   async redirects() {
     return [
-      {
-        source: '/bmw-data-2021',
-        destination: '/bmw-data',
+      // WordPress published one BMW page per year; each lands on that year of the dashboard.
+      ...[2021, 2022, 2023, 2024, 2025, 2026].map(year => ({
+        source: `/bmw-data-${year}`,
+        destination: `/bmw-data?year=${year}`,
         permanent: true,
-      },
-      {
-        source: '/bmw-data-2022',
-        destination: '/bmw-data',
-        permanent: true,
-      },
+      })),
+      // BMW workbooks, now served from /public/reports/bmw (byte-identical copies).
+      { source: '/wp-content/uploads/2023/05/bmw-report2021.xls', destination: '/reports/bmw/bmw-report2021.xls', permanent: true },
+      { source: '/wp-content/uploads/2023/05/bmw-report2022.xls', destination: '/reports/bmw/bmw-report2022.xls', permanent: true },
       { source: '/jobs/cashier', destination: '/careers/cashier', permanent: true },
       { source: '/jobs/electrician', destination: '/careers/electrician', permanent: true },
       { source: '/jobs/housekeeping-ward-boys-ward-ayahs', destination: '/careers/housekeeping-ward-boys-ward-ayahs', permanent: true },

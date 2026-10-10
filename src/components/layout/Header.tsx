@@ -58,7 +58,7 @@ function DesktopNav() {
     };
 
     return (
-        <nav className="hidden lg:flex items-center gap-1">
+        <nav className="hidden lg:flex items-center gap-0 xl:gap-1">
             {navigation.map((item) => (
                 <div
                     key={item.label}
@@ -69,7 +69,7 @@ function DesktopNav() {
                     <Link
                         href={item.href}
                         className={`
-              flex items-center gap-1 px-3 py-2 text-[0.9rem] font-medium rounded-lg transition-colors
+              flex items-center gap-1 px-2 xl:px-3 py-2 text-[0.85rem] xl:text-[0.9rem] font-medium rounded-lg transition-colors
               ${activeMenu === item.label ? 'text-primary bg-primary/5' : 'text-text-primary hover:text-primary'}
             `}
                     >
@@ -240,7 +240,7 @@ export default function Header() {
                         <div className="flex items-center gap-2">
                             <Link
                                 href="/appointment"
-                                className="hidden md:inline-flex items-center px-5 py-2.5 bg-primary text-white text-sm font-semibold rounded-xl hover:bg-primary-dark transition-colors"
+                                className="hidden md:inline-flex items-center whitespace-nowrap px-4 xl:px-5 py-2.5 bg-primary text-white text-sm font-semibold rounded-xl hover:bg-primary-dark transition-colors"
                             >
                                 Book Appointment
                             </Link>

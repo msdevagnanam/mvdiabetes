@@ -134,8 +134,8 @@ export const pageSeo = {
         description: 'Explore our comprehensive FAQ guide to find quick solutions to common queries. Whether you\'re seeking information about our services, appointments, insurance or careers, we\'re here to help.',
     },
     '/bmw-data': {
-        title: 'Biomedical Waste Management (BMW) Data 2021–2022 | MV Diabetes',
-        description: 'View MV Diabetes biomedical waste management data for 2021 and 2022, organized by location, month and waste category.',
+        title: 'Biomedical Waste Management (BMW) Data 2021–2026 | MV Diabetes',
+        description: 'Monthly biomedical waste data from MV Diabetes, January 2021 to September 2026: Yellow, Red, Blue and White bin quantities in kg by location.',
     },
     '/privacy-policy': {
         title: 'Privacy Policy: Your Privacy Matters | MV Diabetes Hospital',

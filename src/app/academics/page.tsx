@@ -241,8 +241,9 @@ export default function AcademicsPage() {
                             <div className="absolute inset-0 bg-gradient-to-tr from-secondary/20 to-transparent rounded-3xl transform -rotate-3 scale-105" />
                             {/* eslint-disable-next-line @next/next/no-img-element */}
                             <img 
-                                src={academicData.awardImage} 
-                                alt="MV Hospital FCD Award" 
+                                src={academicData.awardImage}
+                                alt="MV Hospital FCD Award"
+                                loading="lazy"
                                 className="relative rounded-3xl shadow-xl border border-border w-full max-w-md mx-auto lg:mx-0 object-contain bg-white p-4"
                             />
                         </div>

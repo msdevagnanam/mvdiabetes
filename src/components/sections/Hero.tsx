@@ -63,7 +63,7 @@ export default function Hero() {
 
     return (
         <section
-            className="relative w-full min-h-[85vh] sm:min-h-[600px] lg:min-h-[700px] bg-primary-dark overflow-hidden flex flex-col"
+            className="relative w-full min-h-[85vh] sm:min-h-[600px] lg:min-h-0 lg:h-[calc(100vh-108px)] lg:max-h-[760px] bg-primary-dark overflow-hidden flex flex-col"
             onMouseEnter={() => setIsHovered(true)}
             onMouseLeave={() => setIsHovered(false)}
         >
@@ -74,7 +74,7 @@ export default function Hero() {
                     animate={{ opacity: 1, scale: 1, zIndex: 10 }}
                     exit={{ opacity: 0, scale: 0.95, zIndex: 0 }}
                     transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
-                    className="relative w-full flex-grow flex flex-col"
+                    className="relative w-full h-full flex-grow flex flex-col justify-center"
                 >
                     {/* Background Image */}
                     <div className="absolute inset-0">
@@ -90,13 +90,13 @@ export default function Hero() {
                         <div className="absolute inset-0 bg-gradient-to-t from-primary-dark via-primary-dark/80 lg:via-transparent to-transparent opacity-100 lg:opacity-80" />
                     </div>
 
-                    <div className="container-site flex-grow relative z-20 flex items-end lg:items-center pt-32 pb-24 lg:pb-16">
+                    <div className="container-site flex-grow relative z-20 flex items-end lg:items-center pt-32 pb-24 lg:pt-0 lg:pb-0 lg:py-4">
                         <div className="max-w-2xl w-full">
                             <motion.div
                                 initial={{ opacity: 0, y: 20 }}
                                 animate={{ opacity: 1, y: 0 }}
                                 transition={{ delay: 0.3, duration: 0.6, ease: "easeOut" }}
-                                className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/10 backdrop-blur-md border border-white/15 text-white/90 text-xs sm:text-sm font-semibold tracking-wide mb-6"
+                                className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/10 backdrop-blur-md border border-white/15 text-white/90 text-xs sm:text-sm font-semibold tracking-wide mb-6 lg:mb-3"
                             >
                                 <span className="w-2 h-2 rounded-full bg-accent animate-pulse" />
                                 {slides[currentSlide].eyebrow}
@@ -106,7 +106,7 @@ export default function Hero() {
                                 initial={{ opacity: 0, y: 20 }}
                                 animate={{ opacity: 1, y: 0 }}
                                 transition={{ delay: 0.4, duration: 0.6, ease: "easeOut" }}
-                                className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-white leading-[1.1] mb-6"
+                                className="text-4xl sm:text-5xl lg:text-4xl xl:text-5xl font-extrabold text-white leading-[1.12] mb-6 lg:mb-3 xl:mb-4 tracking-tight"
                             >
                                 {slides[currentSlide].headline}
                             </motion.h1>
@@ -115,7 +115,7 @@ export default function Hero() {
                                 initial={{ opacity: 0, y: 20 }}
                                 animate={{ opacity: 1, y: 0 }}
                                 transition={{ delay: 0.5, duration: 0.6, ease: "easeOut" }}
-                                className="hidden lg:block text-base sm:text-lg text-white/80 leading-relaxed max-w-xl mb-10"
+                                className="hidden lg:block text-sm xl:text-base text-white/80 leading-relaxed max-w-xl mb-10 lg:mb-5 xl:mb-6"
                             >
                                 {slides[currentSlide].description}
                             </motion.p>
@@ -128,14 +128,14 @@ export default function Hero() {
                             >
                                 <Link
                                     href={slides[currentSlide].primaryCta.link}
-                                    className="flex-1 sm:flex-none inline-flex items-center justify-center gap-1 sm:gap-2 px-1 sm:px-7 py-3 sm:py-3.5 bg-secondary text-white text-[0.75rem] sm:text-base font-semibold rounded-xl hover:bg-white hover:text-secondary transition-all duration-300 shadow-xl shadow-secondary/20 text-center leading-tight"
+                                    className="flex-1 sm:flex-none inline-flex items-center justify-center gap-1 sm:gap-2 px-1 sm:px-7 lg:px-6 lg:py-2.5 xl:py-3 py-3 sm:py-3.5 bg-secondary text-white text-[0.75rem] sm:text-base font-semibold rounded-xl hover:bg-white hover:text-secondary transition-all duration-300 shadow-xl shadow-secondary/20 text-center leading-tight"
                                 >
                                     {slides[currentSlide].primaryCta.text}
                                     <ArrowRight size={16} className="hidden sm:block shrink-0" />
                                 </Link>
                                 <Link
                                     href={slides[currentSlide].secondaryCta.link}
-                                    className="flex-1 sm:flex-none inline-flex items-center justify-center gap-1 sm:gap-2 px-1 sm:px-7 py-3 sm:py-3.5 bg-white/10 backdrop-blur-md text-white text-[0.75rem] sm:text-base font-semibold rounded-xl border border-white/20 hover:bg-white/20 transition-colors duration-300 text-center leading-tight"
+                                    className="flex-1 sm:flex-none inline-flex items-center justify-center gap-1 sm:gap-2 px-1 sm:px-7 lg:px-6 lg:py-2.5 xl:py-3 py-3 sm:py-3.5 bg-white/10 backdrop-blur-md text-white text-[0.75rem] sm:text-base font-semibold rounded-xl border border-white/20 hover:bg-white/20 transition-colors duration-300 text-center leading-tight"
                                 >
                                     {slides[currentSlide].secondaryCta.text}
                                 </Link>
@@ -146,16 +146,16 @@ export default function Hero() {
             </AnimatePresence>
 
             {/* Navigation Controls */}
-            <div className="absolute right-4 bottom-8 lg:right-10 lg:bottom-12 z-30 hidden lg:flex items-center gap-4">
+            <div className="absolute right-4 bottom-8 lg:right-8 xl:right-12 lg:bottom-5 xl:bottom-7 z-30 hidden lg:flex items-center gap-4">
                 {/* Dots indicator */}
-                <div className="hidden lg:flex items-center gap-2 mr-4">
+                <div className="hidden lg:flex items-center gap-2 mr-3">
                     {slides.map((_, i) => (
                         <button
                             key={i}
                             onClick={() => setCurrentSlide(i)}
                             className={`transition-all duration-300 rounded-full ${i === currentSlide
                                 ? 'w-8 h-2 bg-secondary'
-                                : 'w-2 h-2 bg-white/30 hover:bg-white/50'
+                                : 'w-2.5 h-2.5 bg-white/40 hover:bg-white/70'
                                 }`}
                             aria-label={`Go to slide ${i + 1}`}
                         />
@@ -166,17 +166,17 @@ export default function Hero() {
                 <div className="flex items-center gap-2">
                     <button
                         onClick={prevSlide}
-                        className="w-12 h-12 rounded-full border border-white/20 bg-black/20 backdrop-blur-md flex items-center justify-center text-white hover:bg-white hover:text-primary transition-all duration-300"
+                        className="w-10 h-10 xl:w-11 xl:h-11 rounded-full border border-white/20 bg-black/30 backdrop-blur-md flex items-center justify-center text-white hover:bg-secondary hover:border-secondary transition-all duration-300 shadow-md cursor-pointer"
                         aria-label="Previous slide"
                     >
-                        <ChevronLeft size={24} />
+                        <ChevronLeft size={20} />
                     </button>
                     <button
                         onClick={nextSlide}
-                        className="w-12 h-12 rounded-full border border-white/20 bg-black/20 backdrop-blur-md flex items-center justify-center text-white hover:bg-white hover:text-primary transition-all duration-300"
+                        className="w-10 h-10 xl:w-11 xl:h-11 rounded-full border border-white/20 bg-black/30 backdrop-blur-md flex items-center justify-center text-white hover:bg-secondary hover:border-secondary transition-all duration-300 shadow-md cursor-pointer"
                         aria-label="Next slide"
                     >
-                        <ChevronRight size={24} />
+                        <ChevronRight size={20} />
                     </button>
                 </div>
             </div>
